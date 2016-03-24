@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "jsx": "react",
+    //"jsx":"preserve",
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

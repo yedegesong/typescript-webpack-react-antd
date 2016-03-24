@@ -1,0 +1,41 @@
+{
+  "name": "aiduobao-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p --config webpack.product.config.js --progress --colors  --profile",
+    "dev": "webpack-dev-server --inline --hot --quiet",
+    "dev2": "webpack-dev-server",
+    "lint": "eslint src"
+  },
+  "author": "cj",
+  "license": "ISC",
+  "dependencies": {
+    "alt": "^0.18.2",
+    "antd": "^0.12.12",
+    "bluebird": "^3.1.5",
+    "classnames": "^2.2.0",
+    "object-assign": "^4.0.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-tap-event-plugin": "^0.2.1"
+  },
+  "devDependencies": {
+    "babel": "^6.1.18",
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "css-loader": "^0.23.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "jsx-loader": "^0.13.2",
+    "react-hot-loader": "^1.3.0",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1",
+    "ts-loader": "^0.8.1",
+    "source-map-loader": "^0.1.5",
+    "typescript": "^1.8.9"
+  }
+}
