@@ -19,7 +19,8 @@
     "object-assign": "^4.0.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-tap-event-plugin": "^0.2.1"
+    "react-tap-event-plugin": "^0.2.1",
+    "jquery": "^2.2.2"
   },
   "devDependencies": {
     "babel": "^6.1.18",

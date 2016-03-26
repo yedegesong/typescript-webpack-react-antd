@@ -17,9 +17,7 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 var node_modules = path.resolve(__dirname, 'node_modules');
 var pathToSrc  = path.resolve(__dirname, 'src');
 //页面主控制目录
-var controllerSrc = path.resolve(__dirname, 'src','controller');
-
-console.log(filepath)
+var controllerSrc = path.resolve(__dirname, 'ts','controller');
 
 var _entry = function(options){
     var entry = {};
