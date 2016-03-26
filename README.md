@@ -5,6 +5,8 @@
 ```
  nodejs
 
+ npm install cnpm -g
+
  npm install webpack -g
 
  npm install typescript -g
@@ -18,7 +20,7 @@
 ```
 npm install 
 
-tsd install react react-dom jquery antd --save
+tsd install 
 
 ```
 
