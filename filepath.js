@@ -4,5 +4,5 @@
  * @type {{index: string, details: string}}
  */
 module.exports = {
-  index:"index"
+  IndexContainer:"IndexContainer"
 }

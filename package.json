@@ -28,15 +28,16 @@
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
-    "css-loader": "^0.23.0",
+    "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^0.9.1",
+    "html-webpack-plugin": "^2.14.0",
     "jsx-loader": "^0.13.2",
     "react-hot-loader": "^1.3.0",
-    "style-loader": "^0.13.0",
-    "webpack": "^1.12.8",
-    "webpack-dev-server": "^1.12.1",
-    "ts-loader": "^0.8.1",
     "source-map-loader": "^0.1.5",
-    "typescript": "^1.8.9"
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.8.1",
+    "typescript": "^1.8.9",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1"
   }
 }

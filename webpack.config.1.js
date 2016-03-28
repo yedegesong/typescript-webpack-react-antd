@@ -4,13 +4,14 @@
  * Created by x on 11/23/15.
  */
 var path = require('path');
-
 /**
  * 导入文件入口
  * @type {{index: string, details: string}|exports|module.exports}
  */
 var webpack           = require('webpack');
 var filepath = require('./filepath');
+//替换HTML资源文件
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 //提取公用CSS
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
@@ -65,7 +66,9 @@ var config = {
     plugins:     [
         new ExtractTextPlugin("app.css"),
         commonsPlugin,
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin()
+        
     ]
 };
 
