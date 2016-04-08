@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --config webpack.product.config.js --progress --colors  --profile",
-    "dev": "webpack-dev-server --inline --hot --quiet",
-    "dev2": "webpack-dev-server",
-    "lint": "eslint src"
+    "build": "webpack -p --config webpack.build.config.js --progress --colors  --profile",
+    "dev": "node webpack.server.js",
+    "dev2": "webpack-dev-server --inline --hot --quiet",
+    "lint": "eslint src",
+    "build2": "webpacck -d"
   },
   "author": "cj",
   "license": "ISC",
@@ -19,8 +20,12 @@
     "object-assign": "^4.0.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-tap-event-plugin": "^0.2.1",
-    "jquery": "^2.2.2"
+    "react-tap-event-plugin": "^0.2.2",
+    "jquery": "^2.2.2",
+    "redux": "^3.3.1",
+    "react-redux": "^4.4.1",
+    "redux-actions": "^0.9.1",
+    "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
     "babel": "^6.1.18",
@@ -38,6 +43,7 @@
     "ts-loader": "^0.8.1",
     "typescript": "^1.8.9",
     "webpack": "^1.12.8",
-    "webpack-dev-server": "^1.12.1"
+    "webpack-dev-server": "^1.12.1",
+    "webpack-split-by-path": "^0.0.8"
   }
 }

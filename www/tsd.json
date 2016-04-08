@@ -1,0 +1,36 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "react/react.d.ts": {
+      "commit": "4bd9b47f0ea79ba83c2e831c56bcaf8ba3a2c8ad"
+    },
+    "react/react-dom.d.ts": {
+      "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
+    },
+    "antd/antd.d.ts": {
+      "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
+    },
+    "redux/redux.d.ts": {
+      "commit": "d969b903d1fce89a5e43828ec68458b4f852db4d"
+    },
+    "react-redux/react-redux.d.ts": {
+      "commit": "4bd9b47f0ea79ba83c2e831c56bcaf8ba3a2c8ad"
+    },
+    "redux-actions/redux-actions.d.ts": {
+      "commit": "4052af9156bdf24d21134d8a07c7fa4b7fbe9ad0"
+    },
+    "redux-thunk/redux-thunk.d.ts": {
+      "commit": "d969b903d1fce89a5e43828ec68458b4f852db4d"
+    },
+    "react-tap-event-plugin/react-tap-event-plugin.d.ts": {
+      "commit": "ec9eb4b28c74665a602c22db3457f0a76fa0fa23"
+    }
+  }
+}
