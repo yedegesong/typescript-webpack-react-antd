@@ -60,4 +60,48 @@ export default class Tool extends Server {
             return object.hasOwnProperty ? object.hasOwnProperty(name) : (name in object);
         
     }
+
+    /**
+     * 判断一个样式是否存在
+     * @param ele
+     * @param cls
+     * @returns {RegExpMatchArray}
+     */
+    static hasClass (ele,cls){
+        return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+    }
+
+    /**
+     * 添加样式
+     * @param ele
+     * @param cls
+     */
+    static addClass(ele,cls){
+        if (!this.hasClass(ele, cls)) ele.className += " " + cls;
+    }
+
+    /**
+     * 删除样式
+     * @param ele
+     * @param cls
+     */
+    static removeClass(ele,cls){
+        if (this.hasClass(ele,cls)) {
+            var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+            ele.className=ele.className.replace(reg,' ');
+        }
+    }
+
+    /**
+     * 添加删除样式
+     * @param ele
+     * @param cls
+     */
+    static toggleClass(ele,cls){
+        if(this.hasClass(ele,cls)){
+            this.removeClass(ele, cls);
+        }else{
+            this.addClass(ele,cls);
+        }
+}
 }

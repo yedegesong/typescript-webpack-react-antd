@@ -88,6 +88,7 @@
 @border-color: #e4e5e7;
 @menu-btn-background:#0388c9;
 
+@active-background:#0388c9;
 //全局图标字体
 .font(){font-family:"iconfont" !important;
   font-size:16px;
@@ -105,3 +106,12 @@
   -o-transform: rotate(@rotate);
   transform: rotate(@rotate);
 }
+
+//全局CSS3缓动
+.transition(@value:all,@time:2s){
+  -moz-transition: @value @time;	/* Firefox 4 */
+  -webkit-transition: @value @time;	/* Safari 和 Chrome */
+  -o-transition: @value @time;
+  transition: @value @time;
+}
+

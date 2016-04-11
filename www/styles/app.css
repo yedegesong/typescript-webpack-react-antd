@@ -305,6 +305,9 @@ body {
   color: #fff;
   cursor: pointer;
 }
+.cw-menu-parent > li.active h3 {
+  background-color: #21a6e7;
+}
 .cw-menu-parent > li > h3:hover {
   background-color: #21a6e7;
 }
@@ -321,6 +324,12 @@ body {
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
   content: "\e6de";
+  -moz-transition: all 0.5s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.5s;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -328,9 +337,25 @@ body {
   transform: rotate(-90deg);
   font-size: 12px;
 }
+.cw-menu-parent > li.active > h3.on:before {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
 .cw-menu-child {
-  height: 0;
+  -moz-transition: max-height 0.5s;
+  /* Firefox 4 */
+  -webkit-transition: max-height 0.5s;
+  /* Safari 和 Chrome */
+  -o-transition: max-height 0.5s;
+  transition: max-height 0.5s;
+  max-height: 0;
   overflow: hidden;
+}
+.cw-menu-parent > li.active .cw-menu-child {
+  max-height: 400px;
 }
 .cw-menu-child > li {
   border-bottom: 1px solid #0395db;
@@ -344,4 +369,7 @@ body {
 }
 .cw-menu-child > li:last-child {
   border-bottom: 0 none;
+}
+.cw-menu-child > li a:hover {
+  background-color: #21a6e7;
 }
