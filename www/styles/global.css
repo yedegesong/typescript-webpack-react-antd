@@ -1,0 +1,98 @@
+/**
+  书写全局公用样式
+*/
+.cwgj-clearfix,
+.cwgj-row {
+  *zoom: 1;
+}
+.cwgj-clearfix:after,
+.cwgj-row:after {
+  content: "";
+  display: table;
+}
+.cwgj-clearfix:after,
+.cwgj-row:after {
+  clear: both;
+}
+.cwgj-clear {
+  clear: both;
+}
+.cwgj-ib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.cwgj-dn {
+  display: none;
+}
+.cwgj-db {
+  display: block;
+}
+.cwgj-pre {
+  overflow: hidden;
+  text-align: left;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.cwgj-wwb {
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.cwgj-ta-center {
+  text-align: center;
+}
+.cwgj-ta-left {
+  text-align: left;
+}
+.cwgj-fl,
+.cwgj-fr {
+  _display: inline;
+}
+.cwgj-fl {
+  float: left;
+}
+.cwgj-fr {
+  float: right;
+}
+.cwgj-bd-t {
+  border-top: 1px solid #e9e9e9;
+}
+.cwgj-bd-r {
+  border-right: 1px solid #e9e9e9;
+}
+.cwgj-bd-b {
+  border-bottom: 1px solid #e9e9e9;
+}
+.cwgj-bd-l {
+  border-left: 1px solid #e9e9e9;
+}
+.cwgj-t-aln-c {
+  text-align: center;
+}
+.cwgj-t-aln-l {
+  text-align: left;
+}
+.cwgj-t-aln-r {
+  text-align: right;
+}
+.box-align {
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  box-align: center;
+}
+.box-pack {
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-pack: center;
+}
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+.webkit-box {
+  display: -webkit-box;
+  display: -moz-box;
+}
+/*# sourceMappingURL=global.css.map */

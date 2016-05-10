@@ -1,0 +1,43 @@
+{
+  "name": "aiduobao-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p --config webpack.build.config.js --progress --colors  --profile",
+    "dev": "node webpack.server.js",
+    "dev2": "webpack-dev-server --inline --hot --quiet",
+    "lint": "eslint src",
+    "build2": "webpacck -d"
+  },
+  "author": "cj",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^0.12.12",
+    "classnames": "^2.2.0",
+    "object-assign": "^4.0.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-tap-event-plugin": "^0.2.2",
+    "jquery": "^2.2.2",
+    "redux": "^3.3.1",
+    "react-redux": "^4.4.1",
+    "redux-actions": "^0.9.1",
+    "redux-thunk": "^2.0.1",
+    "rc-upload": "^1.11.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "html-webpack-plugin": "^2.14.0",
+    "jsx-loader": "^0.13.2",
+    "react-hot-loader": "^1.3.0",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^0.8.1",
+    "typescript": "^1.8.9",
+    "webpack": "^1.12.8",
+    "webpack-dev-server": "^1.12.1",
+    "webpack-split-by-path": "^0.0.8"
+  }
+}
