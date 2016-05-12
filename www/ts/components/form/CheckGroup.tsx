@@ -13,6 +13,7 @@ interface CheckGroupProps {
     defaultChecked?:any;
     defaultValue?:any;
     labelOptions?: any;
+    value?: any;
 }
 export default class CheckGroup extends React.Component<CheckGroupProps, any> {
     static defaultProps = {
@@ -89,4 +90,6 @@ export default class CheckGroup extends React.Component<CheckGroupProps, any> {
             </div>
         );
     }
+
+
 }

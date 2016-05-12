@@ -45,8 +45,8 @@ export default class InputSelect extends React.Component<InputSelectProps,any> {
             <div className={Cls}>
                 <select
                     {...this.props}
-                    value={value}
                     name={name}
+                    value={this.state.value}
                     className={inputClassName}
                     onChange={this.handleChange}>
                     <option value="-1">请选择</option> 
@@ -55,4 +55,12 @@ export default class InputSelect extends React.Component<InputSelectProps,any> {
             </div>
         );
     }
+    
+    /**
+     * 解决二次渲染值回填
+     */
+    componentWillReceiveProps(nextProps) {
+        this.setState({ value: nextProps.value });
+    }
+    
 }

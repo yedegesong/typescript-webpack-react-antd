@@ -5,7 +5,6 @@
 }
 .@{css-prefix}row
 .@{css-prefix}col{
-	float: left;
 	position: relative;
 	min-height: 1px;
 	padding-right: 10px;
@@ -15,55 +14,47 @@
 	width: @wd;
 }
 
-.@{css-prefix}col-10{
-	.wd;
-}
-.@{css-prefix}col-20{
-	.wd(20%);
-}
-.@{css-prefix}col-25{
-	.wd(25%);
-}
-.@{css-prefix}col-33{
-	.wd(33.3333%);
-}
-.@{css-prefix}col-50{
-	.wd(50%);
-}
-.@{css-prefix}col-67{
-	.wd(66.6666%);
-}
-.@{css-prefix}col-75{
-	.wd(75%);
-}
-.@{css-prefix}col-80{
-	.wd(80%);
-}
-.@{css-prefix}col-90{
-	.wd(90%);
-}
+@media (min-width: 992px){
+	.@{css-prefix}col-10,
+	.@{css-prefix}col-20,
+	.@{css-prefix}col-25,
+	.@{css-prefix}col-33,
+	.@{css-prefix}col-50,
+	.@{css-prefix}col-67,
+	.@{css-prefix}col-75,
+	.@{css-prefix}col-80,
+	.@{css-prefix}col-90{
+	    float: left;
+	}
 
-.@{css-prefix}col-primary{
-	.border-radius;
-	background-color: #89bceb;
-	border-color: #89bceb;
+	.@{css-prefix}col-10{
+		.wd;
+	}
+	.@{css-prefix}col-20{
+		.wd(20%);
+	}
+	.@{css-prefix}col-25{
+		.wd(25%);
+	}
+	.@{css-prefix}col-33{
+		.wd(33.3333%);
+	}
+	.@{css-prefix}col-50{
+		.wd(50%);
+	}
+	.@{css-prefix}col-67{
+		.wd(66.6666%);
+	}
+	.@{css-prefix}col-75{
+		.wd(75%);
+	}
+	.@{css-prefix}col-80{
+		.wd(80%);
+	}
+	.@{css-prefix}col-90{
+		.wd(90%);
+	}
 }
-.@{css-prefix}col-info{
-	.border-radius;
-	background-color: #77d6e1;
-	border-color: #77d6e1;
-}
-.@{css-prefix}col-success{
-	.border-radius;
-	background-color: #5cd29d;
-	border-color: #5cd29d;
-}
-.@{css-prefix}col-warning{
-	.border-radius;
-	background-color: #f4b066;
-	border-color: #f4b066;
-}
-
 
 //图片加说明文字面板
 .@{css-prefix}grid{

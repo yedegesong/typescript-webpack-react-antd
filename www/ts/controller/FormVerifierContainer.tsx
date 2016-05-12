@@ -78,14 +78,14 @@ class IndexApp extends BaseContainer {
         }];
         //验证的表单
         this.submitDate= {
-            accout:'1',
-            password:'1',
-            password_repeat: '1',
-            city:'1',
-            delivery_channel:'1',
-            Interest:['福州'],
-            phone:'15985796051',
-            email:'277527478@qq.com',
+            accout:'',
+            password:'',
+            password_repeat: '',
+            city:'-1',
+            delivery_channel:'',
+            Interest:[],
+            phone:'',
+            email:'',
             bank:''
         }
     }
@@ -94,7 +94,7 @@ class IndexApp extends BaseContainer {
         let isChecked = this.checkedValue.state.checked;
         if (!isChecked) {
             Tips({
-                message: '请必须勾选车位管家平台合作协议',
+                message: '请必须勾选合作协议',
                 type: 2
             });
             return false;
@@ -154,7 +154,7 @@ class IndexApp extends BaseContainer {
                         </FormItems>
                         <FormItems label="投放位置">
                             <RadioGroup>
-                                <InputRadio label="全部" defaultChecked name="delivery_channel" value="1" onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
+                                <InputRadio label="全部" name="delivery_channel" value="1" onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
                                 <InputRadio label="微信" name="delivery_channel" value="2" onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
                                 <InputRadio label="APP"  name="delivery_channel" value="3"  onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
                             </RadioGroup>
@@ -163,7 +163,7 @@ class IndexApp extends BaseContainer {
                             <CheckGroup  options={[{ label: '篮球', value: '1' }, { label: '足球', value: '2' }]}  onChange={(checkedValues) => this.valueChange('Interest', checkedValues) }/>
                         </FormItems>
                         <FormItems label="是否同意协议">
-                            <InputCheckbox label="你必须阅读并同意" name="circle" checked ref={(c) => this.checkedValue = c} />
+                            <InputCheckbox label="你必须阅读并同意" name="circle"  ref={(c) => this.checkedValue = c} />
                         </FormItems>
                         <FormItems >
                             <Buttons type = "danger" display = "block" onClick = {() => this.sublimeButton() } >登录</Buttons>

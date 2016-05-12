@@ -13,29 +13,26 @@ interface InputTextProps {
     addonAfter?: any;
     addonBefore?: any;
     defaultValue?: any;
+    id?: any;
 }
-export default class InputText extends React.Component<InputTextProps,any> {
+export default class InputText extends React.Component<any,any> {
 
     static  defaultProps = {
-            className:''
     }
 
     constructor(props){
         super(props);
         this.handleChange = this.handleChange.bind(this);
-
         this.state = {
             value: this.props.value
         };
     }
 
     handleChange(event){
-        this.setState({value: event.target.value});
-        if(this.props.onChange){
-            this.props.onChange(event,this);
-        }
+        this.setState({ value: event.target.value });
+        if (this.props.onChange) this.props.onChange(event, this);
     }
-
+    
     render(){
         let inputClassName = "cwgj-form-input";
         const {value, name, addonAfter, addonBefore,className} = this.props;
@@ -50,12 +47,18 @@ export default class InputText extends React.Component<InputTextProps,any> {
                 {addonBefore ? < div className="cwgj-input-group-addon">{addonBefore}</div> : false}
                 <input
                     {...this.props}
-                    value={value}
-                    name={name}
+                    value={this.state.value}
                     className={inputClassName}
                     onChange={this.handleChange}/>
                 {addonAfter ? < div className="cwgj-input-group-addon">{addonAfter}</div> : false}
             </div>
         );
+    }
+    
+    /**
+     * 解决二次渲染值回填
+     */
+    componentWillReceiveProps(nextProps) {
+        this.setState({ value: nextProps.value });
     }
 }

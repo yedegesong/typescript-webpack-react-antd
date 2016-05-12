@@ -9,8 +9,7 @@ interface RadioGroupProps {
 export default class RadioGroup extends React.Component<RadioGroupProps, any> {
     static defaultProps = {
         options: [],
-        defaultValue: [],
-        onChange() {},
+        defaultValue: []
     }
 
     constructor(props) {

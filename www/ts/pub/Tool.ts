@@ -11,8 +11,9 @@ export default class Tool{
     /**
      * 实现跳转功能，参数为跳转的路径 exLinks 为true 需传入整个URL 如:http://www.baidu.com
      */
-    static goPush(path: string, exLinks: boolean = false) {
-        if (exLinks) {
+    static goPush(path: string) {
+        console.log(path)
+        if (path.indexOf('http') != -1) {
             window.location.href = path;
             return false;
         }
@@ -94,15 +95,21 @@ export default class Tool{
     /**
      * 获取?后面所有参数
      */
-    static getUrlParams() {
-        var result = {};
-        var params: string[] = (window.location.search.split('?')[1] || '').split('&');
-        for (var param in params) {
-            if (params.hasOwnProperty(param)) {
-                var paramParts: string[] = params[param].split('=');
-                result[paramParts[0]] = decodeURIComponent(paramParts[1] || "");
+    static getUrlParams():any {
+        let url = window.location.search;
+        let theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            let str = url.substr(1);
+            let strs = str.split("&");
+            for (let i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
             }
         }
-        return result;
+        return theRequest;
+    }
+    
+    //返回?后面指定的参数
+    static getQueryString (Paras):any{
+        return this.getUrlParams()[Paras]
     }
 }

@@ -9,16 +9,16 @@ interface InputRadioProps {
     onChange?: Function;
     disabled?: boolean;
     value?: any;
-    defaultChecked?:any;
-    name?:string;
-    id?:string;
-    label?:string;
+    defaultChecked?: any;
+    name?: string;
+    id?: string;
+    label?: string;
 }
 export default class InputRadio extends React.Component<InputRadioProps, any> {
 
     static defaultProps = {
-        className : '',
-        disabled:false
+        className: '',
+        disabled: false
     }
 
     constructor(props) {
@@ -29,15 +29,15 @@ export default class InputRadio extends React.Component<InputRadioProps, any> {
     handleClick(event) {
 
         if (event.target.checked && this.props.onChange) {
-            let label,value;
+            let label, value;
             label = event.target.nextSibling.innerHTML;
             value = event.target.value;
-            this.props.onChange(event,value,label);
+            this.props.onChange(event, value, label);
         }
     }
 
     render() {
-        const {className,label} = this.props;
+        const {className, label} = this.props;
         let addClassName = className;
         let Cls = classNames('cwgj-form-radio-container', { [`${addClassName}`]: className });
         return (
@@ -46,7 +46,7 @@ export default class InputRadio extends React.Component<InputRadioProps, any> {
                     <input
                         {...this.props}
                         type="radio"
-                        onChange={(event)=>{this.handleClick(event)}}
+                        onChange={(event) => { this.handleClick(event) } }
                         name={this.props.name}
                         id={this.props.id}/>
                     <span>{label}</span>

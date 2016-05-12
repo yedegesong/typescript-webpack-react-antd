@@ -23,6 +23,9 @@ import Col from './grid/Col';
 import Upload from './upload/Upload';
 import Tabs from './tabs/Tabs';
 import TabPane from './tabs/TabPane';
+import Dashboard from './dashboard/Dashboard';
+import Tabel from './tabel/Tabel';
+
 export {
     AppHeader,
     AppMenu,
@@ -48,5 +51,7 @@ export {
     Upload,
     SelectGroup,
     Tabs,
-    TabPane
+    TabPane,
+    Dashboard,
+    Tabel
 }

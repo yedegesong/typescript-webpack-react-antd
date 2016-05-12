@@ -8,6 +8,34 @@ const MenuData = {
       "url": "API"
     },
     {
+      "description": "网格布局",
+      "menuId": 21,
+      "name": "网格布局",
+      "subMunu": [],
+      "url": "Grid"
+    },
+    {
+      "description": "表格",
+      "menuId": 21,
+      "name": "表格",
+      "subMunu": [],
+      "url": "Table"
+    },
+    {
+      "description": "卡片",
+      "menuId": 21,
+      "name": "卡片",
+      "subMunu": [],
+      "url": "Card"
+    },
+    {
+      "description": "基于百度图表",
+      "menuId": 21,
+      "name": "基于百度图表",
+      "subMunu": [],
+      "url": "Echarts"
+    },
+    {
       "description": "按钮组件",
       "menuId": 21,
       "name": "按钮组件",

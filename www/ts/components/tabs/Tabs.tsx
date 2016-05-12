@@ -4,7 +4,7 @@ import * as classNames from "classnames";
 export default class Tabs extends React.Component<any, any> {
 
     static defaultProps = {
-        activeKey: 1
+        activeKey: 0
     }
 
     constructor(props){
@@ -19,12 +19,11 @@ export default class Tabs extends React.Component<any, any> {
             activeKey: key
         })
         if (this.props.onChange) {
-            this.props.onChange(key, value, this);
+            this.props.onChange(value, key, this);
         }
     }
 
     TabsTitle (){
-        console.log(this.props.children)
         /**--遍历组件--**/
         return React.Children.map(this.props.children, (c: any,index:any) => {
             let Cls = this.state.activeKey == index ? 'tabOn' : ' ';

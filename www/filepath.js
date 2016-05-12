@@ -13,5 +13,9 @@ module.exports = {
   MaskContainer:"MaskContainer",
   DialogContainer:"DialogContainer",
   UploadContainer:"UploadContainer",
-  TabsContainer:"TabsContainer"
+  TabsContainer:"TabsContainer",
+  GridContainer:"GridContainer",
+  EchartsContainer:"EchartsContainer",
+  CardContainer:"CardContainer",
+  TableContainer:"TableContainer"
 }

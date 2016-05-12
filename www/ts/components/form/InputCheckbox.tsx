@@ -70,4 +70,11 @@ export default class InputCheckbox extends React.Component<InputCheckboxProps, a
                 </div>
         );
     }
+
+    /**
+     * 解决二次渲染值回填
+     */
+    componentWillReceiveProps(nextProps) {
+        this.setState({ checked: nextProps.checked});
+    }
 }
