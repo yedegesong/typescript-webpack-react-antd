@@ -9,10 +9,10 @@ import {
     Buttons,
     Tabs,
     TabPane} from '../components/index';
+import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
-import { activeMenuAction} from '../redux/actions/MenuAction';
 const store = BaseStore({  });
 //数据流向
 class IndexApp extends BaseContainer {
@@ -40,7 +40,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-       
+        let {MenuReducers, dispatch} = this.props;
+        dispatch(changeActiveAction({ parent: 6, child: -1 }))
     }
     
     componentWillUnmount():void {

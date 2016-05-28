@@ -24,6 +24,10 @@
 .@{css-prefix}info-text{
 	line-height:34px;
 }
+
+.@{css-prefix}info-text img{
+	width:100%;
+}
 //特殊文本域
 .@{css-prefix}form-text-container{
 	.webkit-box;
@@ -64,6 +68,7 @@
 .@{css-prefix}form-items .@{css-prefix}form-label{
 	display: block;
 	margin-bottom:5px;
+	font-size: 12px;
 }
 .@{css-prefix}form-items .@{css-prefix}form-items-help{
 	margin-top:10px;
@@ -76,6 +81,7 @@
 	height: 33px;
     line-height: 33px;
 	position: absolute;
+	text-align: center;
 }
 .@{css-prefix}form-group.horizontal .@{css-prefix}form-label .require{
 	color:red;
@@ -134,11 +140,29 @@
 	-webkit-appearance: none;
 	.transition(all,.15s);
 }
-
-.@{css-prefix}form-input:focus{
+.@{css-prefix}form-textarea textarea{
+	vertical-align: baseline;
+	margin-top:10px;
+	position:relative;
+	height: auto;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-appearance: none;
+	.transition(all,.15s);
+	 width: 100%;
+	}
+.@{css-prefix}form-input:focus,
+.@{css-prefix}form-textarea textarea:focus{
 	border-color: @input-hover-color;
 	outline: 0;
 	box-shadow: 0 0 0 2px @input-focus-color;
+
 }
 
 .@{css-prefix}form-input[disabled]{
@@ -173,7 +197,8 @@
 	.transform-rotate(-90deg);
 }
 .@{css-prefix}form-input:not([disabled]):hover,
-.@{css-prefix}form-input-select:hover{
+.@{css-prefix}form-input-select:not([disabled]):hover,
+.@{css-prefix}form-textarea textarea:hover{
 	border-color: @input-hover-color;
 }
 

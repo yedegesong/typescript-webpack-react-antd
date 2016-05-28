@@ -6,7 +6,7 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "react/react.d.ts": {
-      "commit": "6052959591c9bc6f8463c58220965c7030ba934d"
+      "commit": "b9989e602b3225d48aa4a9dfa0631ae41fea100d"
     },
     "react/react-dom.d.ts": {
       "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
@@ -15,7 +15,7 @@
       "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
     },
     "antd/antd.d.ts": {
-      "commit": "a44529fcb1e1cdc0355e71c42a6048de99b57c34"
+      "commit": "b9989e602b3225d48aa4a9dfa0631ae41fea100d"
     },
     "redux/redux.d.ts": {
       "commit": "544a35a10866b32afda9c7f029c0764558563f4f"
@@ -31,6 +31,12 @@
     },
     "classnames/classnames.d.ts": {
       "commit": "a7b9b1adbfebf0d3725e81ca25fb8079f9d33f6b"
+    },
+    "superagent/superagent.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "node/node.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
     }
   }
 }

@@ -42,17 +42,18 @@ class Server {
                 content:JSON.stringify(this.contentBody)
             },
             dataType:'text',
-            timeout: 6000,
+            timeout: 100000000,
             success: function(data) {
                 dtd.resolve(JSON.parse(data));
                 Toast.close();
             },
             beforeSend: function(data) {
-                Toast.open({ tips: '提交数据中...' });
+                Toast.open({ tips: '数据加载中...' });
             },
             error: function(data, textStatus, errorThrown) {
                 console.log(JSON.stringify(data));
                 console.log(errorThrown);
+                Toast.close();
             }
         })
         return dtd.promise();

@@ -19,6 +19,10 @@ const GET_ACTIVE = 'GET_ACTIVE';
 const ACTIVE_MENU = 'ACTIVE_MENU';
 
 /**
+    动态修改菜单高亮部分
+**/
+const CHANGE_ACTIVE = 'CHANGE_ACTIVE';
+/**
  * 显示菜单视图
  */
 let OnGetMenu = (state) => {
@@ -32,9 +36,11 @@ let switchMenu = (menuSwitch) => {
     return { type: SWITCH_MENU, menuSwitch };
 }
 
-let activeMenuAction = (active) => {
-    return { type: ACTIVE_MENU, active };
+let OnchangeActive = (active) => {
+    return { type: CHANGE_ACTIVE, active };
 }
+
+
 /**
  * 保存当前父热点状态
  */
@@ -50,6 +56,14 @@ let saveChildActive = (saveData) => {
     LocalStorage.add('cw_child_active', saveData);
 }
 
+/**
+ * 获取本地存储的状态
+ */
+let changeActiveAction = (changeActive:{}) => {
+    return (dispatch, getState) => {
+        dispatch(OnchangeActive(changeActive));
+    }
+}
 /**
  * 获取本地存储的状态
  */
@@ -98,10 +112,11 @@ export {
     SWITCH_MENU,
     GET_ACTIVE,
     ACTIVE_MENU,
+    CHANGE_ACTIVE,
     getMenuAction,
     switchMenu,
     getActive,
     saveParentActive,
     saveChildActive,
-    activeMenuAction
+    changeActiveAction
 }

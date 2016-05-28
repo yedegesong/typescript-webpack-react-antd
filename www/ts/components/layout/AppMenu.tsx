@@ -1,11 +1,8 @@
 import * as React from "react";
 import {connect} from 'react-redux';
 import Tool from '../../pub/Tool';
-import {getMenuAction, saveParentActive, saveChildActive, getActive} from '../../redux/actions/MenuAction';
-/**
- * 获取当前选中的热点
- */
-const ACTIVE = getActive();
+import {getMenuAction, saveParentActive, saveChildActive,changeActiveAction} from '../../redux/actions/MenuAction';
+
 interface AppMenuProps {
     active:number;
     MenuReducers: any;
@@ -30,8 +27,8 @@ class AppMenu extends React.Component<AppMenuProps, any>{
         //让当前函数this 指向到类本身
         this.createItem = this.createItem.bind(this);
         this.state = {
-            parentActive: ACTIVE.parentActive.parentkey,
-            childActive: ACTIVE.childActive.childkey
+            parentActive: MenuReducers.active.parent,
+            childActive: MenuReducers.active.child
         }
        /*this.state = {
             parentActive: this.props.parentActive,
@@ -41,7 +38,9 @@ class AppMenu extends React.Component<AppMenuProps, any>{
     }
     
     handleOrderTabClick(event, parentIndex, parentName,URL) {
-        this.setState({ parentActive: parentIndex,childActive:-1});
+        let {MenuReducers, dispatch} = this.props;
+        //this.setState({ parentActive: parentIndex,childActive:-1});
+        dispatch(changeActiveAction({ parent: parentIndex, child: -1 }))
         if(Tool.hasClass(event.target.parentNode,'active')){
             Tool.removeClass(event.target.parentNode, 'active');
         }else{
@@ -58,7 +57,8 @@ class AppMenu extends React.Component<AppMenuProps, any>{
     }
 
     push(event,childIndex,childName,URL){
-        this.setState({ childActive: childIndex });
+        let {MenuReducers, dispatch} = this.props;
+        dispatch(changeActiveAction({ parent: MenuReducers.active.parent, child: childIndex }))
         let active_Json = { childkey: childIndex, childvalue: childName };
         saveChildActive(active_Json);
         Tool.goPush(URL);
@@ -68,9 +68,10 @@ class AppMenu extends React.Component<AppMenuProps, any>{
     }
 
     createItem(item,index){
+        let {MenuReducers, dispatch} = this.props;
         //判断是否存在子菜单
         let hasChild = item.subMunu.length > 0 ? true : false;
-        let parentActive = this.state.parentActive == index ? "cwgj-menu-parent-item active" : "cwgj-menu-parent-item";
+        let parentActive = MenuReducers.active.parent == index ? "cwgj-menu-parent-item active" : "cwgj-menu-parent-item";
         let ParentUrl = item.url;
         return (
             <li key={index} className={ parentActive } >
@@ -79,7 +80,7 @@ class AppMenu extends React.Component<AppMenuProps, any>{
                     <ul className="cwgj-menu-child">
                         {item.subMunu.map((childItem,childIndex) => {
                             let ChildUrl =  childItem.url;
-                            let childActive = this.state.childActive == childIndex ? "cwgj-menu-child-item chd-active" : "cwgj-menu-child-item";
+                            let childActive = MenuReducers.active.child == childIndex ? "cwgj-menu-child-item chd-active" : "cwgj-menu-child-item";
                             return (<li key = {childIndex}  className={ childActive }>
                                 <a href={URL} onClick = {(event) => this.push(event, childIndex, childItem.name, ChildUrl) }>{childItem.name}</a>
                                     </li>
@@ -92,10 +93,8 @@ class AppMenu extends React.Component<AppMenuProps, any>{
 
     render(){
         let {MenuReducers, dispatch} = this.props;
-      
-        //{MenuReducers.menuList.map(this.createItem.bind(this))}
         return (
-          <div className={MenuReducers.menuSwitch ? "cwgj-menu" : "cwgj-menu off" }>
+          <div className="cwgj-menu">
               <ul className="cwgj-menu-parent" >
                   {MenuReducers.menuList.map(this.createItem)}
               </ul>

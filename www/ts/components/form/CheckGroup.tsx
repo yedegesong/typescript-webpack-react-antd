@@ -16,6 +16,7 @@ interface CheckGroupProps {
     value?: any;
 }
 export default class CheckGroup extends React.Component<CheckGroupProps, any> {
+    checkedValue: any;
     static defaultProps = {
         options: [],
         defaultValue: [],
@@ -25,11 +26,12 @@ export default class CheckGroup extends React.Component<CheckGroupProps, any> {
     constructor(props) {
         super(props);
         this.toggleOption = this.toggleOption.bind(this);
+        this.checkedValue = [];
         let value;
         if ('value' in props) {
             value = props.value;
         } else if ('defaultValue' in props) {
-            value = props.defaultValue;
+            value = props.defaultValue || [];
         }
         this.state = { value };
     }
@@ -48,11 +50,11 @@ export default class CheckGroup extends React.Component<CheckGroupProps, any> {
     }
 
     componentWillReceiveProps(nextProps) {
-        if ('value' in nextProps) {
-            this.setState({
-                value: nextProps.value || [],
-            });
-        }
+         if ('value' in nextProps) {
+             this.setState({
+                 value: nextProps.value || [],
+             });
+         }
     }
 
     toggleOption(option) {
@@ -61,8 +63,9 @@ export default class CheckGroup extends React.Component<CheckGroupProps, any> {
         if (optionIndex === - 1) {
             value.push(option.value);
         } else {
-            value.splice(optionIndex, 1);
+           value.splice(optionIndex, 1);
         }
+
         if (!('value' in this.props)) {
             this.setState({ value });
         }
@@ -77,7 +80,6 @@ export default class CheckGroup extends React.Component<CheckGroupProps, any> {
             <div className = {Cls}>
                 {
                     options.map(option =>
-
                         <InputCheckbox
                             disabled={'disabled' in option ? option.disabled : this.props.disabled}
                             checked={this.state.value.indexOf(option.value) !== -1}
@@ -90,6 +92,5 @@ export default class CheckGroup extends React.Component<CheckGroupProps, any> {
             </div>
         );
     }
-
 
 }

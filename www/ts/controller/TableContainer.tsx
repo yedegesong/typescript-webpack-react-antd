@@ -10,6 +10,7 @@ import {
     Buttons,
     Row,
     Col} from '../components/index';
+import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -32,10 +33,24 @@ class IndexApp extends BaseContainer {
                                     <th>名称</th>
                                     <th>名字</th>
                                     <th>操作</th>
+                                    <th>名称</th>
+                                    <th>名字</th>
+                                    <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td>嘻嘻嘻</td>
+                                    <td>表格5表格表格表格表格</td>
+                                    <td>表格6表格表格表格</td>
+                                    <td>嘻嘻嘻</td>
+                                    <td>表格5表格表格表格表格</td>
+                                    <td>表格6表格表格表格</td>
+                                </tr>
+                                <tr>
+                                    <td>嘻嘻嘻</td>
+                                    <td>表格5表格表格表格表格</td>
+                                    <td>表格6表格表格表格</td>
                                     <td>嘻嘻嘻</td>
                                     <td>表格5表格表格表格表格</td>
                                     <td>表格6表格表格表格</td>
@@ -49,61 +64,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        
-       var myChart = echarts.init(document.getElementById('main'));
-        // 指定图表的配置项和数据
-        var option = {
-            tooltip : {
-                trigger: 'item',
-                formatter: "{a} <br/>{b} : {c} ({d}%)",
-                x:'center'
-            },
-            legend: {
-                left: 'center',
-                x:'center',
-                data: ['金山大道商圈','福湾商圈','晋安区政府商圈','前屿商圈']
-            },
-            series : [
-                {
-                    name: '访问来源',
-                    type: 'pie',
-                    radius : '55%',
-                    center: ['50%', '60%'],
-                    data:[
-                        {
-                            "circleId": 2,
-                            "name": "金山大道商圈",
-                            "value": 0
-                        },
-                        {
-                            "circleId": 3,
-                            "name": "福湾商圈",
-                            "value": 0
-                        },
-                        {
-                            "circleId": 4,
-                            "name": "晋安区政府商圈",
-                            "value": 0
-                        },
-                        {
-                            "circleId": 5,
-                            "name": "前屿商圈",
-                            "value": 0
-                        }
-                    ],
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
-                }
-            ]
-        };
-
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+        let {MenuReducers, dispatch} = this.props;
+        dispatch(changeActiveAction({ parent: 2, child: -1 }))
     }
 
     componentWillUnmount():void {
@@ -113,7 +75,7 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
-        IndexReducers: state.IndexReducers
+        MenuReducers: state.MenuReducers
     }
 }
 

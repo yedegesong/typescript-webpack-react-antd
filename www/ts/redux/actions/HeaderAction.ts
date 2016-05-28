@@ -25,9 +25,6 @@ function getAuthAction(reddit?: any) {
             dispatch(OnGetAuth(_data));
             return false;
         }
-        
-        //alert('请求超时,请重新登录');
-        //Tool.goPush('login');
     }
 }
 
@@ -36,12 +33,8 @@ function getAuthAction(reddit?: any) {
  */
 function loginOutAction(){
     let buyConfirm = (modal) => {
-        Api.exit().then(function(data){
-            if (data.r_msg == 'success'){
-                LocalStorage.remove('cw_auth');
-                Tool.goPush('login');
-            }
-        })
+        LocalStorage.remove('cw_auth');
+        Tool.goPush('Login');
         modal.close();
     }
 

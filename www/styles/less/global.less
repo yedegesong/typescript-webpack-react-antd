@@ -187,7 +187,7 @@
 }
 
 //全局CSS3缓动
-.transition(@value:all;@time:2s){
+.transition(@value:all;@time:.5s){
   -moz-transition: @value @time;	/* Firefox 4 */
   -webkit-transition: @value @time;	/* Safari 和 Chrome */
   -o-transition: @value @time;
@@ -215,7 +215,15 @@
     -moz-box-sizing: @borderBox;
     box-sizing: @borderBox;
 }
-   
+
+//位移   
+.transform-translate(@X:0px;@Y:0px){
+  transform: translate(@X,@Y);
+  -ms-transform: translate(@X,@Y);  /* IE 9 */
+  -webkit-transform: translate(@X,@Y); /* Safari and Chrome */
+  -o-transform: translate(@X,@Y);    /* Opera */
+  -moz-transform: translate(@X,@Y);    /* Firefox */
+}
 
 
 

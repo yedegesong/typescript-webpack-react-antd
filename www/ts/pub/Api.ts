@@ -105,6 +105,14 @@ const Api = {
 		);
 	},
 	/**
+	 * 充值接口
+	 */
+	UserRecharge: (opts) => {
+		return Server.resource('POST', 'POST_webadvalipaysubmit',
+			{ payMoney: opts.payMoney, payType: opts.payType }
+		);
+	},
+	/**
 	 * 退款接口
 	 */
 	UserRefund: () => {
@@ -167,6 +175,160 @@ const Api = {
 		return Server.resource('POST', 'cwgjad_2016.0.0.1_get_adv_title_action',
 			{ advID: advID }
 		);
-	}
+	},
+	/**
+	 * 广告中心所有API 
+	 */
+	 //获得城市
+	LoadGetCity : () =>{
+		//http://cwgjad1.api1.cheweiguanjia.com/js/common/sys_citys.js
+		let city_Url = `${Config.fileBaseUrl}js/common/sys_citys.js`;
+		return city_Url;
+	},
+	/**
+	 * 广告中心所有API 
+	 */
+	//获得城市
+	LoadGetBusinesscircle: (cityId) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_getbusinesscircle',
+			{ cityId: cityId }
+		);
+	},
+	/**
+	 * 获取广告ID
+	 */
+	LoadGetAdvId:(opts) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_addadvert',
+			{   delivery_channel: opts.delivery_channel,
+				form_id:opts.form_id,
+				sys_user_id:opts.sys_user_id,
+				advNameText:opts.advNameText,
+				biz_circle_id:opts.biz_circle_id
+			 }
+		);
+	},
+	/**
+	 * 双渠道平台数据提交 
+	 */
+	DoubleCreateAdv: (opts) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_addadvertdetailallchannel',
+			{   adv_content: opts.adv_content,
+				adv_title:opts.adv_title,
+				adv_content_img1:opts.adv_content_img1,
+				adv_content_img2:opts.adv_content_img2,
+				adv_id:opts.adv_id,
+				choice:opts.choice,
+				thirdHttp:opts.thirdHttp,
+				target_users:opts.target_users,
+				budgetMoney:opts.budgetMoney,
+				budgetCount:opts.budgetCount,
+				budgetType:opts.budgetType,
+				adv_material:opts.adv_material
+			 }
+		);
+	},
+	/**
+	 * 单渠道平台数据提交 
+	 */
+	SingleCreateAdv: (opts) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_addadvertdetail',
+			{
+				adv_content: opts.adv_content,
+				adv_title: opts.adv_title,
+				adv_content_img: opts.adv_content_img,
+				adv_id: opts.adv_id,
+				choice: opts.choice,
+				thirdHttp: opts.thirdHttp,
+				target_users: opts.target_users,
+				budgetMoney: opts.budgetMoney,
+				budgetCount: opts.budgetCount,
+				budgetType: opts.budgetType,
+				adv_material: opts.adv_material
+			}
+		);
+	},
+	/**
+	 * 查询广告接口
+	 */
+	LoadQueryAdvert: (adv_id) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_queryadvert',
+			{
+				adv_id:adv_id
+			}
+		);
+	},
+	/**
+	 * 修改内容单渠道 
+	 */
+	SingleEditorAdv: (opts) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_updateadvertdetail',
+			{
+				adv_title: opts.adv_title,
+				adv_content_img: opts.adv_content_img,
+				adv_id: opts.adv_id,
+				detail_id: opts.detail_id,
+				delivery_channel: opts.delivery_channel,
+				target_users: opts.target_users,
+				budgetMoney: opts.budgetMoney,
+				budgetCount: opts.budgetCount,
+				budgetType: opts.budgetType,
+				advNameText: opts.advNameText
+			}
+		);
+	},
+	/**
+	 * 查找微信，QQ图片 
+	 */
+	QueryDoubleImages: (adv_id) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_queryadvdetailallchannel',
+			{
+				adv_id: adv_id
+			}
+		);
+	},
+	/**
+	 * 查找排期 
+	 */
+	QueryCalendar: (opts) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_adv_schedule_list',
+			{
+				adv_id: opts.adv_id,
+				city_id: opts.city_id,
+				circle_ids: opts.circle_ids
+			}
+		);
+	},
+	/**
+	 * 修改内容双渠道 
+	 */
+	DoubleEditorAdv: (opts) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_updateadvdetailAllChannel',
+			{
+				adv_title: opts.adv_title,
+				adv_content_img1: opts.adv_content_img1,
+				adv_content_img2: opts.adv_content_img2,
+				adv_id: opts.adv_id,
+				detail_id: opts.detail_id,
+				delivery_channel: opts.delivery_channel,
+				target_users: opts.target_users,
+				budgetMoney: opts.budgetMoney,
+				budgetCount: opts.budgetCount,
+				budgetType: opts.budgetType,
+				advNameText: opts.advNameText
+			}
+		);
+	},
+	/***
+		产品上下架
+	*/
+	AdvStatus: (opts) => {
+		return Server.resource('POST', 'cwgjad_2016.0.0.1_user_center_set_adv_status_action',
+			{
+				advid: opts.advid,
+				status: opts.status
+			}
+		);
+	},
 }
+
 export default Api;

@@ -107,7 +107,20 @@ export default class Tool{
         }
         return theRequest;
     }
-    
+    /**
+     * 简易的内置验证
+     */
+    static verifier(verifier){
+        let key = { isOk: true, tips :''};
+        verifier.forEach(function(item,index){
+            if (item.value.toString().trim().length <= 0) {
+                key = { isOk: false, tips: item.tips};
+                return false;
+            }
+        })
+        return key;
+    }
+
     //返回?后面指定的参数
     static getQueryString (Paras):any{
         return this.getUrlParams()[Paras]

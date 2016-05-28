@@ -27,12 +27,8 @@ export default class InputRadio extends React.Component<InputRadioProps, any> {
     }
 
     handleClick(event) {
-
         if (event.target.checked && this.props.onChange) {
-            let label, value;
-            label = event.target.nextSibling.innerHTML;
-            value = event.target.value;
-            this.props.onChange(event, value, label);
+            this.props.onChange(event, this)
         }
     }
 
@@ -53,5 +49,12 @@ export default class InputRadio extends React.Component<InputRadioProps, any> {
                 </label>
             </div>
         );
+    }
+
+    /**
+     * 解决二次渲染值回填
+     */
+    componentWillReceiveProps(nextProps) {
+        this.setState({ defaultChecked: nextProps.defaultChecked });
     }
 }

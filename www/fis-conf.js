@@ -6,8 +6,11 @@ fis.set('project.ignore', [
 ]);
 
 fis.media('pro').match('/dist/*.js', {
-    release: '/static/$0'
+    release: '/ERP/$0'
+})
+.match('/styles/*.css', {
+    release: '/ERP/$0'
 }).match('/pages/*.html', {
-    release: '/template/$0'
+    release: '/ERP/$0'
 });
 

@@ -15,14 +15,18 @@ import {
     CheckGroup,
     RadioGroup,
     Buttons,
-    Tips} from '../components/index';
+    Tips,
+    Row,
+    Col} from '../components/index';
+import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
+
 //表单验证模块
 import Verifier from '../pub/Verifier';
+import Tool from '../pub/Tool';
 const store = BaseStore({  });
-
 //验证的表单配置
 let Verifier_Config = {
     accout: {
@@ -32,6 +36,14 @@ let Verifier_Config = {
     phone: {
         name: '手机号码',
         mobile: true
+    },
+    bank: {
+        name: '银行',
+        bank: true
+    },
+    email: {
+        name: '电子邮箱',
+        email: true
     },
     password: {
         name: '密码',
@@ -52,17 +64,8 @@ let Verifier_Config = {
     Interest:{
         name:'兴趣爱好',
         group:1
-    },
-    email:{
-        name:'电子邮箱',
-        email: true
-    },
-    bank:{
-        name: '银行',
-        bank: true
     }
 };
-
 class IndexApp extends BaseContainer {
     date: any[];
     submitDate:any;
@@ -82,7 +85,7 @@ class IndexApp extends BaseContainer {
             password:'',
             password_repeat: '',
             city:'-1',
-            delivery_channel:'',
+            delivery_channel:'-1',
             Interest:[],
             phone:'',
             email:'',
@@ -118,21 +121,21 @@ class IndexApp extends BaseContainer {
                     message: '通过验证!',
                     type: 1
                 });
+                console.log(this.submitDate)
             }
     }
 
     valueChange(name,value){
         this.submitDate[name] = value;
     }
-
+    
     render() {
-
         return (
             <AppBody>
-                <Panel title = "表单验证">
+                <Panel title = "表单验证" >
                     <FormGroup horizontal >
                         <FormItems label="用户名">
-                            <InputText type="test" placeholder="请输入您的账号" onChange={(event)=>this.valueChange('accout',event.target.value)}/>
+                            <InputText type="test" placeholder="请输入您的账号" onChange={(event) => this.valueChange('accout', event.target.value) }/>
                         </FormItems>
                         <FormItems label="手机号码">
                             <InputText type="test" placeholder="请输入您的手机号码" onChange={(event) => this.valueChange('phone', event.target.value) }/>
@@ -144,23 +147,23 @@ class IndexApp extends BaseContainer {
                             <InputText type="test" placeholder="请输入您的邮箱" onChange={(event) => this.valueChange('email', event.target.value) }/>
                         </FormItems>
                         <FormItems label="密码" >
-                            <InputText type="password" placeholder="请输入您的密码" onChange={(event)=>this.valueChange('password',event.target.value)}/>
+                            <InputText type="password" placeholder="请输入您的密码" onChange={(event) => this.valueChange('password', event.target.value) }/>
                         </FormItems>
                         <FormItems label="确认密码" >
                             <InputText type="password" placeholder="请输入您的密码" onChange={(event) => this.valueChange('password_repeat', event.target.value) }/>
                         </FormItems>
                         <FormItems label="城市">
-                            <InputSelect  items={this.date}  onChange={(event) => this.valueChange('city',event.target.value) } />
+                            <InputSelect  items={this.date}  onChange={(event) => this.valueChange('city', event.target.value) } />
                         </FormItems>
                         <FormItems label="投放位置">
-                            <RadioGroup>
-                                <InputRadio label="全部" name="delivery_channel" value="1" onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
-                                <InputRadio label="微信" name="delivery_channel" value="2" onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
-                                <InputRadio label="APP"  name="delivery_channel" value="3"  onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
+                            <RadioGroup onChange={(event) => this.valueChange('delivery_channel', event.target.value) }>
+                                <InputRadio label="全部" name="delivery_channel" value="1" />
+                                <InputRadio label="微信" name="delivery_channel" value="2"  />
+                                <InputRadio label="APP"  name="delivery_channel" value="3" />
                             </RadioGroup>
                         </FormItems>
                         <FormItems label="兴趣爱好">
-                            <CheckGroup  options={[{ label: '篮球', value: '1' }, { label: '足球', value: '2' }]}  onChange={(checkedValues) => this.valueChange('Interest', checkedValues) }/>
+                            <CheckGroup  options={[{ label: '篮球', value: '1' }, { label: '足球', value: '2' }]} onChange={(checkedValues) => this.valueChange('Interest', checkedValues) }/>
                         </FormItems>
                         <FormItems label="是否同意协议">
                             <InputCheckbox label="你必须阅读并同意" name="circle"  ref={(c) => this.checkedValue = c} />
@@ -175,17 +178,19 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        
+        let {FormVerifierReducer, dispatch} = this.props;
+        dispatch(changeActiveAction({ parent: 9, child: 1 }))
     }
     
     componentWillUnmount():void {
         
     }
+
 }
 
 let mapStateToProps = (state) => {
     return {
-        IndexReducers: state.IndexReducers
+        FormVerifierReducer: state.FormVerifierReducer
     }
 }
 

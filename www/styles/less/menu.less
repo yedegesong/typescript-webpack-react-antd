@@ -8,16 +8,17 @@
 //子热点状态
 @menu-child-active:#222d37;
 .@{css-prefix}menu{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:1;
+  height:100%;
   width:220px;
+  z-index:9;
   color:@menu-text-color;
-  .transition(all,0.5s);
   background-color:@menu-background;
-  overflow:hidden;
-}
-
-.@{css-prefix}menu.off{
-  transform: translateX(-200px);
-  width: 0;
+  overflow-y: auto;
+  .transition();
 }
 
 .@{css-prefix}menu-parent>li{

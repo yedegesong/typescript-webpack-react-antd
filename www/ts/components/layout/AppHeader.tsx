@@ -50,7 +50,7 @@ class AppHeader extends React.Component<AppHeaderProps, any> {
             <div className="cwgj-layout-header">
                 <div className="cwgj-header-container">
                     <div className="cwgj-logo">
-                        广告管理平台
+                        组件管理系统
                     </div>
                     <div className="cwgj-menu-switch" onClick = {(event) => this.handleSwitch(event)}>
                         <span></span>
@@ -59,8 +59,6 @@ class AppHeader extends React.Component<AppHeaderProps, any> {
                         <h3 onClick = {(event) => this.handleAuthSwitch(event) }>欢迎您&nbsp;:&nbsp;{auchUserName}</h3>
                         <div className="cwgj-auth-menu">
                         <ul>
-                            <li>个人资料</li>
-                            <li>修改密码</li>
                             <li onClick = {this.exit.bind(this)} >退出</li>
                         </ul>
                     </div>

@@ -12,6 +12,7 @@ import InputRadio from './form/InputRadio';
 import InputCheckbox from './form/InputCheckbox';
 import CheckGroup from './form/CheckGroup';
 import RadioGroup from './form/RadioGroup';
+import Textarea from './form/Textarea';
 import InfoText from './form/InfoText';
 import Buttons from './button/Buttons';
 import Tips from './tips/Tips';
@@ -39,6 +40,7 @@ export {
     InputRadio,
     InputCheckbox,
     CheckGroup,
+    Textarea,
     RadioGroup,
     InfoText,
     Buttons,

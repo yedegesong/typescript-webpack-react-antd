@@ -9,4 +9,6 @@
 /// <reference path="react-tap-event-plugin/react-tap-event-plugin.d.ts" />
 /// <reference path="classnames/classnames.d.ts" />
 /// <reference path="echarts/echarts.d.ts" />
-/// <reference path="rc-upload/rc-upload.d.ts" />
+/// <reference path="node/node.d.ts" />
+/// <reference path="superagent/superagent.d.ts" />
+/// <reference path="promise/superagent-bluebird-promise.d.ts" />

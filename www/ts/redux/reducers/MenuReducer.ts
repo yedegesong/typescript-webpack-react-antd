@@ -1,4 +1,4 @@
-import { BASE_MENU, SWITCH_MENU, GET_ACTIVE, ACTIVE_MENU} from '../actions/MenuAction';
+import { BASE_MENU, SWITCH_MENU, GET_ACTIVE, ACTIVE_MENU, CHANGE_ACTIVE} from '../actions/MenuAction';
 import Tool from '../../pub/Tool';
 /**
  * 菜单父键和值,二级菜单键和值,菜单切换状态,菜单数据
@@ -6,9 +6,9 @@ import Tool from '../../pub/Tool';
  */
 const MenuState =
 	{
-		active:{parent:0,child:-1},
-		menuSwitch:true,
-		menuList:[]
+		active: { parent: -1, child: -1 },
+		menuSwitch: true,
+		menuList: []
 	}
 
 export default function MenuReducers(state = MenuState, action) {
@@ -17,12 +17,9 @@ export default function MenuReducers(state = MenuState, action) {
 			return Tool.assign({}, state, action.state);
 		case SWITCH_MENU:
 			return Tool.assign({}, state, { menuSwitch: action.menuSwitch });
-		case ACTIVE_MENU:
+		case CHANGE_ACTIVE:
 			return Tool.assign({}, state, { active: action.active });
 		default:
 			return state
 	}
 }
-
-
-

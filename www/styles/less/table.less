@@ -10,7 +10,7 @@
 	text-align: left;
 }
 .@{css-prefix}table th,.@{css-prefix}table td{
-	padding: 14px 8px;
+	padding: .3rem .2rem;
 	word-break:break-all;
 }
 .@{css-prefix}table th{
@@ -24,5 +24,21 @@
 /*.@{css-prefix}table tbody tr:hover{
 	background-color: #f9f9f9;
 }*/
+@media screen and (max-width: 767px){
+	.@{css-prefix}table{
+	    width: 100%;
+	    margin-bottom: 15px;
+	    overflow-y: hidden;
+	    -ms-overflow-style: -ms-autohiding-scrollbar;
+	}
 
+	.@{css-prefix}table td,.@{css-prefix}table th{
+		white-space: nowrap;
+	}
+}
+
+.@{css-prefix}table{
+    min-height: .01%;
+    overflow-x: auto;
+}
 

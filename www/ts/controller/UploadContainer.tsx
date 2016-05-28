@@ -8,6 +8,7 @@ import {
     Panel,
     Buttons,
     Upload} from '../components/index';
+import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -49,9 +50,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        $.getJSON("http://text.com/TextApi.php", function(data) {
-            console.log(data)
-        });
+        let {MenuReducers, dispatch} = this.props;
+        dispatch(changeActiveAction({ parent: 7, child: -1 }))
     }
     
     componentWillUnmount():void {

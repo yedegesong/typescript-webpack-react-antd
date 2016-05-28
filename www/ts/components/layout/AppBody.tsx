@@ -1,18 +1,24 @@
 import * as React from "react";
+import {connect} from 'react-redux';
 import {AppHeader, AppMenu} from '../index';
-export default class AppBody extends React.Component<any,any> {
+import Detect from '../../pub/Detect';
+let detect = new Detect();
+let adCls = detect.os.phone ? "cwgj-layout-mobile-main" : "cwgj-layout-pc-main";
+class AppBody extends React.Component<any,any> {
     
     constructor(props){
         super(props);
-    }R
+    }
     /**
      * body 主容器 包括头部和菜单
      */
     render() {
+        let {MenuReducers, dispatch} = this.props;
         const {children} = this.props;
+        let Cls = MenuReducers.menuSwitch ? adCls : adCls + " off";
         return (<div className="cwgj-body">
                     <AppHeader />
-                    <div className="cwgj-layout-main">
+                    <div className = { Cls }>
                         <AppMenu  />
                         <div className="cwgj-container">
                             {children}
@@ -23,3 +29,11 @@ export default class AppBody extends React.Component<any,any> {
     }
 
 }
+
+let mapStateToProps = (state) => {
+    return {
+        MenuReducers: state.MenuReducers
+    }
+}
+
+export default connect(mapStateToProps)(AppBody);

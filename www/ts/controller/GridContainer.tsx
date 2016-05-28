@@ -7,8 +7,9 @@ import {
     AppBody,
     Panel,
     Buttons,
-Row,
-Col} from '../components/index';
+    Row,
+    Col} from '../components/index';
+import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -50,7 +51,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-       
+        let {MenuReducers, dispatch} = this.props;
+        dispatch(changeActiveAction({ parent: 1, child: -1 }))
     }
     
     componentWillUnmount():void {
