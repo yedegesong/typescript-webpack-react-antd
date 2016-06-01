@@ -1,0 +1,57 @@
+//分页
+.@{css-prefix}pagination{
+
+}
+
+
+.@{css-prefix}pagination>ul{
+	
+}
+
+.@{css-prefix}pagination>ul li{
+	   cursor: pointer;
+    border-radius: 6px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    min-width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    list-style: none;
+    float: left;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    margin-right: 8px;
+    font-family: Arial;
+    .transition();
+}
+
+.@{css-prefix}pagination>ul li:hover{
+	border-color: #2db7f5;
+	color:#2db7f5;
+}
+
+.@{css-prefix}pagination>ul>li.on{
+	background-color: #2db7f5;
+	color:#fff;
+	border-color: #2db7f5;
+}
+
+.@{css-prefix}pagination>ul li .icon{
+	font-size: 10px;
+}
+
+.@{css-prefix}pagination>ul li.off{
+	cursor: not-allowed;
+	border: 1px solid #d9d9d9;
+    color: #ccc;
+}
+
+.@{css-prefix}pagination>ul li.page-next,
+.@{css-prefix}pagination>ul li.page-prev{
+    border:0 none;
+}
+
+

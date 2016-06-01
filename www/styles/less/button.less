@@ -1,0 +1,202 @@
+//按钮颜色
+
+@btn-default: #fff;
+@btn-hover-default: #e6e6e6;
+
+
+@btn-blue: #2db7f5;
+@btn-hover-blue: #1caaea;
+@btn-active-blue: #4e97d9;
+
+@btn-green: #5cb85c;
+@btn-hover-green: #449d44;
+@btn-active-green: #36ab7a;
+
+@btn-red: #d9534f;
+@btn-hover-red: #c9302c;
+@btn-active-red: #e9595b;
+
+@btn-info: #5bc0de;
+@btn-hover-info: #31b0d5;
+@btn-active-info: #47b8c6;
+
+@btn-warning: #f0ad4e;
+@btn-hover-warning: #ec971f;
+@btn-active-warning: #e79857;
+
+@color-write: #fff;
+
+@btn-link: #2db7f5;
+
+.@{css-prefix}btn{
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.5;
+  padding: 4px 15px;
+  font-size: 12px;
+  .border-radius;
+  .user-select;
+  position: relative;
+  color: #666;
+  background-color: #f4f4f4;
+  border-color: #d9d9d9;
+  margin-right: 8px;
+}
+
+//默认按钮
+.@{css-prefix}btn-default{
+  color: #444;
+  background-color: @btn-default;
+  border-color: darken(@btn-default, 6%);
+}
+.@{css-prefix}btn-default:not([disabled]):hover,
+.@{css-prefix}btn-default:focus{
+  color: #444;
+  background-color: @btn-hover-default;
+  border-color: darken(@btn-hover-default, 6%);
+}
+
+
+
+//蓝色按钮
+.@{css-prefix}btn-primary{
+  color: @color-write;
+  background-color: @btn-blue;
+  border-color: darken(@btn-blue, 6%);
+}
+.@{css-prefix}btn-primary:not([disabled]):hover,
+.@{css-prefix}btn-primary:focus{
+  color: @color-write;
+  background-color: @btn-hover-blue;
+  border-color: darken(@btn-hover-blue, 6%);
+}
+.@{css-prefix}btn-primary:active,
+.@{css-prefix}btn-primary.active{
+  color: @color-write;
+  background-color: @btn-active-blue;
+  border-color: darken(@btn-active-blue, 6%);
+}
+
+
+//绿色按钮
+.@{css-prefix}btn-success{
+  color: @color-write;
+  background-color: @btn-green;
+  border-color: darken(@btn-green,6%);
+}
+.@{css-prefix}btn-success:not([disabled]):hover,
+.@{css-prefix}btn-success:focus{
+  color: @color-write;
+  background-color: @btn-hover-green;
+  border-color: darken(@btn-hover-green,6%);
+}
+.@{css-prefix}btn-success:active,
+.@{css-prefix}btn-success.active{
+  color: @color-write;
+  background-color: @btn-active-green;
+  border-color: darken(@btn-active-green,6%);
+}
+
+
+//红色按钮
+.@{css-prefix}btn-danger{
+  color: @color-write;
+  background-color: @btn-red;
+  border-color: darken(@btn-red,6%);
+}
+.@{css-prefix}btn-danger:not([disabled]):hover,
+.@{css-prefix}btn-danger:focus{
+  color: @color-write;
+  background-color: @btn-hover-red;
+  border-color: darken(@btn-hover-red,6%);
+}
+.@{css-prefix}btn-danger:active,
+.@{css-prefix}btn-danger.active{
+  color: @color-write;
+  background-color: @btn-active-red;
+  border-color: darken(@btn-active-red,6%);
+}
+
+
+//淡蓝按钮
+.@{css-prefix}btn-info{
+  color: @color-write;
+  background-color: @btn-info;
+  border-color: darken(@btn-info,6%);
+}
+.@{css-prefix}btn-info:not([disabled]):hover,
+.@{css-prefix}btn-info:focus{
+  color: @color-write;
+  background-color: @btn-hover-info;
+  border-color: darken(@btn-hover-info,6%);
+}
+.@{css-prefix}btn-info:active,
+.@{css-prefix}btn-info.active{
+  color: @color-write;
+  background-color: @btn-active-info;
+  border-color: darken(@btn-active-info,6%);
+}
+
+
+//橙色按钮
+.@{css-prefix}btn-warning{
+  color: @color-write;
+  background-color: @btn-warning;
+  border-color: darken(@btn-warning,6%);
+}
+.@{css-prefix}btn-warning:not([disabled]):hover,
+.@{css-prefix}btn-warning:focus{
+  color: @color-write;
+  background-color: @btn-hover-warning;
+  border-color: darken(@btn-hover-warning,6%);
+}
+.@{css-prefix}btn-warning:active,
+.@{css-prefix}btn-warning.active{
+  color: @color-write;
+  background-color: @btn-active-warning;
+  border-color: darken(@btn-active-warning,6%);
+}
+
+//链接按钮
+.@{css-prefix}btn-link{
+      border-color: transparent;
+      background-color: transparent;
+      color: @btn-link;
+}
+//大按钮
+.@{css-prefix}btn-lg{
+  padding: 5px 15px;
+  font-size: 14px;
+}
+//小按钮
+.@{css-prefix}btn-sm{
+  padding: 1px 8px;
+  font-size: 12px;
+}
+
+//大(块)按钮
+.@{css-prefix}btn-block{
+  display: block;
+  .wd(100%);
+  padding: 7px;
+  font-size: 14px;
+}
+
+//不可点
+.@{css-prefix}btn[disabled],
+fieldset[disabled] .@{css-prefix}btn{
+  cursor: not-allowed;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  opacity: .7;
+}
+
+
+

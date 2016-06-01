@@ -1,0 +1,144 @@
+//头部 背景颜色
+@header-background :#1f2c36;
+//LOGO 背景颜色
+@logo-background :#3a80a7;
+//用户信息颜色
+@header-text-color:#fff;
+//个人信息背景色
+@auth-active-background:#2c3b48;
+//菜单切换背景色
+@menu-switch-background:#2c3b48;
+//高亮前景色
+
+.@{css-prefix}layout-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+	  background-color:@header-background;
+    display: block;
+    height: 56px;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+}
+
+.@{css-prefix}header-container{
+  height: 56px;
+}
+.@{css-prefix}logo{
+  width:3.6rem;
+  float: left;
+  height: 55px;
+  line-height:55px;
+  text-align: center;
+  color:#fff;
+  background-position: center;
+}
+.@{css-prefix}menu-switch{
+  padding: 18px 26px 31px 26px;
+  font-size: 14px;
+  cursor: pointer;
+  float:left;
+  &:hover{
+    background-color:@menu-switch-background;
+  }
+}
+
+.@{css-prefix}menu-switch{
+  span {
+    position:relative;
+    display: block;
+    width:12px;
+    height:2px;
+    margin-top: 4px;
+    background-color:#fff;
+  }
+  span:before,span:after{
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+  }
+  span:before{
+    margin-top: 5px;
+  }
+  span:after{
+    margin-top: 10px;
+  }
+}
+
+.@{css-prefix}auth{
+  position: absolute;
+  cursor: pointer;
+  margin-right: .48rem;
+  right: 0;
+  h3{
+    padding: 18px 40px 13px 15px;
+    height: 56px;
+    line-height: 25px;
+    font-size: 16px;
+    color:@header-text-color;
+  }
+  &:hover{
+    background-color:@auth-active-background;
+    color:#fff;
+  }
+}
+
+.@{css-prefix}auth h3:after{
+  position: absolute;
+  top: 18px;
+  right: 12px;
+  .font;
+  content: "\e68d";
+  color: #fff;
+  font-size: 18px;
+}
+
+.@{css-prefix}auth.on h3{
+  background-color:@auth-active-background;
+}
+
+/**头部个人菜单**/
+.@{css-prefix}auth-menu{
+      display: none;
+    position: absolute;
+    top: 56px;
+    right: -0;
+    background: #fff;
+    color: #333 !important;
+    padding: 5px 0 3px 0;
+    border-radius: 0 0 5px 5px;
+    height: auto;
+    min-width: 150px;
+    border: solid thin rgba(0,0,0,0.2);
+    border-top: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.@{css-prefix}auth.on .@{css-prefix}auth-menu{
+  display:block;
+}
+
+.@{css-prefix}auth-menu >ul >li{
+  text-align: center;
+  padding: 10px 12px;
+  text-align: left;
+  color: #9d9fa2;
+  background: #fafbfc;
+  font-size:14px;
+  text-align:center;
+}
+
+.@{css-prefix}auth-menu >ul >li:hover{
+  background: rgba(0,0,0,0.04);
+  color:#1f2c36;
+}
+
+
+
+

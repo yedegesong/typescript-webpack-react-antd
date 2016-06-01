@@ -1,0 +1,344 @@
+@input-hover-color:#57c5f7;
+@input-focus-color:#d5f1fd;
+//文本域提示颜色值
+.input-placeholder(@color: #999;@ft:12px){
+	::-webkit-input-placeholder {
+  		color: @color;
+  		font-size:@ft;
+	}
+	:-moz-placeholder {/* Firefox 18- */
+	 	 color: @color;
+	 	 font-size:@ft;
+	}
+	::-moz-placeholder{/* Firefox 19+ */
+	 	color: @color;
+	 	font-size:@ft;
+	}
+	:-ms-input-placeholder {
+	  	color: @color;
+	  	font-size:@ft;
+	}
+}
+.input-placeholder();
+/*--提示文本域--*/
+.@{css-prefix}info-text{
+	line-height:34px;
+}
+
+.@{css-prefix}info-text img{
+	width:100%;
+}
+//特殊文本域
+.@{css-prefix}form-text-container{
+	.webkit-box;
+}
+
+.@{css-prefix}form-text-container .@{css-prefix}input-group-addon{
+	padding: 5px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0 4px 4px 0;
+}
+.@{css-prefix}form-text-container.addonAfter>.@{css-prefix}form-input{
+	width:auto;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.@{css-prefix}form-text-container.addonBefore>.@{css-prefix}form-input{
+	width:auto;
+	border-radius:0;
+}
+.@{css-prefix}form-text-container.addonBefore .cwgj-input-group-addon:nth-child(1){
+	border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-right: 0 none;
+    border-radius: 4px 0 0 4px;
+}
+.@{css-prefix}form-items{
+	margin-bottom: .5rem;
+	position:relative;
+}
+.@{css-prefix}form-items .@{css-prefix}form-label{
+	display: block;
+	margin-bottom:5px;
+	font-size: 12px;
+}
+.@{css-prefix}form-items .@{css-prefix}form-items-help{
+	margin-top:10px;
+}
+//表单水平
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-items{}
+
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-label{ 
+	width: 3rem;
+	height: 33px;
+    line-height: 33px;
+	position: absolute;
+	text-align: center;
+}
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-label .require{
+	color:red;
+	vertical-align: -3px;
+    margin-right: .1rem;
+}
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-text-container,
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-select-container,
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-redio-group,
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-checkbox-group,
+.@{css-prefix}form-group.horizontal>.@{css-prefix}form-items>.@{css-prefix}form-radio-container,
+.@{css-prefix}form-group.horizontal>.@{css-prefix}form-items>.@{css-prefix}form-checkbox-container,
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-items-help,
+.@{css-prefix}form-group.horizontal .@{css-prefix}info-text
+{
+	padding-left: 3.5rem;
+}
+.@{css-prefix}form-group.horizontal .@{css-prefix}form-items-help{
+	color:#bbb;
+}
+
+.@{css-prefix}form-group.horizontal>.@{css-prefix}form-items.BtnFormItems{
+	text-align: center;
+	.box-pack;
+}
+//表单内联
+.@{css-prefix}form-group.inline{
+	.webkit-box;
+	.box-align();
+}
+.@{css-prefix}form-group.inline .@{css-prefix}form-label,
+.@{css-prefix}form-group.inline .@{css-prefix}form-text-container,
+.@{css-prefix}form-group.inline .@{css-prefix}form-items{
+	margin-right:10px;
+}
+.@{css-prefix}form-group.inline .@{css-prefix}btn{
+	margin-bottom:0;
+}
+//表单文本框
+.@{css-prefix}form-input[type='test'],
+.@{css-prefix}form-input[type='password'],
+.@{css-prefix}form-input[type='number'],
+.@{css-prefix}form-input-select{
+	position:relative;
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-appearance: none;
+	.transition(all,.15s);
+}
+.@{css-prefix}form-textarea textarea{
+	vertical-align: baseline;
+	margin-top:10px;
+	position:relative;
+	height: auto;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-appearance: none;
+	.transition(all,.15s);
+	 width: 100%;
+	}
+.@{css-prefix}form-input:focus,
+.@{css-prefix}form-textarea textarea:focus{
+	border-color: @input-hover-color;
+	outline: 0;
+	box-shadow: 0 0 0 2px @input-focus-color;
+
+}
+
+.@{css-prefix}form-input[disabled]{
+	background-color: #eee;
+	opacity: 1;
+	cursor: not-allowed;
+
+}
+
+//下拉选择框
+.@{css-prefix}form-input-select{
+	cursor: pointer;
+}
+.@{css-prefix}form-input-select[disabled]{
+	cursor: not-allowed;
+	background-color: #f3f3f3;
+}
+.@{css-prefix}form-select-container{
+	position:relative;
+}
+
+.@{css-prefix}form-select-container:after{
+	position: absolute;
+	right:10px;
+	top:4px;
+	width:20px;
+	height:20px;
+	.font;
+	content: "\e604";
+	color:#767676;
+	font-size:14px;
+	.transform-rotate(-90deg);
+}
+.@{css-prefix}form-input:not([disabled]):hover,
+.@{css-prefix}form-input-select:not([disabled]):hover,
+.@{css-prefix}form-textarea textarea:hover{
+	border-color: @input-hover-color;
+}
+
+//单选按钮
+
+.@{css-prefix}form-input-radio{
+	line-height: 25px;
+	display: inline-block;
+	margin-right:10px;
+	cursor: pointer;
+}
+
+.@{css-prefix}form-input-radio>input[type='radio']{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	position: relative;
+	overflow: visible;
+	border: 0;
+	background: 0 0;
+	-webkit-appearance: none;
+	outline: 0;
+	margin-right: 8px;
+	vertical-align: middle;
+
+}
+
+.@{css-prefix}form-input-radio>input[type='radio']:before{
+	content: '';
+	display: block;
+	width: 18px;
+	height: 18px;
+	border: 1px solid #dfe0e1;
+	border-radius: 13px;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+}
+
+.@{css-prefix}form-input-radio>input[type='radio']:checked:after{
+	content: '';
+	display: block;
+	width: 8px;
+	height: 8px;
+	background: #18b4ed;
+	border-radius: 100%;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+.@{css-prefix}form-input-radio>input[type='radio']:disabled:before{
+	background-color:#f3f3f3;
+	    cursor: not-allowed;
+}
+
+.@{css-prefix}form-input-radio>input[type='radio']:disabled:checked:after{
+	content: '';
+	display: block;
+	width: 8px;
+	height: 8px;
+	background:#ccc;
+	border-radius: 100%;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+}
+
+//复选框
+.@{css-prefix}form-input-checkbox>input[type='checkbox']{
+	display: inline-block;
+	width:14px;
+	height:14px;
+	position: relative;
+	overflow: visible;
+	border: 0;
+	background: 0 0;
+	-webkit-appearance: none;
+	outline: 0;
+	margin-right: 8px;
+	vertical-align: -2px;
+}
+
+.@{css-prefix}form-input-checkbox>input[type='checkbox']:before{
+	content: '';
+	display: block;
+	width: 14px;
+	height: 14px;
+	border: 1px solid #dfe0e1;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border-radius: 3px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff;
+}
+.@{css-prefix}form-input-checkbox>input[type='checkbox']:checked:after{
+	-webkit-transform: rotate(45deg) scale(1);
+	-ms-transform: rotate(45deg) scale(1);
+	transform: rotate(45deg) scale(1);
+	position: absolute;
+	left: 4px;
+	top: 1px;
+	display: table;
+	width: 5px;
+	height: 8px;
+	border: 2px solid #fff;
+	border-top: 0;
+	border-left: 0;
+	content: ' ';
+}
+
+.@{css-prefix}form-input-checkbox>input[type='checkbox']:disabled:checked:after{
+	border: 2px solid #ccc;
+	border-top: 0;
+	border-left: 0;
+}
+.@{css-prefix}form-input-checkbox>input[type='checkbox']:checked:before{
+	background-color:#2db7f5;
+	border: 1px solid #2db7f5;
+}
+
+.@{css-prefix}form-input-checkbox>input[type='checkbox']:disabled:before{
+	background-color:#f3f3f3;
+}
+
+.@{css-prefix}form-input-checkbox>input[type='checkbox']:disabled:checked:before{
+	background-color:#f3f3f3;
+	border: 1px solid #dfe0e1;
+}
+
+.@{css-prefix}form-checkbox-group{
+
+}
+
+.@{css-prefix}form-checkbox-group>.@{css-prefix}form-checkbox-container,
+.@{css-prefix}form-redio-group>.@{css-prefix}form-radio-container{
+	display: inline-block;
+	margin-right:8px;
+}

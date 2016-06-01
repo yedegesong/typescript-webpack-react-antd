@@ -1,0 +1,101 @@
+//左侧菜单 背景颜色
+@menu-background: #2c3b48;
+//父菜单移动上去 背景颜色
+@menu-hover-background: #1f2933;
+@menu-hover-color:#fff;
+//菜单文字颜色
+@menu-text-color:#959ca3;
+//子热点状态
+@menu-child-active:#222d37;
+.@{css-prefix}menu{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:1;
+  height:100%;
+  width:220px;
+  z-index:9;
+  color:@menu-text-color;
+  background-color:@menu-background;
+  overflow-y: auto;
+  .transition();
+}
+
+.@{css-prefix}menu-parent>li{
+}
+
+.@{css-prefix}menu-parent>li>h3{
+  position:relative;
+  font-size:12px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.@{css-prefix}menu-parent>li>h3.on{
+  position:relative;
+}
+
+.@{css-prefix}menu-parent>li>h3:hover{
+  background-color:@menu-hover-background;
+  color:@menu-hover-color;
+}
+
+.@{css-prefix}menu-parent>li.active h3{
+
+  background-color:@menu-hover-background;
+  color:@menu-hover-color;
+}
+
+
+
+.@{css-prefix}menu-parent>li>h3.on:before{
+  position: absolute;
+  right:20px;
+  .font;
+  content: "\e601";
+  .transition(all,0.5s);
+  .transform-rotate(0);
+  font-size: 12px;
+}
+.@{css-prefix}menu-parent>li.active>h3.on:before{
+  .transform-rotate(-90deg);
+}
+
+.@{css-prefix}menu-child{
+ .transition(max-height,0.5s);
+  max-height:0;
+  margin: 4px 0;
+  overflow:hidden;
+}
+.@{css-prefix}menu-parent>li.active .@{css-prefix}menu-child{
+  max-height:400px;
+}
+.@{css-prefix}menu-child>li{
+  border-bottom: 0 none;
+  a{
+    position: relative;
+    display: block;
+    color:@menu-text-color;
+    padding: 10px 10px 10px 30px;
+    font-size:12px;
+  }
+  &:last-child{
+    border-bottom:0 none;
+  }
+  a:hover{
+    color:#fff;
+  }
+}
+
+.@{css-prefix}menu-child .chd-active{
+  background-color:@menu-child-active;
+  a{
+    color:#fff;
+  }
+}
+
+
+
+
+
+

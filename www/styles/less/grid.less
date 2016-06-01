@@ -1,0 +1,98 @@
+.@{css-prefix}row{
+	display: block;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+.@{css-prefix}row
+.@{css-prefix}col{
+	position: relative;
+	min-height: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.wd(@wd:10%){
+	width: @wd;
+}
+
+@media (min-width: 992px){
+	.@{css-prefix}col-10,
+	.@{css-prefix}col-20,
+	.@{css-prefix}col-25,
+	.@{css-prefix}col-33,
+	.@{css-prefix}col-50,
+	.@{css-prefix}col-67,
+	.@{css-prefix}col-75,
+	.@{css-prefix}col-80,
+	.@{css-prefix}col-90{
+	    float: left;
+	}
+
+	.@{css-prefix}col-10{
+		.wd;
+	}
+	.@{css-prefix}col-20{
+		.wd(20%);
+	}
+	.@{css-prefix}col-25{
+		.wd(25%);
+	}
+	.@{css-prefix}col-33{
+		.wd(33.3333%);
+	}
+	.@{css-prefix}col-50{
+		.wd(50%);
+	}
+	.@{css-prefix}col-67{
+		.wd(66.6666%);
+	}
+	.@{css-prefix}col-75{
+		.wd(75%);
+	}
+	.@{css-prefix}col-80{
+		.wd(80%);
+	}
+	.@{css-prefix}col-90{
+		.wd(90%);
+	}
+}
+
+//图片加说明文字面板
+.@{css-prefix}grid{
+	position: relative;
+	display: block;
+	padding:.2rem;
+	margin-bottom: 20px;
+	background-color: #fff;
+	box-shadow: 0 2px 8px 1px rgba(0,0,0,.2);
+}
+
+.@{css-prefix}grid-group{
+	padding-top:.15rem;
+}
+
+.@{css-prefix}grid-group>div{
+	margin-bottom:.15rem;
+}
+
+.@{css-prefix}grid-group>:last-child{
+	margin-bottom:0;
+}
+.@{css-prefix}grid-img{
+	position: relative;
+	width: 100%;
+	padding-top: 62%;
+}
+.@{css-prefix}grid-img  img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+.@{css-prefix}grid-title{
+	font-size: .3rem;
+}
+
+

@@ -35,4 +35,10 @@ tsd install
  npm run dev 
  
 ```
- No newline at end of file
+
+### 在线预览地址
+
+```
+http://yedegesong.github.io/ERP/pages/Login.html
+
+```

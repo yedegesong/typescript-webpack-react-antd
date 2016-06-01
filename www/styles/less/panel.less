@@ -1,0 +1,27 @@
+/**一些小元件**/
+@panel-border-color:#e4e5e7;
+@panel-color:#6a6c6f;
+.@{css-prefix}panel{
+  background-color:#fff;
+  border:1px solid @panel-border-color;
+  color:@panel-color;
+  font-size:12px;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.07);
+  border-radius: 3px;
+  margin-bottom:.48rem;
+}
+
+.@{css-prefix}panel-header{
+ .box();
+  padding: 10px 20px;
+  border-bottom:1px solid @panel-border-color;
+}
+
+.@{css-prefix}panel-header .@{css-prefix}panel-title{
+  .box-flex();
+  font-size:14px;
+}
+
+.@{css-prefix}panel-content{
+  padding: 20px;
+}

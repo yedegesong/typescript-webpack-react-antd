@@ -1,0 +1,37 @@
+.@{css-prefix}tabs-title{
+	.webkit-box;
+	border-bottom: 1px solid #d9d9d9;
+    width: 100%;
+    background-color: #fff;
+    height: 45px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.@{css-prefix}tabs-title>div{
+	    padding: 8px 20px;
+    -webkit-transition: color .3s cubic-bezier(.645, .045, .355, 1);
+    transition: color .3s cubic-bezier(.645, .045, .355, 1);
+        height: 45px;
+    min-width: 70px;
+    text-align: center;
+    color: #777;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+.@{css-prefix}tabs-title>div.tabOn{
+	color: #2db7f5;
+	border-bottom:2px solid #2db7f5;
+}
+
+.@{css-prefix}tabs-content>.@{css-prefix}tabpane{
+	display: none;
+}
+
+.@{css-prefix}tabs-content>.@{css-prefix}tabpane.TabConOn{
+	display: block;
+     padding: .3rem;
+}
+
