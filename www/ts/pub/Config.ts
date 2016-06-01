@@ -12,8 +12,8 @@ interface Config {
 }
 
 //let prefix = 'http://192.168.1.160:60018/';
-let prefix = 'http://127.0.0.1:9090/';
-//let prefix = 'http://yedegesong.github.io/ERP/';
+//let prefix = 'http://127.0.0.1:9090/';
+let prefix = 'http://yedegesong.github.io/ERP/';
 /**
  * 配置项  
  * TelBaseUrl => 配置模板路径

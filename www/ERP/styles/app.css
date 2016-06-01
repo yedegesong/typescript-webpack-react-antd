@@ -295,12 +295,6 @@ body {
   word-wrap: break-word;
   word-break: break-all;
 }
-.cwgj-ta-center {
-  text-align: center;
-}
-.cwgj-ta-left {
-  text-align: left;
-}
 .cwgj-fl,
 .cwgj-fr {
   _display: inline;
@@ -323,13 +317,13 @@ body {
 .cwgj-bd-l {
   border-left: 1px solid #e9e9e9;
 }
-.cwgj-t-aln-c {
+.cwgj-text-center {
   text-align: center;
 }
-.cwgj-t-aln-l {
+.cwgj-text-left {
   text-align: left;
 }
-.cwgj-t-aln-r {
+.cwgj-text-right {
   text-align: right;
 }
 .cwgj-nowrap {
@@ -939,7 +933,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
-  content: "\e604";
+  content: "\e601";
   -moz-transition: all 0.5s;
   /* Firefox 4 */
   -webkit-transition: all 0.5s;
@@ -1062,8 +1056,8 @@ body {
 }
 .cwgj-btn-default {
   color: #444;
-  background-color: #d4d4d4;
-  border-color: #c5c5c5;
+  background-color: #fff;
+  border-color: #f0f0f0;
 }
 .cwgj-btn-default:not([disabled]):hover,
 .cwgj-btn-default:focus {
@@ -1079,8 +1073,8 @@ body {
 .cwgj-btn-primary:not([disabled]):hover,
 .cwgj-btn-primary:focus {
   color: #fff;
-  background-color: #89bceb;
-  border-color: #6fade7;
+  background-color: #1caaea;
+  border-color: #1498d4;
 }
 .cwgj-btn-primary:active,
 .cwgj-btn-primary.active {
@@ -1090,14 +1084,14 @@ body {
 }
 .cwgj-btn-success {
   color: #fff;
-  background-color: #69caa0;
-  border-color: #52c292;
+  background-color: #5cb85c;
+  border-color: #4aab4a;
 }
 .cwgj-btn-success:not([disabled]):hover,
 .cwgj-btn-success:focus {
   color: #fff;
-  background-color: #5cd29d;
-  border-color: #44cb8f;
+  background-color: #449d44;
+  border-color: #3b883b;
 }
 .cwgj-btn-success:active,
 .cwgj-btn-success.active {
@@ -1107,14 +1101,14 @@ body {
 }
 .cwgj-btn-danger {
   color: #fff;
-  background-color: #F96868;
-  border-color: #f84b4b;
+  background-color: #d9534f;
+  border-color: #d43a36;
 }
 .cwgj-btn-danger:not([disabled]):hover,
 .cwgj-btn-danger:focus {
   color: #fff;
-  background-color: #fa7a7a;
-  border-color: #f95d5d;
+  background-color: #c9302c;
+  border-color: #b02a27;
 }
 .cwgj-btn-danger:active,
 .cwgj-btn-danger.active {
@@ -1124,14 +1118,14 @@ body {
 }
 .cwgj-btn-info {
   color: #fff;
-  background-color: #57c7d4;
-  border-color: #3fbfce;
+  background-color: #5bc0de;
+  border-color: #42b6d9;
 }
 .cwgj-btn-info:not([disabled]):hover,
 .cwgj-btn-info:focus {
   color: #fff;
-  background-color: #77d6e1;
-  border-color: #5ecedb;
+  background-color: #31b0d5;
+  border-color: #279ec0;
 }
 .cwgj-btn-info:active,
 .cwgj-btn-info.active {
@@ -1147,14 +1141,19 @@ body {
 .cwgj-btn-warning:not([disabled]):hover,
 .cwgj-btn-warning:focus {
   color: #fff;
-  background-color: #f4b066;
-  border-color: #f2a149;
+  background-color: #ec971f;
+  border-color: #da8712;
 }
 .cwgj-btn-warning:active,
 .cwgj-btn-warning.active {
   color: #fff;
   background-color: #e79857;
   border-color: #e3883c;
+}
+.cwgj-btn-link {
+  border-color: transparent;
+  background-color: transparent;
+  color: #2db7f5;
 }
 .cwgj-btn-lg {
   padding: 5px 15px;
@@ -1175,7 +1174,7 @@ fieldset[disabled] .cwgj-btn {
   cursor: not-allowed;
   -webkit-box-shadow: none;
   box-shadow: none;
-  opacity: .5;
+  opacity: .7;
 }
 .cwgj-row {
   display: block;
@@ -1587,30 +1586,19 @@ fieldset[disabled] .cwgj-btn {
 }
 .cwgj-tabs-content > .cwgj-tabpane.TabConOn {
   display: block;
+  padding: .3rem;
 }
 /*--指示版样式--*/
 .cwgj-dash-stat {
-  position: relative;
-  height: 110px;
-  margin-bottom: 15px;
-  margin-top: 15px;
-  background: rgba(0, 0, 0, 0.1);
-  text-align: center;
-  overflow: hidden;
-  cursor: default;
+  padding: 15px;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
 .cwgj-dash-stat .cwgj-dash-stat-cont {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  z-index: 2;
+  position: relative;
+  text-align: center;
 }
 .cwgj-dash-stat .cwgj-dash-stat-main {
   display: block;
@@ -1633,5 +1621,50 @@ fieldset[disabled] .cwgj-btn {
 .cwgj-dash-color-d {
   background-color: #27ae60 !important;
   color: #fff !important;
+}
+.cwgj-pagination > ul li {
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  min-width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  list-style: none;
+  float: left;
+  border: 1px solid #d9d9d9;
+  background-color: #fff;
+  margin-right: 8px;
+  font-family: Arial;
+  -moz-transition: all 0.5s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.5s;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.cwgj-pagination > ul li:hover {
+  border-color: #2db7f5;
+  color: #2db7f5;
+}
+.cwgj-pagination > ul > li.on {
+  background-color: #2db7f5;
+  color: #fff;
+  border-color: #2db7f5;
+}
+.cwgj-pagination > ul li .icon {
+  font-size: 10px;
+}
+.cwgj-pagination > ul li.off {
+  cursor: not-allowed;
+  border: 1px solid #d9d9d9;
+  color: #ccc;
+}
+.cwgj-pagination > ul li.page-next,
+.cwgj-pagination > ul li.page-prev {
+  border: 0 none;
 }
 /*# sourceMappingURL=app.css.map */

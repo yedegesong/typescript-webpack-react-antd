@@ -1,4 +1,4 @@
-# typescript + webpack + react + antd + fis3
+# typescript + webpack + react + fis3
 
 ## 全局需要安装的环境
 
