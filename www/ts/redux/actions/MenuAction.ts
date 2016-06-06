@@ -102,6 +102,7 @@ function getMenuAction(reddit?: any) {
             dispatch(OnGetMenu(_data));
             return false;
         }
+        console.log(menu)
            LocalStorage.add('cw_menu', menu);
            dispatch(OnGetMenu(menu));
     }

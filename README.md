@@ -40,3 +40,7 @@ tsd install
 
 http://yedegesong.github.io/ERP/pages/Login.html
 
+### 在线使用文档
+
+https://yedegesong.gitbooks.io/typescript-react-redux/content/jian_jie.html
+

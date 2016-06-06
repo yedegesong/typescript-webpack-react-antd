@@ -34,6 +34,7 @@ function getAuthAction(reddit?: any) {
 function loginOutAction(){
     let buyConfirm = (modal) => {
         LocalStorage.remove('cw_auth');
+        LocalStorage.remove('cw_menu');
         Tool.goPush('Login');
         modal.close();
     }

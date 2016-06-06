@@ -4,6 +4,7 @@
  * @type {{index: string, details: string}}
  */
 module.exports = {
+  HelloWordContainer:"HelloWordContainer",
   LoginContainer:"LoginContainer",
   ApiContainer : "ApiContainer",
   ButtonContainer:"ButtonContainer",

@@ -14,7 +14,7 @@ export default class BaseComponent extends React.Component < any, any > {
          */
         if (!_data) {
              alert('请求超时,请重新登录');
-             Tool.goPush('login');
+             Tool.goPush('Login');
         }
       
     }
