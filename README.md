@@ -36,7 +36,9 @@ tsd install
  
 ```
 
-### 在线预览地址
+### 在线预览地址 
+
+> 账号:admin 密码:123456
 
 http://yedegesong.github.io/ERP/pages/Login.html
 
