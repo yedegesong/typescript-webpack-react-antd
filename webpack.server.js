@@ -16,6 +16,12 @@ new WebpackDevServer(webpack(config), {
     noInfo: false,
     hot: true,
     historyApiFallback: true,
+    proxy: {
+            '/act': {
+                target: 'http://192.168.1.160:8100/advert',
+                secure: false,
+            }
+            },
     stats: {
         colors: true,
         progress: true
