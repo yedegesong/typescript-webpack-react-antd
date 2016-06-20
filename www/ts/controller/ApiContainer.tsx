@@ -27,8 +27,8 @@ class IndexApp extends BaseContainer {
         return (
             <AppBody>
                 <Row>
-                    <Col span="50">
-                        <Panel  title="面板-字体辅助">
+                    <Col span="50" >
+                        <Panel  title="面板-字体辅助" >
                             <div>
                                 <div className="cwgj-text-muted">在鼠标经过时颜色可以加深，就像默认的链接一样</div>
                                 <div className="cwgj-text-primary">在鼠标经过时颜色可以加深，就像默认的链接一样</div>

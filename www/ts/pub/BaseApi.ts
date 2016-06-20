@@ -15,7 +15,7 @@ const BaseApi = {
 	 */
     backfill: () => {
         return promise.resource('post', 'TextApi.php',
-            { });
+            {});
     }
 }
 

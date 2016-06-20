@@ -24,7 +24,7 @@ class IndexApp extends BaseContainer {
         if(type ==1){
             Toast.close();
         }else{
-            Toast.open();
+            Toast.open({tips:'图片上传中'});
         }
         
     }

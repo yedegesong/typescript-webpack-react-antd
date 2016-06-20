@@ -21,7 +21,7 @@ export default class Buttons extends React.Component<ButtonsProps,any> {
     }
 
     handleClick(event) {
-
+        console.log(this.props)
         if ( this.props.onClick) {
             this.props.onClick(event);
         }

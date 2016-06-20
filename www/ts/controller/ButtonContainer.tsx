@@ -22,8 +22,8 @@ class IndexApp extends BaseContainer {
     }
 
     handleButton(){
-        let {MenuReducers, dispatch} = this.props;
-        
+        //let {MenuReducers, dispatch} = this.props;
+        alert('a')
     }
 
     render() {
@@ -31,7 +31,7 @@ class IndexApp extends BaseContainer {
             <AppBody>
                 <Panel title="按钮面板">
                     <Buttons>默认default</Buttons>
-                    <Buttons type = "primary" >首选primary</Buttons>
+                    <Buttons type = "primary"  onClick={this.handleButton}>首选primary</Buttons>
                     <Buttons type = "success">成功success</Buttons>
                     <Buttons type = "danger">危险danger</Buttons>
                     <Buttons type = "info">一般info</Buttons>

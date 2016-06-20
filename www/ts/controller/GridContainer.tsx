@@ -14,16 +14,38 @@ import {changeActiveAction} from '../redux/actions/MenuAction';
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
 const store = BaseStore({  });
+
+class Text extends React.Component<any, any>{
+    constructor(props) {
+        super(props);
+    }
+
+    handle(){
+        this.props.Ok('我是子类传递过来的')
+    }
+
+    render(){
+
+        return (<div >
+                <button onClick={this.handle.bind(this)}>我是按钮</button>
+            </div>)
+    }
+}
+
 //数据流向
 class IndexApp extends BaseContainer {
     constructor(props) {
         super(props);
     }
 
+    Ok(data){
+        alert(data)
+    }
     render() {
 
         return (
             <AppBody>
+                <Text onOk = {this.Ok.bind(this)}/>
                 <Panel title="按钮面板-网格布局">
                     <Row>
                         <Col span="10">10%</Col>

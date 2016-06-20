@@ -27,7 +27,7 @@ export let ChangeDataAction = (data) => {
 const HeaderState =
 	{
 		submitDate: {
-			accout: '',
+			accout: '我是默认默认',
             password: '',
             password_repeat: '',
             city: '-1',
@@ -41,6 +41,7 @@ const HeaderState =
 export function FormVerifierReducer(state = HeaderState, action) {
 	switch (action.type) {
 		case GET_FORM:
+		
 			return Tool.assign({}, state, { submitDate: action.data });
 		default:
 			return state

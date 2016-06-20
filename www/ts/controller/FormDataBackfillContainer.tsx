@@ -148,7 +148,7 @@ class IndexApp extends BaseContainer {
                 <Panel title = "表单验证 - 基于redux的数据回填">
                     <FormGroup horizontal >
                         <FormItems label="用户名">
-                            <InputText type="test" placeholder="请输入您的账号" value={this.submitDate.accout} onChange={(event) => this.valueChange('accout', event.target.value) }/>
+                            <InputText  type="test" placeholder="请输入您的账号" value={this.submitDate.accout} onChange={(event) => this.valueChange('accout', event.target.value) }/>
                         </FormItems>
                         <FormItems label="手机号码">
                             <InputText type="test" placeholder="请输入您的手机号码" value={this.submitDate.phone} onChange={(event) => this.valueChange('phone', event.target.value) }/>
