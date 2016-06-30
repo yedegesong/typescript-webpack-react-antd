@@ -9,20 +9,41 @@ import {changeActiveAction} from '../redux/actions/MenuAction';
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
 const store = BaseStore({  });
-class IndexApp extends BaseContainer {
+class Text extends React.Component<any, any>{
     constructor(props) {
         super(props);
     }
 
     render() {
+        return <span>{this.props.text}</span>
+    }
+}
+
+class IndexApp extends BaseContainer {
+    constructor(props) {
+        super(props);
+        this.state = {
+            text:'hello,word'
+        }
+    }
+    ok(){
+        this.setState({
+            text:'aaa'
+        })
+    }
+    render() {
         return (
-            <div>Hello,Word</div>
+            <div>
+                <Text text={this.state.text}/>
+                <button onClick={this.ok.bind(this) }>改变</button>
+            </div>
+            
         );
     }
 
     componentDidMount():void {
         let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction({ parent: 0, child: -1 }))
+        dispatch(changeActiveAction())
     }
 
     componentWillUnmount():void {

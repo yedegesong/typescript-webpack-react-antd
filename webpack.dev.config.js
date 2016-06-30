@@ -18,7 +18,7 @@ var pathToSrc  = path.resolve(__dirname, 'src');
 var pathToBuild  = path.resolve(__dirname, 'www');
 //页面主控制目录
 var controllerSrc = path.resolve(__dirname, 'www','ts','controller');
-
+var componentsSrc = path.resolve(__dirname, 'www','ts','components');
 var _entry = function(options){
     var entry = {};
     for (var name in options) {
@@ -33,6 +33,7 @@ var config = {
     //入口文件配置
     entry:_entry(filepath),
     resolve:     {
+        root:componentsSrc,
         extensions: ['', '.js', '.jsx','.ts','.tsx']
     },
     //输出文件配置

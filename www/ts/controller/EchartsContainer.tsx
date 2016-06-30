@@ -41,7 +41,7 @@ class IndexApp extends BaseContainer {
 
     componentDidMount():void {
         let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction({ parent: 4, child: -1 }))
+        dispatch(changeActiveAction())
        var myChart = echarts.init(document.getElementById('main'));
         // 指定图表的配置项和数据
         var option = {

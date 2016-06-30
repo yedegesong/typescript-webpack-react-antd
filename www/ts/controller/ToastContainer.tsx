@@ -43,7 +43,7 @@ class IndexApp extends BaseContainer {
 
     componentDidMount():void {
         let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction({ parent: 8, child: 2 }))
+        dispatch(changeActiveAction())
     }
     
     componentWillUnmount():void {

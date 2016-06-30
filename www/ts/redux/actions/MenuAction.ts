@@ -1,6 +1,9 @@
 import Tool from '../../pub/Tool';
+import Config from '../../pub/Config';
 import LocalStorage from '../../pub/LocalStorage';
 import menu from './menu';
+const now_url = window.location.href.match(/(?:\w*)(?=.html)/);
+
 /**
  * 菜单初始化获取值
  */
@@ -59,9 +62,28 @@ let saveChildActive = (saveData) => {
 /**
  * 获取本地存储的状态
  */
-let changeActiveAction = (changeActive:{}) => {
+let changeActiveAction = () => {
     return (dispatch, getState) => {
-        dispatch(OnchangeActive(changeActive));
+        let menuActivea:any = {}
+        menu.menuList.map((v, i) => {
+
+            if (now_url[0] === v.url) {
+                menuActivea.parent = i;
+                menuActivea.child = -1;
+                dispatch(OnchangeActive(menuActivea));
+            }
+
+            if (v.url == '#' && v.subMunu.length>0) {
+               v.subMunu.map((j,index)=>{
+                   if (now_url[0] === j.url){
+                       menuActivea.parent = i;
+                       menuActivea.child = index;
+                       dispatch(OnchangeActive(menuActivea));
+                   }
+                })
+            }
+           
+        })
     }
 }
 /**
