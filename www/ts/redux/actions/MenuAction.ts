@@ -66,13 +66,17 @@ let changeActiveAction = () => {
     return (dispatch, getState) => {
         let menuActivea:any = {}
         menu.menuList.map((v, i) => {
-
+            /**
+             * 处理一级菜单
+             */
             if (now_url[0] === v.url) {
                 menuActivea.parent = i;
                 menuActivea.child = -1;
                 dispatch(OnchangeActive(menuActivea));
             }
-
+            /**
+             * 处理二级菜单
+             */
             if (v.url == '#' && v.subMunu.length>0) {
                v.subMunu.map((j,index)=>{
                    if (now_url[0] === j.url){
