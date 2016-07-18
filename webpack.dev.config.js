@@ -30,7 +30,9 @@ var _entry = function(options){
 var config = {
     pathToBuild: pathToBuild,
     devtool: "source-map",
-    //入口文件配置
+    /*入口文件配置 编译的文件加文件路径
+    {name:value}
+    */
     entry:_entry(filepath),
     resolve:     {
         root:componentsSrc,

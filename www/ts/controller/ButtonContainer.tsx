@@ -39,8 +39,8 @@ class IndexApp extends BaseContainer {
                     <Buttons type = "link">链接link</Buttons>
                 </Panel>
                 <Panel title="按钮面板-禁止">
-                    <Buttons disabled = {true}>默认default</Buttons>
-                    <Buttons type = "primary" disabled = {true}>首选primary</Buttons>
+                    <Buttons disabled = {true} >默认default</Buttons>
+                    <Buttons type = "primary" disabled = {true} onClick={()=>this.handleButton}>首选primary</Buttons>
                     <Buttons type = "success" disabled = {true}>成功success</Buttons>
                     <Buttons type = "danger" disabled = {true}>危险danger</Buttons>
                     <Buttons type = "info" disabled = {true}>一般info</Buttons>

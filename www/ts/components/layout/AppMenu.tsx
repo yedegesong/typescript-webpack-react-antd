@@ -2,7 +2,7 @@ import * as React from "react";
 import {connect} from 'react-redux';
 import Tool from '../../pub/Tool';
 import {getMenuAction, saveParentActive, saveChildActive,changeActiveAction} from '../../redux/actions/MenuAction';
-
+const now_url = window.location.href.match(/(?:\w*)(?=.html)/);
 interface AppMenuProps {
     active:number;
     MenuReducers: any;
@@ -30,26 +30,20 @@ class AppMenu extends React.Component<AppMenuProps, any>{
             parentActive: MenuReducers.active.parent,
             childActive: MenuReducers.active.child
         }
-       /*this.state = {
-            parentActive: this.props.parentActive,
-            childActive: this.props.childActive
-        }*/
-       //console.log(this.props)
     }
     
     handleOrderTabClick(event, parentIndex, parentName,URL) {
         let {MenuReducers, dispatch} = this.props;
-        //this.setState({ parentActive: parentIndex,childActive:-1});
-        dispatch(changeActiveAction({ parent: parentIndex, child: -1 }))
-        if(Tool.hasClass(event.target.parentNode,'active')){
+        let active_Json = { parentkey: parentIndex, parentvalue: parentName };
+        saveParentActive(active_Json);
+        if(URL.indexOf('#') == -1){
+            Tool.goPush(URL);
+        }else{
+            if(Tool.hasClass(event.target.parentNode,'active')){
             Tool.removeClass(event.target.parentNode, 'active');
         }else{
             Tool.addClass(event.target.parentNode, 'active');
         }
-        let active_Json = { parentkey: parentIndex, parentvalue: parentName };
-        saveParentActive(active_Json);
-        if(URL.indexOf('#')){
-            Tool.goPush(URL);
         }
         //防止冒泡多次触发
         event.preventDefault();
@@ -58,7 +52,7 @@ class AppMenu extends React.Component<AppMenuProps, any>{
 
     push(event,childIndex,childName,URL){
         let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction({ parent: MenuReducers.active.parent, child: childIndex }))
+        dispatch(changeActiveAction())
         let active_Json = { childkey: childIndex, childvalue: childName };
         saveChildActive(active_Json);
         Tool.goPush(URL);
@@ -80,8 +74,8 @@ class AppMenu extends React.Component<AppMenuProps, any>{
                     <ul className="cwgj-menu-child">
                         {item.subMunu.map((childItem,childIndex) => {
                             let ChildUrl =  childItem.url;
-                            let childActive = MenuReducers.active.child == childIndex ? "cwgj-menu-child-item chd-active" : "cwgj-menu-child-item";
-                            return (<li key = {childIndex}  className={ childActive }>
+                            let childActive = ChildUrl == now_url ? "cwgj-menu-child-item chd-active" : "cwgj-menu-child-item";
+                            return (<li key = {childIndex} className={childActive}>
                                 <a href={URL} onClick = {(event) => this.push(event, childIndex, childItem.name, ChildUrl) }>{childItem.name}</a>
                                     </li>
                                     )

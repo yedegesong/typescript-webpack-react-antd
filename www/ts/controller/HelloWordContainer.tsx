@@ -3,19 +3,32 @@ import * as ReactDOM from "react-dom";
 import {bindActionCreators} from 'redux';
 import { Provider, connect} from 'react-redux';
 //自己的第三方组件
-import {AppBody} from '../components/index';
+import * as QQ from '../components/index';
 import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
+import * as Hello from '../pub/Hello'
+console.log(Hello)
+console.log(QQ)
 const store = BaseStore({  });
+
 class Text extends React.Component<any, any>{
     constructor(props) {
         super(props);
+        console.log('a')
     }
 
+    componentWillReceiveProps(){
+        console.log('嘿嘿')
+    }
     render() {
-        return <span>{this.props.text}</span>
+        let {text} = this.props;
+        return <span>{text}</span>
+    }
+
+    componentDidMount(){
+        console.log('ok')
     }
 }
 

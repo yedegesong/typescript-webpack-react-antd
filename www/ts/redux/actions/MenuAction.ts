@@ -3,7 +3,7 @@ import Config from '../../pub/Config';
 import LocalStorage from '../../pub/LocalStorage';
 import menu from './menu';
 const now_url = window.location.href.match(/(?:\w*)(?=.html)/);
-
+console.log(now_url)
 /**
  * 菜单初始化获取值
  */
@@ -40,6 +40,7 @@ let switchMenu = (menuSwitch) => {
 }
 
 let OnchangeActive = (active) => {
+    console.log(active)
     return { type: CHANGE_ACTIVE, active };
 }
 
@@ -64,54 +65,40 @@ let saveChildActive = (saveData) => {
  */
 let changeActiveAction = () => {
     return (dispatch, getState) => {
-        let menuActivea:any = {}
-        menu.menuList.map((v, i) => {
-            /**
-             * 处理一级菜单
-             */
-            if (now_url[0] === v.url) {
-                menuActivea.parent = i;
-                menuActivea.child = -1;
-                dispatch(OnchangeActive(menuActivea));
-            }
-            /**
-             * 处理二级菜单
-             */
-            if (v.url == '#' && v.subMunu.length>0) {
-               v.subMunu.map((j,index)=>{
-                   if (now_url[0] === j.url){
-                       menuActivea.parent = i;
-                       menuActivea.child = index;
-                       dispatch(OnchangeActive(menuActivea));
-                   }
-                })
-            }
-           
-        })
+        let parentActive = LocalStorage.get('cw_parent_active');
+        let childActive = LocalStorage.get('cw_child_active');
+        let menuActivea:any = {};
+        if(parentActive&&childActive){
+                    menuActivea.parent = parentActive.parentkey;
+                    menuActivea.child = childActive.childkey;
+                    dispatch(OnchangeActive(menuActivea));
+        }else{
+                menu.menuList.map((v, i) => {
+                /**
+                 * 处理一级菜单
+                 */
+                if (now_url[0] === v.url) {
+                    menuActivea.parent = i;
+                    menuActivea.child = -1;
+                    dispatch(OnchangeActive(menuActivea));
+                }
+                /**
+                 * 处理二级菜单
+                 */
+                if (v.url == '#' && v.subMunu.length>0) {
+                   v.subMunu.map((j,index)=>{
+                       if (now_url[0] === j.url){
+                           menuActivea.parent = i;
+                           menuActivea.child = index;
+                           dispatch(OnchangeActive(menuActivea));
+                       }
+                    })
+                }
+               
+            })
+        }
+        
     }
-}
-/**
- * 获取本地存储的状态
- */
-let getActive = () =>{
-    let parentActive = LocalStorage.get('cw_parent_active');
-    let childActive = LocalStorage.get('cw_child_active');
-    /**
-     * 只存在父元素
-     */
-    if (parentActive && childActive === null) {
-        return { parentActive: parentActive, childActive: { childkey: -1, childvalue: '' } };
-    }
-    /**
-     * 存在父元素，子元素
-     */
-    if (parentActive && childActive){
-        return { parentActive: parentActive, childActive: childActive };
-    }
-    /**
-     * 默认什么都不点击的情况
-     */
-    return {parentActive: { parentkey:-1, parentvalue:'' },childActive: { childkey:-1, childvalue:'' } };
 }
 
 /**
@@ -142,7 +129,6 @@ export {
     CHANGE_ACTIVE,
     getMenuAction,
     switchMenu,
-    getActive,
     saveParentActive,
     saveChildActive,
     changeActiveAction

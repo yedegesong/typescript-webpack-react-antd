@@ -179,7 +179,7 @@ class IndexApp extends BaseContainer {
 
     componentDidMount():void {
         let {FormVerifierReducer, dispatch} = this.props;
-        dispatch(changeActiveAction({ parent: 9, child: 1 }))
+        dispatch(changeActiveAction())
     }
     
     componentWillUnmount():void {

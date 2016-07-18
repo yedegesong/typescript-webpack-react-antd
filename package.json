@@ -31,7 +31,6 @@
   "devDependencies": {
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^0.9.1",
-    "html-webpack-plugin": "^2.14.0",
     "jsx-loader": "^0.13.2",
     "react-hot-loader": "^1.3.0",
     "source-map-loader": "^0.1.5",
