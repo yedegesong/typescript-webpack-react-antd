@@ -1,60 +1,67 @@
 const MenuData = {
   "menuList": [
     {
-      "description": "Api",
+      "description": "api",
       "menuId": 21,
-      "name": "Api",
+      "name": "api",
       "subMunu": [],
-      "url": "Api"
+      "url": "api"
     },
     {
       "description": "网格布局",
       "menuId": 21,
       "name": "网格布局",
       "subMunu": [],
-      "url": "Grid"
+      "url": "grid"
     },
     {
       "description": "表格",
       "menuId": 21,
       "name": "表格",
       "subMunu": [],
-      "url": "Table"
+      "url": "table"
     },
     {
       "description": "卡片",
       "menuId": 21,
       "name": "卡片",
       "subMunu": [],
-      "url": "Card"
+      "url": "card"
+    },
+    {
+      "description": "日历",
+      "menuId": 21,
+      "name": "日历",
+      "subMunu": [],
+      "url": "calendar"
     },
     {
       "description": "基于百度图表",
       "menuId": 21,
       "name": "基于百度图表",
       "subMunu": [],
-      "url": "Echarts"
+      "url": "echarts"
     },
     {
       "description": "按钮组件",
       "menuId": 21,
       "name": "按钮组件",
       "subMunu": [],
-      "url": "Button"
+      "url": "button"
     },
     {
       "description": "Tab切换",
       "menuId": 21,
       "name": "Tab切换",
       "subMunu": [],
-      "url": "Tabs"
+      "url": "tabs"
     },
     {
       "description": "文件上传",
       "menuId": 21,
       "name": "文件上传",
       "subMunu": [],
-      "url": "Upload"
+      "url": "upload"
     },
     {
       "description": "全局提示效果模块",
@@ -65,25 +72,25 @@ const MenuData = {
           "description": "全局提示",
           "menuId": 17,
           "name": "全局提示",
-          "url": "Tips"
+          "url": "tips"
         },
         {
           "description": "弹框组件",
           "menuId": 17,
           "name": "弹框组件",
-          "url": "Dialog"
+          "url": "dialog"
         },
         {
           "description": "全局加载中",
           "menuId": 17,
           "name": "全局加载中",
-          "url": "Toast"
+          "url": "toast"
         },
         {
           "description": "全局遮罩",
           "menuId": 17,
           "name": "全局遮罩",
-          "url": "Mask"
+          "url": "mask"
         }
       ],
       "url": "#"
@@ -97,19 +104,19 @@ const MenuData = {
           "description": "所有表单",
           "menuId": 17,
           "name": "所有表单",
-          "url": "Form"
+          "url": "form"
         },
         {
           "description": "表单验证",
           "menuId": 17,
           "name": "表单验证",
-          "url": "FormVerifier"
+          "url": "formVerifier"
         },
         {
           "description": "表单数据回填",
           "menuId": 17,
           "name": "表单数据回填",
-          "url": "FormDataBackfill"
+          "url": "formDataBackfill"
         }
       ],
       "url": "#"
@@ -119,7 +126,7 @@ const MenuData = {
     "menuId": 21,
     "name": "分页",
     "subMunu": [],
-    "url": "Pagination"
+    "url": "pagination"
     },
   ]
 }

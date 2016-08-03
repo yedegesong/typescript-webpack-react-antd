@@ -23,7 +23,7 @@ fileNames.forEach(function(v){
   }
 });
 
-console.log(files_names);
+//console.log(files_names);
 /*module.exports = {
   HelloWordContainer:"HelloWordContainer",
   LoginContainer:"LoginContainer",

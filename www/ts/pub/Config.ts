@@ -24,7 +24,7 @@ let prefix = 'http://127.0.0.1:9090/';
 const Config:Config = {
     //TelBaseUrl: 'http://127.0.0.1:6060/pages/',
     BaseUrl: prefix,
-    TelBaseUrl: `${prefix}pages/`,
+    TelBaseUrl: `${prefix}dist/pages/`,
     ApiBaseUrl: `${prefix}act`,
     UploadBaseUrl:`${prefix}upload`,
     FilesUploadUrl: `${prefix}uploadFile`,
