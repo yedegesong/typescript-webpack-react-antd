@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 interface TipsProps {
     timeout?:any;
     onFinish?:Function;
@@ -56,16 +58,16 @@ document.body.appendChild(_messageHolder);
      * body 主容器 包括头部和菜单
      */
     render() {
-        let className = classNames('cwgj-poptips', {
+        let className = classNames(`${css_prefix}-poptips`, {
             'show': this.state.show,
-            'cwgj-poptips-success': this.state.type == 1,
-            'cwgj-poptips-info': this.state.type == 2,
-            'cwgj-poptips-warn': this.state.type == 3
+            [`${css_prefix}-poptips-success`]: this.state.type == 1,
+            [`${css_prefix}-poptips-info`]: this.state.type == 2,
+            [`${css_prefix}-poptips-warn`]: this.state.type == 3
         });
 
         return (
             <div className={ className }>
-                <div className="cwgj-poptips-cnt">
+                <div className={`${css_prefix}-poptips-cnt`}>
                     <p>{this.state.message}</p>
                 </div>
             </div>

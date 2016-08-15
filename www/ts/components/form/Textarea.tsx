@@ -1,5 +1,8 @@
 import * as React from "react";
 import * as classNames from "classnames";
+
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 /**
  * 面板组件
  */
@@ -34,10 +37,10 @@ export default class Textarea extends React.Component<any,any> {
     }
     
     render(){
-        let inputClassName = "cwgj-form-textarea";
+        let inputClassName = `${css_prefix}-form-textarea`;
         const {value, name, addonAfter, addonBefore,className} = this.props;
         let addClassName = className;
-        let Cls = classNames('cwgj-form-text-container', {
+        let Cls = classNames(`${css_prefix}-form-text-container`, {
             'addonBefore': addonAfter && addonBefore,
             'addonAfter': addonAfter || addonBefore,
             [`${addClassName}`]: className

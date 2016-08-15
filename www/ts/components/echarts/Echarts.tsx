@@ -1,4 +1,8 @@
 import * as React from "react";
+
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
+
 export default class Echarts extends React.Component<any,any> {
     
     constructor(props){
@@ -9,7 +13,7 @@ export default class Echarts extends React.Component<any,any> {
      */
     render() {
         const {children} = this.props;
-        return (<div className="cwgj-baidu-echarts">
+        return (<div className={`${css_prefix}-baidu-echarts`}>
                     {children}
                 </div>
                     );

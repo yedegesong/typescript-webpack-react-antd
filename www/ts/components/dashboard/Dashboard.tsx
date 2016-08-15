@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 interface DashboardProps {
     className?: string;
     type?:string;
@@ -21,16 +23,16 @@ export default class Dashboard extends React.Component<any,any> {
      */
     render() {
         const {children,type,label,className} = this.props;
-        let typeButton = 'cwgj-dash-color-';
+        let typeButton = `${css_prefix}-dash-color-`;
         let addClassName = className;
-        let Cls = classNames('cwgj-dash-stat',{
+        let Cls = classNames(`${css_prefix}-dash-stat`,{
             [`${typeButton}${type}`] : true,
             [`${addClassName}`]: className
         });
         return (<div className = {Cls}>
-                    <div className="cwgj-dash-stat-cont">
-                        <div className="cwgj-dash-stat-main">{label}</div>
-                        <div className="cwgj-dash-stat-sub">{children}</div>
+                    <div className={`${css_prefix}-dash-stat-cont`}>
+                        <div className={`${css_prefix}-dash-stat-main`}>{label}</div>
+                        <div className={`${css_prefix}-dash-stat-sub`}>{children}</div>
                     </div>
                 </div>
                     );

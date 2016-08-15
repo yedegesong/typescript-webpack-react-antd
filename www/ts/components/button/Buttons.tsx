@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 interface ButtonsProps {
     onClick?: Function;
     className?: string;
@@ -32,13 +34,17 @@ export default class Buttons extends React.Component<ButtonsProps,any> {
      */
     render() {
         const {children, type, size,display, className} = this.props;
-        let typeButton = 'cwgj-btn-';
-        let addClassName = className;
-        let Cls = classNames('cwgj-btn',{
+        let typeButton,ui_btn_block,ui_btn_lg,addClassName,ui_btn_sm,Cls;
+            typeButton = `${css_prefix}-btn-`;
+            ui_btn_block = `${css_prefix}-btn-block`;
+            ui_btn_lg = `${css_prefix}-btn-lg`;
+            ui_btn_sm = `${css_prefix}-btn-sm`;
+            addClassName = className;
+            Cls = classNames(`${css_prefix}-btn`,{
             [`${typeButton}${type}`] : true,
-            'cwgj-btn-block':display&&display=='block',
-            'cwgj-btn-lg':size&&size=='large',
-            'cwgj-btn-sm':size&&size=='small',
+            ui_btn_block:display&&display=='block',
+            ui_btn_lg:size&&size=='large',
+            ui_btn_sm:size&&size=='small',
             [`${addClassName}`]: className
         });
         return (<button  {...this.props} className = { Cls }  onClick={(event) => this.handleClick(event) }>

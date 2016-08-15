@@ -1,5 +1,9 @@
 import * as React from "react";
 import * as classNames from "classnames";
+
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
+
 export default class FormGroup extends React.Component<any,any> {
     /**
      * 表单布局 块布局(默认),水平布局(horizontal),行内布局(inline)
@@ -19,7 +23,7 @@ export default class FormGroup extends React.Component<any,any> {
         const {children,horizontal,inline,className} = this.props;
         let addClassName = className;
         let Cls = classNames(
-            'cwgj-form-group',
+            `${css_prefix}-form-group`,
             {'horizontal':horizontal,
                 'inline':inline,
                 [`${addClassName}`]: className});

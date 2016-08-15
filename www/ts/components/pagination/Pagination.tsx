@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as classNames from "classnames";
 import Icon from "../icon/Icon";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 const KEYCODE = {
 	ZERO: 48,
 	NINE: 57,
@@ -191,8 +193,8 @@ export default class Pagination extends React.Component<any,any> {
 
     render() {
 		let allPages = Math.ceil(this.props.total / this.props.defaultPageSize);
-        return (<div className="cwgj-pagination">
-					<ul className="pagination-list cwgj-clearfix">
+        return (<div className={`${css_prefix}-pagination`}>
+					<ul className="pagination-list ui-clearfix">
 						<li 
 						className = {this.state.defaultCurrent < 2 ? 'off' : ''}
 						onClick={(event) => this.handlePrevClick(event, allPages) }>

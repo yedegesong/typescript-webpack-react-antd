@@ -7,11 +7,12 @@ import {
     Echarts,
     Buttons,
     Row,
-    Col, Tabel, Icon} from '../../components/index';
+    Col, Table, Icon} from '../../components/index';
 export default class TableOne extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
+
             columns: [{
                 title: '姓名',
                 dataIndex: 'name',
@@ -66,7 +67,7 @@ export default class TableOne extends React.Component<any, any> {
     }
     render() {
         return (
-            <Tabel columns={this.state.columns} dataSource={this.state.data} />
+            <Table columns={this.state.columns} dataSource={this.state.data} />
         );
     }
 

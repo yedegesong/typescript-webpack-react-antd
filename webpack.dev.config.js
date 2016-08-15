@@ -33,7 +33,7 @@ var _entry = function(options){
 }
 /**
  * 将字符串首字母大写
- * @param s
+ * @param 
  * @returns {string}
  */
 function titleCase3(s) {
@@ -43,14 +43,24 @@ function titleCase3(s) {
 }
 var config = {
     pathToBuild: pathToBuild,
-    devtool: "source-map",
+    devtool: "cheap-source-map",
     /*入口文件配置 编译的文件加文件路径
     {name:value}
     */
     entry:_entry(filepath),
     resolve:     {
         root:componentsSrc,
-        extensions: ['', '.js', '.jsx','.ts','.tsx']
+        /**
+         * 扩展的文件后缀名
+         */
+        extensions: ['', '.js', '.jsx','.ts','.tsx'],
+        alias:{
+            'react':path.join(node_modules,'react/react.js'),
+            'react-dom':path.join(node_modules,'react-dom/dist/react-dom.js'),
+            'redux':path.join('redux/dist/redux.js'),
+            'react-redux':path.join(node_modules,'react-redux/dist/react-redux.js')
+        }
+        
     },
     //输出文件配置
     output:      {
@@ -68,9 +78,13 @@ var config = {
                 exclude: /node_modules/
             },
             {
+                test: /\.less$/,
+                loader: "style!css!less"
+            }
+            /*{
                 test:   /\.css$/,
                 loader: 'style!css'
-            }
+            }*/
         ],
     },
     preLoaders: [
@@ -95,20 +109,31 @@ var config = {
     ]
 };
 
+/**
+ *  读取模板文件
+ * @type {string[]}
+ */
 var fileNames = fs.readdirSync(viewPath, function(err, files){
     if(err){console.log(err);return false;};
     return files;
 });
+
+/**
+ * 动态插入多页模板
+ */
 fileNames.forEach(function(v){
     var regtsx = /(?:\w*)(?=.ejs)/;
-    var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container'
+    var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
+    console.log(chunksContainer)
     var htmlConfig = {
         template: './view/' + v,
         filename:'./pages/' + (v.match(regtsx)[0]) +'.html',
         chunks:['common',chunksContainer],
     }
+    
     config.plugins.push(new HtmlWebpackPlugin(htmlConfig));
-})
+});
+
 /*var htmlConfig = {
     title: '公用模块调试',
     template: './view/login.ejs',

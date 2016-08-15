@@ -1,6 +1,8 @@
 import * as React from "react";
 import InputCheckbox from './InputCheckbox';
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 /**
  * 面板组件
  */
@@ -75,7 +77,7 @@ export default class CheckGroup extends React.Component<CheckGroupProps, any> {
     render() {
         const options = this.getOptions();
         let addClassName = this.props.className;
-        let Cls = classNames('cwgj-form-checkbox-group', { [`${addClassName}`]: this.props.className });
+        let Cls = classNames(`${css_prefix}-form-checkbox-group`, { [`${addClassName}`]: this.props.className });
         return (
             <div className = {Cls}>
                 {

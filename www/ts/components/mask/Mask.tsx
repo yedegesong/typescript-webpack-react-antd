@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 interface MaskProps {
     autoClose?: boolean;
 }
@@ -28,7 +30,7 @@ class Mask extends React.Component<MaskProps, any> {
      */
     render() {
         return (
-            <div className="cwgj-mask"  onClick = {this.handleClick.bind(this) } ></div>
+            <div className={`${css_prefix}-mask`}  onClick = {this.handleClick.bind(this) } ></div>
         );
     }
 

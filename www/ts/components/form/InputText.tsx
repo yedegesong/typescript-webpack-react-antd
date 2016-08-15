@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 /**
  * 面板组件
  */
@@ -34,23 +36,23 @@ export default class InputText extends React.Component<any,any> {
     }
     
     render(){
-        let inputClassName = "cwgj-form-input";
+        let inputClassName = `${css_prefix}-form-input`;
         const {value, name, addonAfter, addonBefore,className} = this.props;
         let addClassName = className;
-        let Cls = classNames('cwgj-form-text-container', {
+        let Cls = classNames(`${css_prefix}-form-text-container`, {
             'addonBefore': addonAfter && addonBefore,
             'addonAfter': addonAfter || addonBefore,
             [`${addClassName}`]: className
         });
         return (
             <div className={Cls}>
-                {addonBefore ? < div className="cwgj-input-group-addon">{addonBefore}</div> : false}
+                {addonBefore ? < div className={`${css_prefix}-input-group-addon`}>{addonBefore}</div> : false}
                 <input
                     {...this.props}
                     value={this.state.value}
                     className={inputClassName}
                     onChange={this.handleChange}/>
-                {addonAfter ? < div className="cwgj-input-group-addon">{addonAfter}</div> : false}
+                {addonAfter ? < div className={`${css_prefix}-input-group-addon`}>{addonAfter}</div> : false}
             </div>
         );
     }

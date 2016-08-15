@@ -9,12 +9,17 @@ import {
     Echarts,
     Buttons,
     Row,
-    Col, Tabel, Icon} from '../components/index';
+    Col, Table, Icon} from '../components/index';
 import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
+
+
 import TableOne from './Table/TableOne';
+import TableTwo from './Table/TableTwo';
+import TableThree from './Table/TableThree';
+import TableFour from './Table/TableFour';
 //表单验证模块
 import Verifier from '../pub/Verifier';
 const store = BaseStore({});
@@ -26,10 +31,20 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
+       
         return (
             <AppBody>
                 <Panel  title="表格 - 带操作数据展示 - 组件">
                     <TableOne />
+                </Panel>
+                <Panel  title="表格 - 手机分类数据展示">
+                <TableTwo />
+                </Panel>
+          <Panel  title="表格 - 复选框(全选/反选)">
+                    <TableThree />
+                </Panel>
+             <Panel  title="表格 - 单选框表格组件">
+                    <TableFour />
                 </Panel>
             </AppBody>
         );
@@ -37,7 +52,7 @@ class IndexApp extends BaseContainer {
 
     componentDidMount(): void {
         let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction())
+        //dispatch(changeActiveAction())
     }
 
     componentWillUnmount(): void {

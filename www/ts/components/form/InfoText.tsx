@@ -1,5 +1,8 @@
 import * as React from "react";
 import * as classNames from "classnames";
+
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 export default class InfoText extends React.Component<any, any> {
     /**
      * 表单布局 块布局(默认),水平布局(horizontal),行内布局(inline)
@@ -16,7 +19,7 @@ export default class InfoText extends React.Component<any, any> {
         const {children, horizontal, inline, className} = this.props;
         let addClassName = className;
         let Cls = classNames(
-            'cwgj-info-text',
+            `${css_prefix}-info-text`,
             {
                 [`${addClassName}`]: className
             });

@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 /**
  * 面板组件
  */
@@ -40,10 +42,10 @@ export default class SelectGroup extends React.Component<SelectGroupProps,any> {
     }
 
     render() {
-        let inputClassName = "cwgj-form-input-select";
+        let inputClassName = `${css_prefix}-form-input-select`;
         const {value, name, items,className} = this.props;
         let addClassName = className;
-        let Cls = classNames('cwgj-form-select-container', { [`${addClassName}`]: className });
+        let Cls = classNames(`${css_prefix}-form-select-container`, { [`${addClassName}`]: className });
         return (
             <div className={Cls}>
                 <select

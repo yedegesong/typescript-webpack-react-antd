@@ -110,13 +110,13 @@ const MenuData = {
           "description": "表单验证",
           "menuId": 17,
           "name": "表单验证",
-          "url": "formVerifier"
+          "url": "form_verifier"
         },
         {
           "description": "表单数据回填",
           "menuId": 17,
           "name": "表单数据回填",
-          "url": "formDataBackfill"
+          "url": "form_data_backfill"
         }
       ],
       "url": "#"

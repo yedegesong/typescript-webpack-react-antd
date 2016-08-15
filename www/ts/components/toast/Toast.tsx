@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 interface ToastProps {
     tips?:string;
     autoClose?:boolean;
@@ -24,9 +26,9 @@ document.body.appendChild(_toastHolder);
      */
     render() {
         return(
-            <div className="cwgj-loading-block">
-                <div className="cwgj-loading-cnt">
-                    <i className="cwgj-loading-bright"></i>
+            <div className={`${css_prefix}-loading-block`}>
+                <div className={`${css_prefix}-loading-cnt`}>
+                    <i className={`${css_prefix}-loading-bright`}></i>
                     <p>{this.props.tips}</p>
                 </div>
             </div>

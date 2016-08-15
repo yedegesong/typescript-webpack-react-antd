@@ -1,6 +1,8 @@
 import * as React from "react";
 import {connect} from 'react-redux';
 import Tool from '../../pub/Tool';
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 import {getMenuAction, saveParentActive, saveChildActive,changeActiveAction} from '../../redux/actions/MenuAction';
 const now_url = window.location.href.match(/(?:\w*)(?=.html)/);
 interface AppMenuProps {
@@ -65,16 +67,16 @@ class AppMenu extends React.Component<AppMenuProps, any>{
         let {MenuReducers, dispatch} = this.props;
         //判断是否存在子菜单
         let hasChild = item.subMunu.length > 0 ? true : false;
-        let parentActive = MenuReducers.active.parent == index ? "cwgj-menu-parent-item active" : "cwgj-menu-parent-item";
+        let parentActive = MenuReducers.active.parent == index ? `${css_prefix}-menu-parent-item active` : `${css_prefix}-menu-parent-item`;
         let ParentUrl = item.url;
         return (
             <li key={index} className={ parentActive } >
                 <h3 className = {hasChild ? 'on' : 'off'} data-href = {ParentUrl} onClick = {(event) => this.handleOrderTabClick(event, index, item.name, ParentUrl) }>{item.name}</h3>
                 { hasChild ? (
-                    <ul className="cwgj-menu-child">
+                    <ul className={`${css_prefix}-menu-child`}>
                         {item.subMunu.map((childItem,childIndex) => {
                             let ChildUrl =  childItem.url;
-                            let childActive = ChildUrl == now_url ? "cwgj-menu-child-item chd-active" : "cwgj-menu-child-item";
+                            let childActive = ChildUrl == now_url ? `${css_prefix}-menu-child-item chd-active` : `${css_prefix}-menu-child-item`;
                             return (<li key = {childIndex} className={childActive}>
                                 <a href={URL} onClick = {(event) => this.push(event, childIndex, childItem.name, ChildUrl) }>{childItem.name}</a>
                                     </li>
@@ -88,8 +90,8 @@ class AppMenu extends React.Component<AppMenuProps, any>{
     render(){
         let {MenuReducers, dispatch} = this.props;
         return (
-          <div className="cwgj-menu">
-              <ul className="cwgj-menu-parent" >
+          <div className={`${css_prefix}-menu`}>
+              <ul className={`${css_prefix}-menu-parent`}>
                   {MenuReducers.menuList.map(this.createItem)}
               </ul>
           </div>

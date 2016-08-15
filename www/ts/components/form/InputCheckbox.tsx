@@ -1,5 +1,8 @@
 import * as React from "react";
 import * as classNames from "classnames";
+
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 /**
  * 面板组件
  */
@@ -37,27 +40,17 @@ export default class InputCheckbox extends React.Component<InputCheckboxProps, a
             /**
              * 回调将状态和值返回
              */
-            this.props.onChange({
-                target: {
-                    checked
-                },
-                stopPropagation() {
-                    event.stopPropagation();
-                },
-                preventDefault() {
-                    event.preventDefault();
-                },
-            })
+            this.props.onChange(checked)
         };
     }
 
     render() {
         const {className,label} = this.props;
         let addClassName = className;
-        let Cls = classNames('cwgj-form-checkbox-container', { [`${addClassName}`]: className });
+        let Cls = classNames(`${css_prefix}-form-checkbox-container`, { [`${addClassName}`]: className });
         return (
             <div className = {Cls}>
-                <label className="cwgj-form-input-checkbox" for={this.props.id}>
+                <label className={`${css_prefix}-form-input-checkbox`} for={this.props.id}>
                     <input
                         {...this.props}
                         type="checkbox"

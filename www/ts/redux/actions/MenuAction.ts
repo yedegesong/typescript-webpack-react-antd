@@ -3,7 +3,6 @@ import Config from '../../pub/Config';
 import LocalStorage from '../../pub/LocalStorage';
 import menu from './menu';
 const now_url = window.location.href.match(/(?:\w*)(?=.html)/);
-console.log(now_url)
 /**
  * 菜单初始化获取值
  */
@@ -40,7 +39,6 @@ let switchMenu = (menuSwitch) => {
 }
 
 let OnchangeActive = (active) => {
-    console.log(active)
     return { type: CHANGE_ACTIVE, active };
 }
 
@@ -111,11 +109,10 @@ function getMenuAction(reddit?: any) {
         /**
          * 如果本地存在就取本地数据，否则获取服务器数据。
          */
-        if (_data) {
+        /*if (_data) {
             dispatch(OnGetMenu(_data));
             return false;
-        }
-        console.log(menu)
+        }*/
            LocalStorage.add('cw_menu', menu);
            dispatch(OnGetMenu(menu));
     }

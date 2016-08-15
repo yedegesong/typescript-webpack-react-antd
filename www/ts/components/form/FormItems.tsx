@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 interface FormItemsProps {
     label?: string;
     className?: string;
@@ -19,10 +21,10 @@ export default class FormItems extends React.Component<FormItemsProps,any> {
     render() {
         const {children, label, className,help,require,BtnFormItems} = this.props;
         let addClassName = className;
-        let contenCls = classNames('cwgj-form-items', { 'BtnFormItems':BtnFormItems,[`${addClassName}`]: className });
-        let Cls = classNames('cwgj-form-label');
+        let contenCls = classNames(`${css_prefix}-form-items`, { 'BtnFormItems':BtnFormItems,[`${addClassName}`]: className });
+        let Cls = classNames(`${css_prefix}-form-label`);
         let labelTel = label ? (<label className={Cls}><span>{require?<strong className="require">*</strong>:false}{label}</span></label>) : false;
-        let helpTips = help ? (<div className="cwgj-form-items-help">{help}</div>) : false;
+        let helpTips = help ? (<div className={`${css_prefix}-form-items-help`}>{help}</div>) : false;
         return (<div className={contenCls}>
                     {labelTel}
                     {children}

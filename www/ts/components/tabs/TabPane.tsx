@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as classNames from "classnames";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 interface TabPaneProps {
     tab?: string;
     key?: any;
@@ -20,7 +22,7 @@ export default class TabPane extends React.Component<any, any> {
      */
     render() {
         const {children, className} = this.props;
-        let Cls = classNames('cwgj-tabpane', {
+        let Cls = classNames(`${css_prefix}-tabpane`, {
             [`${className}`]: className
         });
         return (

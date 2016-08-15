@@ -1,4 +1,6 @@
 import * as React from "react";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 /**
  * 面板组件
  */
@@ -11,14 +13,14 @@ export default class Panel extends React.Component<any,any> {
     render(){
         const {children, className, title, component} = this.props;
         let ButtonComponent = component ? component : false;
-        const cls = className != undefined ? "cwgj-panel" + ` ${className}` : "cwgj-panel";
-        let HTML = title ? (<div className="cwgj-panel-header">
-                     <div className="cwgj-panel-title">{title}</div>
-                     <div className="cwgj-panel-component">{ButtonComponent}</div>
+        const cls = className != undefined ? `${css_prefix}-panel` + ` ${className}` : `${css_prefix}-panel`;
+        let HTML = title ? (<div className={`${css_prefix}-panel-header`}>
+                     <div className={`${css_prefix}-panel-title`}>{title}</div>
+                     <div className={`${css_prefix}-panel-component`}>{ButtonComponent}</div>
               </div>) : null;
               return ( <div className={cls} >
                   {HTML}
-                    <div className="cwgj-panel-content">
+                    <div className={`${css_prefix}-panel-content`}>
                         {children}
                     </div>
                 </div>);

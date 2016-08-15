@@ -1,5 +1,8 @@
 import * as React from "react";
 import * as classNames from "classnames";
+
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 /**
  * 面板组件
  */
@@ -35,10 +38,10 @@ export default class InputRadio extends React.Component<InputRadioProps, any> {
     render() {
         const {className, label} = this.props;
         let addClassName = className;
-        let Cls = classNames('cwgj-form-radio-container', { [`${addClassName}`]: className });
+        let Cls = classNames(`${css_prefix}-form-radio-container`, { [`${addClassName}`]: className });
         return (
             <div className = {Cls}>
-                <label className="cwgj-form-input-radio" for={this.props.id}>
+                <label className={`${css_prefix}-form-input-radio`} for={this.props.id}>
                     <input
                         {...this.props}
                         type="radio"

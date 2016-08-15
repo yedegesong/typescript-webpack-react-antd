@@ -9,12 +9,7 @@ var fileNames = fs.readdirSync(viewPath, function(err, files){
     return files;
 });
 
-/*var htmlConfig = {
-    title: '公用模块调试',
-    template: './view/login.ejs',
-    filename:'./pages/login.html',
-    chunks:['common','LoginContainer'],
-}*/
+
 function titleCase3(s) {
     return s.toLowerCase().split(/\s+/).map(function(item, index) {
         return item.slice(0, 1).toUpperCase() + item.slice(1);
@@ -22,11 +17,12 @@ function titleCase3(s) {
 }
 fileNames.forEach(function(v){
     var regtsx = /(?:\w*)(?=.ejs)/;
-    var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container'
-    console.log({
+    var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
+    console.log(chunksContainer)
+    /*console.log({
         template: './view/' + v,
         filename:'./pages/' + (v.match(regtsx)[0]) +'.html',
         chunks:['common',chunksContainer],
-    })
+    })*/
 
 })

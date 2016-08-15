@@ -13,7 +13,7 @@ function LoginAction(account?:string,password?:string) {
 	if(account == 'admin'&&password == '123456'){
 		let auth ={"AdvAccount_ID":35,"CityID":115,"LOGIN_ID":"admin","ROLE_ID":17,"USER_ID":154,"pass":true}
 		LocalStorage.add('cw_auth', auth);
-		Tool.goPush('Api');
+		Tool.goPush('api');
 		return false;
 	}
 	Tips({

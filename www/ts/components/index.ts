@@ -25,7 +25,8 @@ import Upload from './upload/Upload';
 import Tabs from './tabs/Tabs';
 import TabPane from './tabs/TabPane';
 import Dashboard from './dashboard/Dashboard';
-import Tabel from './tabel/Tabel';
+import Table from './tabel/Table';
+import TableList from './tabel/TableList';
 import Icon from './icon/Icon';
 import Pagination from './pagination/Pagination';
 export {
@@ -56,7 +57,8 @@ export {
     Tabs,
     TabPane,
     Dashboard,
-    Tabel,
+    Table,
     Icon,
-    Pagination
+    Pagination,
+    TableList
 }

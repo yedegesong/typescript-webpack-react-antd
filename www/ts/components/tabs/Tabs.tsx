@@ -1,6 +1,9 @@
 import * as React from "react";
-//console.log(React)
 import * as classNames from "classnames";
+
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
+
 export default class Tabs extends React.Component<any, any> {
 
     static defaultProps = {
@@ -41,11 +44,11 @@ export default class Tabs extends React.Component<any, any> {
     render() {
         const {children} = this.props;
         return (
-            <div className="cwgj-tabs">
-                <div className="cwgj-tabs-title">
+            <div className={`${css_prefix}-tabs`}>
+                <div className={`${css_prefix}-tabs-title`}>
                     {this.TabsTitle()}
                 </div>
-                <div className="cwgj-tabs-content">
+                <div className={`${css_prefix}-tabs-content`}>
                     {this.tabConten() }
                 </div>
             </div>)

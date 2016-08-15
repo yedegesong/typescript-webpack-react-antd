@@ -1,13 +1,16 @@
 import * as React from "react";
 import * as classNames from "classnames";
-import Radio from './InputRadio';
+
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 /**
  * 面板组件
  */
 interface RadioGroupProps {
     className?: string;
-    onChange?: any;
+    onChange?: Function;
     defaultChecked?: any;
+    value:string;
 }
 export default class RadioGroup extends React.Component<RadioGroupProps, any> {
     static defaultProps = {
@@ -25,14 +28,15 @@ export default class RadioGroup extends React.Component<RadioGroupProps, any> {
     }
 
     render() {
-        let {className, onChange} = this.props;
+        let {className,value, onChange} = this.props;
         const children = React.Children.map(this.props.children, (radio:any):any => {
             return React.cloneElement(radio, { 
-                onChange: onChange
+                    onChange: onChange,
+                    checked:radio.props.value == value ? true : false
                  })
         });
         let addClassName = className;
-        let Cls = classNames('cwgj-form-redio-group', { [`${addClassName}`]: className });
+        let Cls = classNames(`${css_prefix}-form-redio-group`, { [`${addClassName}`]: className });
         return (
             <div className = {Cls}>
                 {children}

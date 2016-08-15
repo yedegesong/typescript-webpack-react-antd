@@ -28,6 +28,9 @@ class IndexApp extends BaseContainer {
     SelectGroupDate:any[];
     constructor(props) {
         super(props);
+        this.state = {
+            value:'1'
+        }
         this.date = [{
             label: '北京',
             value: '1'
@@ -58,7 +61,9 @@ class IndexApp extends BaseContainer {
     }
 
     handleRadioChange(event){
-        console.log(event)
+        this.setState({
+            value:event.target.value
+        })
     }
 
     handleCheckboxChange(event){
@@ -75,10 +80,7 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
-
-        return (
-            <AppBody>
-                <Panel title="默认-垂直-表单面板" >
+/*<Panel title="默认-垂直-表单面板" >
                     <FormGroup>
                         <FormItems label="提示文本域" help = "请输入你要提示的文本域内容">
                             <InfoText>56.2元</InfoText>
@@ -119,7 +121,10 @@ class IndexApp extends BaseContainer {
                             <Buttons type = "success" display = "block" >注册</Buttons>
                         </FormItems>
                     </FormGroup>
-                </Panel>
+                </Panel>*/
+        return (
+            <AppBody>
+                
                 <Panel title="水平-表单面板" >
                     <FormGroup horizontal >
                         <FormItems label="提示文本域">
@@ -144,14 +149,14 @@ class IndexApp extends BaseContainer {
                             <InputSelect  items={this.date} disabled onChange={(event) => this.handleInputChange(event) } />
                         </FormItems>
                         <FormItems label="单选按钮">
-                            <RadioGroup>
-                                <InputRadio label="全部" name="delivery_channel" value="1" defaultChecked  onChange={(event) => this.handleRadioChange(event) }/>
-                                <InputRadio label="微信" name="delivery_channel" value="2" onChange={(event) => this.handleRadioChange(event) }/>
-                                <InputRadio label="APP"  name="delivery_channel" value="3"  onChange={(event) => this.handleRadioChange(event) }/>
+                            <RadioGroup value = {this.state.value} onChange={(event) => this.handleRadioChange(event) }>
+                                <InputRadio label="全部" name="delivery_channel" value="1" />
+                                <InputRadio label="微信" name="delivery_channel" value="2" />
+                                <InputRadio label="APP"  name="delivery_channel" value="3" />
                             </RadioGroup>
                         </FormItems>
                         <FormItems label="未选不可选单选按钮">
-                            <InputRadio label="全部" name="delivery_channel1" value="-1" disabled onChange={(event) => this.handleRadioChange(event) }/>
+                            <InputRadio label="全部" name="delivery_channel1" value="-1" disabled />
                         </FormItems>
                         <FormItems label="已选不可选单选按钮">
                             <InputRadio label="全部" name="delivery_channel2" value="-1" defaultChecked disabled onChange={(event) => this.handleRadioChange(event) }/>

@@ -1,15 +1,18 @@
 import * as React from "react";
 import * as classNames from "classnames";
-export default class Col extends React.Component<any,any> {
 
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
+
+export default class Col extends React.Component<any,any> {
     /**
      * 删格布局容器
      */
     render() {
         const {children,span,className} = this.props;
-        let typeCol = 'cwgj-col-';
+        let typeCol = `${css_prefix}-col-`;
         let addClassName = className;
-        let Cls = classNames('cwgj-col', {
+        let Cls = classNames(`${css_prefix}-col`, {
             [`${typeCol}${span}`]: true,
             [`${addClassName}`]: className
         });

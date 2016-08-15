@@ -2,6 +2,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import * as classNames from "classnames";
 import Mask from "../mask/Mask";
+import ComponentsConfig from "../ComponentsConfig";
+const css_prefix = ComponentsConfig.css_prefix;
 interface DialogProps {
     className?: string;
     show?: boolean;
@@ -34,7 +36,7 @@ class Dialog extends React.Component<DialogProps, any> {
     renderActions() {
         return this.props.actions.map((action, idx) => {
 
-            let className = classNames('chgj-btn_dialog', {
+            let className = classNames(`${css_prefix}-btn_dialog`, {
                 default: !action.primary,
                 primary: action.primary
             });
@@ -65,11 +67,11 @@ class Dialog extends React.Component<DialogProps, any> {
 
     render() {
         let className = classNames({
-            'cwgj-dialog_alert': this.props.type == 'alert',
-            'cwgj-dialog_confirm': this.props.type == 'confirm'
+            [`${css_prefix}-dialog_alert`]: this.props.type == 'alert',
+            [`${css_prefix}-dialog_confirm`]: this.props.type == 'confirm'
         });
 
-        let contentClassName = 'chgj-dialog';
+        let contentClassName = `${css_prefix}-dialog`;
         if (this.props.className) contentClassName += ` ${this.props.className}`;
 
         let Children = React.cloneElement(this.props.children);
@@ -77,12 +79,12 @@ class Dialog extends React.Component<DialogProps, any> {
         return (
             <div id={this.props.id} className={className}>
                 <div {...this.props} className={contentClassName}>
-                    <div className="chgj-dialog_hd">
-                        {this.props.title ? <strong className="chgj-dialog_title">{this.props.title}</strong> : null}
+                    <div className={`${css_prefix}-dialog_hd`}>
+                        {this.props.title ? <strong className={`${css_prefix}-dialog_title`}>{this.props.title}</strong> : null}
                         {this.props.header}
                     </div>
-                    <div className="chgj-dialog_bd">{this.props.children}</div>
-                    <div className="chgj-dialog_ft">
+                    <div className={`${css_prefix}-dialog_bd`}>{this.props.children}</div>
+                    <div className={`${css_prefix}-dialog_ft`}>
                         {this.renderActions() }
                     </div>
                 </div>
