@@ -36,7 +36,7 @@ tsd install
  
 ```
 
-## 预览目的
+## 本地预览目录
 
 ```
  http://127.0.0.1:9090/dist/pages/login.html
