@@ -36,6 +36,13 @@ tsd install
  
 ```
 
+## 预览目的
+
+```
+ http://127.0.0.1:9090/dist/pages/login.html
+ 
+```
+
 ### 在线预览地址 
 
 > 账号:admin 密码:123456
