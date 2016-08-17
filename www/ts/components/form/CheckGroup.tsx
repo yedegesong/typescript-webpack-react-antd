@@ -1,6 +1,6 @@
 import * as React from "react";
 import InputCheckbox from './InputCheckbox';
-import * as classNames from "classnames";
+import classNames from "classnames";
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
 /**

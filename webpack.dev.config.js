@@ -53,14 +53,7 @@ var config = {
         /**
          * 扩展的文件后缀名
          */
-        extensions: ['', '.js', '.jsx','.ts','.tsx'],
-        alias:{
-            'react':path.join(node_modules,'react/react.js'),
-            'react-dom':path.join(node_modules,'react-dom/dist/react-dom.js'),
-            'redux':path.join('redux/dist/redux.js'),
-            'react-redux':path.join(node_modules,'react-redux/dist/react-redux.js')
-        }
-        
+        extensions: ['', '.js', '.jsx','.ts','.tsx']
     },
     //输出文件配置
     output:      {
@@ -73,8 +66,8 @@ var config = {
         loaders: [
             {
                 test:    /\.(js|jsx|tsx|ts)?$/,
-                loaders:['ts-loader'],
-                //loaders: ['react-hot', 'babel','ts-loader'],
+                //loaders:['ts-loader'],
+                loaders: ['react-hot', 'babel','ts-loader'],
                 exclude: /node_modules/
             },
             {
@@ -117,21 +110,25 @@ var fileNames = fs.readdirSync(viewPath, function(err, files){
     if(err){console.log(err);return false;};
     return files;
 });
-
 /**
  * 动态插入多页模板
  */
 fileNames.forEach(function(v){
     var regtsx = /(?:\w*)(?=.ejs)/;
-    var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
-    console.log(chunksContainer)
-    var htmlConfig = {
+    /**
+        如果不已ejs 结尾的不处理
+    **/
+    if(v.match(regtsx)){
+        var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
+        var htmlConfig = {
         template: './view/' + v,
         filename:'./pages/' + (v.match(regtsx)[0]) +'.html',
         chunks:['common',chunksContainer],
+         }
+    
+        config.plugins.push(new HtmlWebpackPlugin(htmlConfig));
     }
     
-    config.plugins.push(new HtmlWebpackPlugin(htmlConfig));
 });
 
 /*var htmlConfig = {

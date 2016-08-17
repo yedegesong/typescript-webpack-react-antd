@@ -29,8 +29,8 @@
 	width:100%;
 }
 //特殊文本域
-.@{css-prefix}form-text-container{
-	.webkit-box;
+.@{css-prefix}form-item-container{
+	display: inline-block;
 }
 
 .@{css-prefix}form-text-container>.@{css-prefix}input-group-addon{
@@ -62,13 +62,15 @@
     border-radius: 4px 0 0 4px;
 }
 .@{css-prefix}form-items{
-	margin-bottom: .5rem;
+	
+	margin-bottom:20px;
 	position:relative;
 }
+
 .@{css-prefix}form-items .@{css-prefix}form-label{
-	display: block;
-	margin-bottom:5px;
+	display: inline-block;
 	font-size: 12px;
+	margin-top: 10px;
 }
 .@{css-prefix}form-items .@{css-prefix}form-items-help{
 	margin-top:10px;
@@ -77,48 +79,30 @@
 .@{css-prefix}form-group.horizontal .@{css-prefix}form-items{}
 
 .@{css-prefix}form-group.horizontal .@{css-prefix}form-label{ 
-	width: 3rem;
-	height: 33px;
-    line-height: 33px;
-	position: absolute;
-	text-align: center;
+	
 }
 .@{css-prefix}form-group.horizontal .@{css-prefix}form-label .require{
 	color:red;
 	vertical-align: -3px;
     margin-right: .1rem;
 }
-.@{css-prefix}form-group.horizontal .@{css-prefix}form-text-container,
-.@{css-prefix}form-group.horizontal .@{css-prefix}form-select-container,
-.@{css-prefix}form-group.horizontal .@{css-prefix}form-redio-group,
-.@{css-prefix}form-group.horizontal .@{css-prefix}form-checkbox-group,
-.@{css-prefix}form-group.horizontal>.@{css-prefix}form-items>.@{css-prefix}form-radio-container,
-.@{css-prefix}form-group.horizontal>.@{css-prefix}form-items>.@{css-prefix}form-checkbox-container,
-.@{css-prefix}form-group.horizontal .@{css-prefix}form-items-help,
-.@{css-prefix}form-group.horizontal .@{css-prefix}info-text
-{
-	padding-left: 3.5rem;
-}
+
 .@{css-prefix}form-group.horizontal .@{css-prefix}form-items-help{
 	color:#bbb;
 }
 
-.@{css-prefix}form-group.horizontal>.@{css-prefix}form-items.BtnFormItems{
-	text-align: center;
-	.box-pack;
-}
 //表单内联
 .@{css-prefix}form-group.inline{
-	.webkit-box;
-	.box-align();
+
 }
-.@{css-prefix}form-group.inline .@{css-prefix}form-label,
-.@{css-prefix}form-group.inline .@{css-prefix}form-text-container,
-.@{css-prefix}form-group.inline .@{css-prefix}form-items{
+.@{css-prefix}form-group.inline>.@{css-prefix}form-items{
+	display: inline-block;
 	margin-right:10px;
 }
-.@{css-prefix}form-group.inline .@{css-prefix}btn{
-	margin-bottom:0;
+
+.@{css-prefix}form-group.inline>.@{css-prefix}form-items>.@{css-prefix}form-label{
+	display: inline-block;
+	margin-right:10px;
 }
 //表单文本框
 .@{css-prefix}form-input[type='test'],

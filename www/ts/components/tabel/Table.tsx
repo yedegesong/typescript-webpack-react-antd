@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import * as classNames from "classnames";
+import classNames from "classnames";
 import Tool from '../../pub/Tool';
 import TableRow from './TableRow';
 import InputCheckbox from '../form/InputCheckbox';

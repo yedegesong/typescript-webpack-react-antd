@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as classNames from "classnames";
+import classNames from "classnames";
 import * as UploadFile from 'rc-upload';
 export default class Upload extends React.Component<any,any> {
 

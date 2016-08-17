@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as classNames from "classnames";
+import classNames from "classnames";
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
 /**
@@ -39,7 +39,7 @@ export default class InputText extends React.Component<any,any> {
         let inputClassName = `${css_prefix}-form-input`;
         const {value, name, addonAfter, addonBefore,className} = this.props;
         let addClassName = className;
-        let Cls = classNames(`${css_prefix}-form-text-container`, {
+        let Cls = classNames(`${css_prefix}-form-item-container`, {
             'addonBefore': addonAfter && addonBefore,
             'addonAfter': addonAfter || addonBefore,
             [`${addClassName}`]: className

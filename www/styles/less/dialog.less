@@ -1,4 +1,4 @@
-.chgj-dialog{
+.@{css-prefix}dialog{
     position: fixed;
     z-index:1000;
     width: 85%;
@@ -12,37 +12,37 @@
     border-radius: 3px;
 }
 @media screen and (min-width: 1024px){
-    .chgj-dialog{
+.@{css-prefix}-dialog{
         width: 35%;
     }
 }
-.chgj-dialog_hd {
+.@{css-prefix}dialog_hd {
     padding: 1.2em 0 .5em;
 }˙
-.chgj-dialog_title {
+.@{css-prefix}dialog_title {
     font-weight: 400;
     font-size: 17px;
 }
-.chgj-dialog_confirm .chgj-dialog .chgj-dialog_hd {
+.@{css-prefix}dialog_confirm .@{css-prefix}dialog .@{css-prefix}dialog_hd {
     text-align: left;
     padding: 1.2em 20px .5em;
 }
-.chgj-dialog_bd {
+.@{css-prefix}dialog_bd {
     padding: 0 20px;
     font-size: 15px;
     color: #888;
 }
-.chgj-dialog_confirm .chgj-dialog .chgj-dialog_bd {
+.@{css-prefix}dialog_confirm .@{css-prefix}dialog .@{css-prefix}dialog_bd {
     text-align: left;
 }
-.chgj-dialog_ft {
+.@{css-prefix}dialog_ft {
     position: relative;
     line-height: 42px;
     margin-top: 20px;
     font-size: 17px;
     display: -webkit-box;
 }
-.chgj-dialog_ft:after {
+.@{css-prefix}dialog_ft:after {
     content: " ";
     position: absolute;
     left: 0;
@@ -57,29 +57,31 @@
     -ms-transform: scaleY(.5);
     transform: scaleY(.5);
 }
-.chgj-dialog_ft a {
+.@{css-prefix}dialog_ft a {
     display: block;
     -webkit-box-flex: 1;
     color: #3cc51f;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.chgj-dialog_ft a, .chgj-dialog_ft a:active, .chgj-dialog_ft a:hover {
+.@{css-prefix}dialog_ft a,
+.@{css-prefix}dialog_ft a:active,
+.@{css-prefix}dialog_ft a:hover {
     text-decoration: none;
 }
 
-.chgj-btn_dialog.default {
+.@{css-prefix}btn_dialog.default {
     color: #353535;
 }
 
-.chgj-dialog_confirm .chgj-dialog_ft a {
+.@{css-prefix}dialog_confirm .@{css-prefix}dialog_ft a {
     position: relative;
 }
 
-.chgj-btn_dialog.primary {
+.@{css-prefix}btn_dialog.primary {
     color: #0bb20c;
 }
-.chgj-dialog_ft a.primary:after {
+.@{css-prefix}dialog_ft a.primary:after {
     content: " ";
     position: absolute;
     left: 0;
@@ -95,7 +97,7 @@
     transform: scaleX(.5);
     overlow:hidden;
 }
-.chgj-dialog_confirm .chgj-dialog_ft a:last-child {
+.@{css-prefix}dialog_confirm .@{css-prefix}dialog_ft a:last-child {
     float: none;
     width: auto;
     overflow: hidden;

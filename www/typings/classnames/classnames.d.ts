@@ -17,10 +17,10 @@ interface ClassNamesFn {
 
 //declare var classNames: ClassNamesFn;
 //TODA 因为不知道问题就修改了源码
-declare var classNames: any;
+declare var classNames: ClassNamesFn;
 
 declare module "classnames" {
-	export = classNames
+	export default classNames;
 }
 
 

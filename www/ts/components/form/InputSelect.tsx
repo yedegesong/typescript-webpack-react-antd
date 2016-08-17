@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as classNames from "classnames";
+import classNames from "classnames";
 
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
@@ -43,7 +43,7 @@ export default class InputSelect extends React.Component<InputSelectProps,any> {
         let inputClassName = `${css_prefix}-form-input-select`;
         const {value, name, items,className} = this.props;
         let addClassName = className;
-        let Cls = classNames(`${css_prefix}-form-select-container`, { [`${addClassName}`]: className });
+        let Cls = classNames(`${css_prefix}-form-item-container`, { [`${addClassName}`]: className });
         return (
             <div className={Cls}>
                 <select

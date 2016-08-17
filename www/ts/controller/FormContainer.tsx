@@ -80,51 +80,18 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
-/*<Panel title="默认-垂直-表单面板" >
-                    <FormGroup>
-                        <FormItems label="提示文本域" help = "请输入你要提示的文本域内容">
-                            <InfoText>56.2元</InfoText>
-                        </FormItems>
-                        <FormItems label="普通文本域" help = "请输入你要提示的文本域内容">
-                            <InputText type="test" />
-                        </FormItems>
-                        <FormItems label="投放位置">
-                            <RadioGroup>
-                                <InputRadio label="全部" defaultChecked name="delivery_channel" value="1" onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
-                                <InputRadio label="微信" name="delivery_channel" value="2" onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
-                                <InputRadio label="APP"  name="delivery_channel" value="3"  onChange={(event) => this.valueChange('delivery_channel', event.target.value) }/>
-                            </RadioGroup>
-                        </FormItems>
-                        <FormItems label="密码文本域">
-                            <InputText type="password" />
-                        </FormItems>
-                        <FormItems label="普通下拉选择框">
-                            <InputSelect  items={this.date} defaultValue = "福州" onChange={(event) => this.handleInputChange(event) } />
-                        </FormItems>
-                        <FormItems label="复选框">
-                            <InputCheckbox label="选择" name="circle" value="1" onChange={(event) => this.handleCheckboxChange(event) }/>
-                        </FormItems>
-                        <FormItems label="复选框组">
-                            <CheckGroup  options={[{ label: '短信通知', value: '1' }, { label: '邮件通知', value: '2' }]} defaultValue={['1']} onChange={(checkedValues) => this.handleCheckGroupChange(checkedValues) }/>
-                        </FormItems>
-                        <FormItems label="复选框组-锁">
-                            <CheckGroup  options={[{ label: '短信通知', value: '1' }, { label: '邮件通知', value: '2' }]}  disabled defaultValue={['1']} onChange={(checkedValues) => this.handleCheckGroupChange(checkedValues) }/>
-                        </FormItems>
-                        <FormItems label="不可选择复选框">
-                            <InputCheckbox label="选择" name="circle" value="1" disabled onChange={(option) => this.handleCheckboxChange(option) }/>
-                        </FormItems>
-                        <FormItems label="选择不可选择复选框">
-                            <InputCheckbox label="选择" name="circle" value="1" checked disabled onChange={(option) => this.handleCheckboxChange(option) }/>
-                        </FormItems>
-                        <FormItems >
-                            <Buttons type = "primary" display = "block" >登录</Buttons>
-                            <Buttons type = "success" display = "block" >注册</Buttons>
-                        </FormItems>
-                    </FormGroup>
-                </Panel>*/
         return (
             <AppBody>
-                
+             <Panel title="行内-表单面板" >
+                    <FormGroup inline>
+                        <FormItems label="账户 : ">
+                            <InputText type="test" placeholder="请输入账号"/>
+                        </FormItems>
+                        <FormItems >
+                            <InputText type="test" placeholder="请输入账号"/>
+                        </FormItems>
+                    </FormGroup>
+                </Panel>
                 <Panel title="水平-表单面板" >
                     <FormGroup horizontal >
                         <FormItems label="提示文本域">
@@ -176,28 +143,15 @@ class IndexApp extends BaseContainer {
                         <FormItems label="选择不可选择复选框">
                             <InputCheckbox label="选择" name="circle" value="1" checked disabled onChange={(event) => this.handleCheckboxChange(event) }/>
                         </FormItems>
-                        <FormItems BtnFormItems>
-                            <Buttons type = "primary"  >登录</Buttons>
-                            <Buttons type = "success">注册</Buttons>
+                        <FormItems label=" ">
+                            <InfoText>
+                                <Buttons type = "primary">登录</Buttons>
+                                <Buttons type = "success">注册</Buttons>
+                            </InfoText>
                         </FormItems>
                     </FormGroup>
                 </Panel>
-                <Panel title="行内-表单面板" >
-                    <FormGroup inline >
-                        <FormItems>
-                            <InputText type="test" placeholder="请输入账号"/>
-                        </FormItems>
-                        <FormItems>
-                            <InputText type="password" placeholder="请输入密码"/>
-                        </FormItems>
-                        <FormItems >
-                            <InputCheckbox label="记住密码" name="circle" value="1" onChange={(event) => this.handleCheckboxChange(event) }/>
-                        </FormItems>
-                        <FormItems >
-                            <Buttons type = "primary">登录</Buttons>
-                        </FormItems>
-                    </FormGroup>
-                </Panel>
+               
                 <Panel title="特殊文本域" >
                     <FormGroup horizontal >
                         <FormItems label="用户名">
