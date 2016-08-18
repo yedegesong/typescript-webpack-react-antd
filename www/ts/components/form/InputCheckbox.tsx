@@ -19,7 +19,7 @@ interface InputCheckboxProps {
     label?:string;
     ref?:any;
 }
-export default class InputCheckbox extends React.Component<InputCheckboxProps, any> {
+export default class InputCheckbox extends React.Component<any, any> {
 
     static defaultProps = {
         className : '',

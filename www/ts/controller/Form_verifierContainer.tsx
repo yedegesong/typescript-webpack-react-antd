@@ -153,7 +153,7 @@ class IndexApp extends BaseContainer {
                             <InputText type="password" placeholder="请输入您的密码" onChange={(event) => this.valueChange('password_repeat', event.target.value) }/>
                         </FormItems>
                         <FormItems label="城市">
-                            <InputSelect  items={this.date}  onChange={(event) => this.valueChange('city', event.target.value) } />
+                            <InputSelect  data={this.date}  onChange={(event) => this.valueChange('city', event.target.value) } />
                         </FormItems>
                         <FormItems label="投放位置">
                             <RadioGroup onChange={(event) => this.valueChange('delivery_channel', event.target.value) }>

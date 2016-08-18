@@ -13,7 +13,7 @@ interface FormItemsProps {
     wrapperCol?:string;
     isInline?:boolean;
 }
-export default class FormItems extends React.Component<FormItemsProps,any> {
+export default class FormItems extends React.Component<any,any> {
     
     static defaultProps = {
         labelCol:'20',

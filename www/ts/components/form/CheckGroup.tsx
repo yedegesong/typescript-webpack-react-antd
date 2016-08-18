@@ -17,7 +17,7 @@ interface CheckGroupProps {
     labelOptions?: any;
     value?: any;
 }
-export default class CheckGroup extends React.Component<CheckGroupProps, any> {
+export default class CheckGroup extends React.Component<any, any> {
     checkedValue: any;
     static defaultProps = {
         options: [],

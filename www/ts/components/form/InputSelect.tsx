@@ -8,15 +8,15 @@ const css_prefix = ComponentsConfig.css_prefix;
  */
 interface InputSelectProps {
     value?: string;
-    className?: string;
+    className?: any;
     onChange?: Function;
     defaultChecked?:any;
     defaultValue?:any;
     name?: string;
-    items?: any[];
+    data?: any[];
     disabled?: any;
 }
-export default class InputSelect extends React.Component<InputSelectProps,any> {
+export default class InputSelect extends React.Component<any,any> {
 
     constructor(props) {
         super(props);
@@ -33,7 +33,7 @@ export default class InputSelect extends React.Component<InputSelectProps,any> {
     }
 
     renderItems() {
-        return this.props.items.map((item, i) => {
+        return this.props.data.map((item, i) => {
           
             return (<option value={item.value} key={i}>{item.label}</option>);
         });
@@ -41,9 +41,10 @@ export default class InputSelect extends React.Component<InputSelectProps,any> {
 
     render() {
         let inputClassName = `${css_prefix}-form-input-select`;
-        const {value, name, items,className} = this.props;
+        let {value, name, data,className} = this.props;
         let addClassName = className;
-        let Cls = classNames(`${css_prefix}-form-item-container`, { [`${addClassName}`]: className });
+        let Cls = classNames(`${css_prefix}-form-item-container`,
+         { [`${addClassName}`]: className });
         return (
             <div className={Cls}>
                 <select
@@ -53,7 +54,7 @@ export default class InputSelect extends React.Component<InputSelectProps,any> {
                     className={inputClassName}
                     onChange={this.handleChange}>
                     <option value="-1">请选择</option> 
-                    {items && items.length >= 1 ? this.renderItems() : false}
+                    {data && data.length >= 1 ? this.renderItems() : false}
                 </select>
             </div>
         );

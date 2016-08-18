@@ -12,7 +12,7 @@ interface RadioGroupProps {
     defaultChecked?: any;
     value:string;
 }
-export default class RadioGroup extends React.Component<RadioGroupProps, any> {
+export default class RadioGroup extends React.Component<any, any> {
     static defaultProps = {
         disabled: false,
         onChange() {

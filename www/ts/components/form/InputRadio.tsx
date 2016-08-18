@@ -17,7 +17,7 @@ interface InputRadioProps {
     id?: string;
     label?: string;
 }
-export default class InputRadio extends React.Component<InputRadioProps, any> {
+export default class InputRadio extends React.Component<any, any> {
 
     static defaultProps = {
         className: '',

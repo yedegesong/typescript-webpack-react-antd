@@ -107,13 +107,13 @@ class IndexApp extends BaseContainer {
                             <InputText type="password" placeholder="请输入你要提示的文本域内容"/>
                         </FormItems>
                         <FormItems label="普通下拉选择框">
-                            <InputSelect  items={this.date} onChange={(event) => this.handleInputChange(event) } />
+                            <InputSelect  data={this.date} onChange={(event) => this.handleInputChange(event) } />
                         </FormItems>
                         <FormItems label="下拉选择组">
-                            <SelectGroup  items={this.SelectGroupDate} onChange={(event) => this.handleInputChange(event) } />
+                            <SelectGroup  data={this.SelectGroupDate} onChange={(event) => this.handleInputChange(event) } />
                         </FormItems>
                         <FormItems label="禁用普通下拉选择框">
-                            <InputSelect  items={this.date} disabled onChange={(event) => this.handleInputChange(event) } />
+                            <InputSelect  data={this.date} disabled onChange={(event) => this.handleInputChange(event) } />
                         </FormItems>
                         <FormItems label="单选按钮">
                             <RadioGroup value = {this.state.value} onChange={(event) => this.handleRadioChange(event) }>

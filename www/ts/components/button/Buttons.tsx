@@ -11,7 +11,7 @@ interface ButtonsProps {
     style?: any;
     disabled?: any;
 }
-export default class Buttons extends React.Component<ButtonsProps,any> {
+export default class Buttons extends React.Component<any,any> {
 
     static defaultProps = {
         type:'default'
