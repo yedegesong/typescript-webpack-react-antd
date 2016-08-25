@@ -23,19 +23,19 @@
 
 .WdateDiv .NavImgll a{
 	float:left;
-	background:transparent url(img.gif) no-repeat scroll 0 0;
+	background:transparent url(/www/lib/My97DatePicker/skin/default/img.gif) no-repeat scroll 0 0;
 }
 .WdateDiv .NavImgl a{
 	float:left;
-	background:transparent url(img.gif) no-repeat scroll -16px 0;
+	background:transparent url(/www/lib/My97DatePicker/skin/default/img.gif) no-repeat scroll -16px 0;
 }
 .WdateDiv .NavImgr a{
 	float:right;
-	background:transparent url(img.gif) no-repeat scroll -32px 0;
+	background:transparent url(/www/lib/My97DatePicker/skin/default/img.gif) no-repeat scroll -32px 0;
 }
 .WdateDiv .NavImgrr a{
 	float:right;
-	background:transparent url(img.gif) no-repeat scroll -48px 0;
+	background:transparent url(/www/lib/My97DatePicker/skin/default/img.gif) no-repeat scroll -48px 0;
 }
 
 .WdateDiv #dpTitle{
@@ -215,21 +215,21 @@
 	height:10px;
 	width:13px;
 	border:0px;
-	background:url(img.gif) no-repeat -32px -16px;
+	background:url(/www/lib/My97DatePicker/skin/default/img.gif) no-repeat -32px -16px;
 }
 
 .WdateDiv #dpTime #dpTimeDown{
 	height:10px;
 	width:13px;
 	border:0px;
-    background:url(img.gif) no-repeat -48px -16px;
+    background:url(/www/lib/My97DatePicker/skin/default/img.gif) no-repeat -48px -16px;
 }
 
  .WdateDiv #dpQS {
  	float:left;
 	margin-right:3px;
 	margin-top:3px;
-	background:url(img.gif) no-repeat 0px -16px;
+	background:url(/www/lib/My97DatePicker/skin/default/img.gif) no-repeat 0px -16px;
 	width:20px;
 	height:20px;
 	cursor:pointer;

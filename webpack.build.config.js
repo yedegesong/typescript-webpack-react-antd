@@ -1,7 +1,5 @@
 'use strict';
-/**
- * webpack 构建配置
- */
+
 /**
  * Created by x on 11/23/15.
  */
@@ -14,19 +12,18 @@ var fs = require('fs');
  */
 var webpack           = require('webpack');
 var filepath = require('./www/filepath');
-//提取公用CSS
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 //html模板插件
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-//var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
-var SplitByPathPlugin = require('webpack-split-by-path');
+//提取公用CSS
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var node_modules = path.resolve(__dirname, 'node_modules');
 var pathToSrc  = path.resolve(__dirname, 'src');
-var pathToBuild  = path.resolve(__dirname, 'www/pages');
-//页面主控制目录
-var controllerSrc = path.resolve(__dirname, 'www','ts','controller');
+var pathToBuild  = path.resolve(__dirname, 'www');
 //模板位置
 var viewPath = path.resolve(__dirname, 'view');
+//页面主控制目录
+var controllerSrc = path.resolve(__dirname, 'www','ts','controller');
+var componentsSrc = path.resolve(__dirname, 'www','ts','components');
 var _entry = function(options){
     var entry = {};
     for (var name in options) {
@@ -36,7 +33,7 @@ var _entry = function(options){
 }
 /**
  * 将字符串首字母大写
- * @param s
+ * @param 
  * @returns {string}
  */
 function titleCase3(s) {
@@ -46,16 +43,16 @@ function titleCase3(s) {
 }
 var config = {
     pathToBuild: pathToBuild,
-    //未压缩的
-    //devtool: "source-map",
-    //不输出
     devtool: "false",
-    /*--压缩过的--*/
-    //devtool:"cheap-source-map",
-    //devtool:"eval-source-map",
-    //入口文件配置
+    /*入口文件配置 编译的文件加文件路径
+    {name:value}
+    */
     entry:_entry(filepath),
     resolve:     {
+        root:componentsSrc,
+        /**
+         * 扩展的文件后缀名
+         */
         extensions: ['', '.js', '.jsx','.ts','.tsx']
     },
     //输出文件配置
@@ -69,30 +66,34 @@ var config = {
         loaders: [
             {
                 test:    /\.(js|jsx|tsx|ts)?$/,
-                //loaders: ['react-hot', 'babel','ts-loader'],
-                loaders: ['ts-loader'],
+                //loaders:['ts-loader'],
+                loaders: ['react-hot', 'babel','ts-loader'],
                 exclude: /node_modules/
             },
             {
-                test:   /\.css$/,
-                //构建的CSS
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-                
+                test: /\.less$/,
+                loader: "style!css!less"
             }
+            /*{
+                test:   /\.css$/,
+                loader: 'style!css'
+            }*/
         ],
     },
     preLoaders: [
         // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
         { test: /\.js$/, loader: "source-map-loader" }
     ],
+    /*externals:{
+        'react' :'React'
+    },*/
     plugins:     [
-        new webpack.DefinePlugin({
+         new webpack.DefinePlugin({
                 'process.env': {
                     NODE_ENV: JSON.stringify('production')
                 }
             }),
-        new ExtractTextPlugin("app.css"),
-         new webpack.optimize.UglifyJsPlugin({
+            new webpack.optimize.UglifyJsPlugin({
                 output: {
                     comments: false
                 },
@@ -100,14 +101,20 @@ var config = {
                     warnings: false
                 }
             }),
-        //commonsPlugin
         new webpack.optimize.CommonsChunkPlugin({
             name: "common",
             filename:"common.js"
-            
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
+       /* new HtmlWebpackPlugin({
+            title: '公用模块调试',
+            template: './view/login.ejs',
+            filename:'login.html',
+            chunks:['common','LoginContainer'],
+        })*/
     ]
 };
+
 /**
  *  读取模板文件
  * @type {string[]}
@@ -116,20 +123,34 @@ var fileNames = fs.readdirSync(viewPath, function(err, files){
     if(err){console.log(err);return false;};
     return files;
 });
-
 /**
  * 动态插入多页模板
  */
 fileNames.forEach(function(v){
     var regtsx = /(?:\w*)(?=.ejs)/;
-    var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
-    var htmlConfig = {
+    /**
+        如果不已ejs 结尾的不处理
+    **/
+    if(v.match(regtsx)){
+        var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
+        var htmlConfig = {
         template: './view/' + v,
         filename:'./pages/' + (v.match(regtsx)[0]) +'.html',
         chunks:['common',chunksContainer],
+         }
+    
+        config.plugins.push(new HtmlWebpackPlugin(htmlConfig));
     }
-
-    config.plugins.push(new HtmlWebpackPlugin(htmlConfig));
+    
 });
+
+/*var htmlConfig = {
+    title: '公用模块调试',
+    template: './view/login.ejs',
+    filename:'./pages/login.html',
+    chunks:['common','LoginContainer'],
+}
+
+config.plugins.push(new HtmlWebpackPlugin(htmlConfig));*/
 
 module.exports = config;

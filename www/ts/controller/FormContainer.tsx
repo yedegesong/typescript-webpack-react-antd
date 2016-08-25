@@ -155,7 +155,7 @@ class IndexApp extends BaseContainer {
                 <Panel title="特殊文本域" >
                     <FormGroup horizontal >
                         <FormItems label="用户名">
-                            <InputText type="test" addonAfter="美元"/>
+                            <InputText type="test" addonBefore="美元"/>
                         </FormItems>
                     </FormGroup>
                     <FormGroup horizontal >

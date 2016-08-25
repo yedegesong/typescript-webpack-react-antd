@@ -46,13 +46,15 @@ export default class InputText extends React.Component<any,any> {
         });
         return (
             <div className={Cls}>
-                {addonBefore ? < div className={`${css_prefix}-input-group-addon`}>{addonBefore}</div> : false}
+                <div className="input-group">
+                {addonBefore ? < div className={`input-group-addon`}>{addonBefore}</div> : false}
                 <input
                     {...this.props}
                     value={this.state.value}
                     className={inputClassName}
                     onChange={this.handleChange}/>
-                {addonAfter ? < div className={`${css_prefix}-input-group-addon`}>{addonAfter}</div> : false}
+                {addonAfter ? < div className={`input-group-addon`}>{addonAfter}</div> : false}
+                </div>
             </div>
         );
     }
