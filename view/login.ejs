@@ -11,8 +11,9 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="mobile-web-app-title" content="react组件">
     <meta name="apple-mobile-web-app-title" content="react组件">
-    <link rel="stylesheet" href="/styles/iconfont.css" />
-    <link rel="stylesheet" href="/styles/app.css" />
+    <%for (var css in htmlWebpackPlugin.options.addLinkCss) {%>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.options.addLinkCss[css] %>">
+    <%}%>
     <link rel="stylesheet" href="/styles/login.css" />
 </head>
 <body>

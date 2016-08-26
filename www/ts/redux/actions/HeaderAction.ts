@@ -35,7 +35,7 @@ function loginOutAction(){
     let buyConfirm = (modal) => {
         LocalStorage.remove('cw_auth');
         LocalStorage.remove('cw_menu');
-        Tool.goPush('Login');
+        Tool.goPush('login');
         modal.close();
     }
 

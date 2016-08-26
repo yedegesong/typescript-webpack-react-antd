@@ -121,9 +121,11 @@ fileNames.forEach(function(v){
     if(v.match(regtsx)){
         var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
         var htmlConfig = {
-        template: './view/' + v,
-        filename:'./pages/' + (v.match(regtsx)[0]) +'.html',
-        chunks:['common',chunksContainer],
+            title: 'My App',
+            addLinkCss:['/styles/iconfont.css','/styles/app.css'],
+            template: './view/' + v,
+            filename:'./pages/' + (v.match(regtsx)[0]) +'.html',
+            chunks:['common',chunksContainer],
          }
     
         config.plugins.push(new HtmlWebpackPlugin(htmlConfig));
