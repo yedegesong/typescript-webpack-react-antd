@@ -94,8 +94,8 @@ class Dialog extends React.Component<DialogProps, any> {
 }
 
 
-let show = (content?: any, actions?: any, callback?: any, title?: string) => {
-    init(content, actions, callback, title);
+let show = (content?: any, actions?: any, title?: string,callback?: any ) => {
+    init(content, actions,title,callback);
 };
 
 let dailog = (content?: any, actions?: any, callback?: any, title?: string) => {
@@ -112,12 +112,12 @@ let onClose = (div) => {
     div.parentNode && div.parentNode.removeChild(div);
 };
 
-let init = (content?: any, actions?: any, callback?: Function, title?: string) => {
+let init = (content?: any, actions?: any, title?: string,callback?: Function) => {
     let dialogHolder = document.createElement('div');
     document.body.appendChild(dialogHolder);
     let dailog = {};
 
-    ReactDOM.render(<Dialog type="confirm" show={true} onClose={() => onClose(dialogHolder) }
+    ReactDOM.render(<Dialog type="confirm" title = {title} show={true} onClose={() => onClose(dialogHolder) }
         actions={actions}>{content}</Dialog>, dialogHolder, function() {
             dailog = this;
             callback && callback(dailog);

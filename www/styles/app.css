@@ -1481,7 +1481,7 @@ fieldset[disabled] .ui-btn {
 .ui-dialog {
   position: fixed;
   z-index: 1000;
-  width: 85%;
+  width: 45%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -1496,16 +1496,13 @@ fieldset[disabled] .ui-btn {
     width: 35%;
   }
 }
-.ui-dialog_hd {
-  padding: 1.2em 0 .5em;
-}
-˙ .ui-dialog_title {
+.ui-dialog_title {
   font-weight: 400;
   font-size: 17px;
 }
 .ui-dialog_confirm .ui-dialog .ui-dialog_hd {
-  text-align: left;
-  padding: 1.2em 20px .5em;
+  text-align: center;
+  margin-bottom: 25px;
 }
 .ui-dialog_bd {
   padding: 0 20px;
@@ -1631,8 +1628,8 @@ fieldset[disabled] .ui-btn {
   transition: all 0.1s ease;
 }
 .ui-dash-color-a {
-  background-color: #2980b9 !important;
   color: #fff !important;
+  background: url("../images/white.png") repeat-x bottom #2980b9 !important;
 }
 .ui-dash-color-b {
   background-color: #16a085 !important;

@@ -7,7 +7,42 @@ import {
     Echarts,
     Buttons,
     Row,
-    Col, Table, Icon} from '../../components/index';
+    Col,
+     Table,
+      Icon,
+      Dialog,
+    FormGroup,
+FormItems,
+InputText} from '../../components/index';
+
+class ChangeTable extends React.Component<any, any>{
+     constructor(props) {
+         super(props);
+         
+     }
+
+     handleInputChange(name,value){
+
+     }
+        render(){
+            let data = this.props.data.record;
+            return <FormGroup horizontal >
+                    <FormItems label="姓名">
+                        <InputText type="test" value={data.name} 
+                        onChange={(event) => this.handleInputChange('name',event.target.value) }/>
+                    </FormItems>
+                    <FormItems label="年龄">
+                        <InputText type="test" value = {data.age} 
+                        onChange={(event) => this.handleInputChange('age',event.target.value) }/>
+                    </FormItems>
+                    <FormItems label="住址">
+                        <InputText type="test" value = {data.address} 
+                        onChange={(event) => this.handleInputChange('address',event.target.value) }/>
+                    </FormItems>
+                    </FormGroup>
+        }
+}
+
 export default class TableOne extends React.Component<any, any> {
     constructor(props) {
         super(props);
@@ -31,7 +66,13 @@ export default class TableOne extends React.Component<any, any> {
                     key: 'operation',
                     render: (text, record) => (
                         <span>
-                            <Buttons type = "danger" size="small" onClick={() => { this.handDelete(text, record) } }><Icon type ="delete"/> 删除</Buttons>
+                            <Buttons type = "primary" size="small" 
+                            onClick={() => { this.handChange( record) } }>
+                                <Icon type ="edit"/> 修改
+                            </Buttons>
+                            <Buttons type = "danger" size="small" onClick={() => { this.handDelete(text, record) } }>
+                                <Icon type ="delete"/> 删除
+                            </Buttons>
                         </span>
                     ),
                 }],
@@ -65,6 +106,27 @@ export default class TableOne extends React.Component<any, any> {
             data: this.state.data
         })
     }
+/**
+ * 修改
+ */
+    handChange(record){
+        let data = {
+            record
+        }
+        let buyConfirm = (modal) => {
+            modal.close();
+        };
+        let buyConfirm1 = (modal) => {
+            modal.close();
+        };
+        let actions = [
+            { label: '取消', onClick: buyConfirm1 },
+            { label: '确定', onClick: buyConfirm, primary: true }
+        ];
+
+        Dialog.show(<div><ChangeTable data = {data}/></div>, actions,'修改资料');
+    }
+
     render() {
         return (
             <Table columns={this.state.columns} dataSource={this.state.data} />
