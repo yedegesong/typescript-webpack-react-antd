@@ -82,6 +82,7 @@ class IndexApp extends BaseContainer {
     render() {
         return (
             <AppBody>
+            
              <Panel title="行内-表单面板" >
                     <FormGroup inline>
                         <FormItems label="账户 : ">

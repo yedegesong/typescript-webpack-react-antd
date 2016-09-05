@@ -6,13 +6,13 @@ import { Provider, connect} from 'react-redux';
 import {
     AppBody,
     Panel,
-    Buttons,Icon} from '../components/index';
+    Buttons,Icon,FormGroup,FormItems,InputText,Calendar} from '../components/index';
 import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
 const store = BaseStore({  });
-declare let WdatePicker;
+//declare let WdatePicker;
 //数据流向
 class IndexApp extends BaseContainer {
     constructor(props) {
@@ -20,20 +20,38 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
+        // <FormItems label="账户 : " className="ui-canlend">
+        //                      <input type="text" placeholder="请选择结束时间" defaultValue = '' ref={function(input) {
+        //               if (input != null) {
+        //                 input.addEventListener('click',(event)=>{
+        //                    WdatePicker({el:input,minDate:'%y-%M',
+        //                    onpicked:(dp)=>{
+        //                         console.log(dp.cal.getDateStr())
+        //                     }
+        //                    })
+        //                 });
+        //               }
+        //             }} />
+        //                 </FormItems>
         return (
             <AppBody>
-                <Panel title="日历-基于M97">
-                    <input className="canlend" placeholder="请选择结束时间" defaultValue = '' ref={function(input) {
-                      if (input != null) {
-                        input.addEventListener('click',(event)=>{
-                           WdatePicker({el:input,minDate:'%y-%M',
-                           onpicked:(dp)=>{
-                                console.log(dp.cal.getDateStr())
-                            }
-                           })
-                        });
-                      }
-                    }} />
+            <Panel title="行内-日历" >
+                    <FormGroup inline>
+                        <FormItems label="开始时间">
+                            <Calendar placeholder = '请输入开始时间' config = {{
+                                onpicked:(dp)=>{
+                                        console.log(dp.cal.getDateStr())
+                                    }
+                           }}/>
+                        </FormItems>
+                         <FormItems label="结束时间">
+                            <Calendar placeholder = '请输入结束时间' config = {{
+                                onpicked:(dp)=>{
+                                        console.log(dp.cal.getDateStr())
+                                    }
+                           }}/>
+                        </FormItems>
+                    </FormGroup>
                 </Panel>
             </AppBody>
         );

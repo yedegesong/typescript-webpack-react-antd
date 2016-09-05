@@ -29,6 +29,7 @@ import Table from './tabel/Table';
 import TableList from './tabel/TableList';
 import Icon from './icon/Icon';
 import Pagination from './pagination/Pagination';
+import Calendar from './calendar/Calendar';
 export {
     AppHeader,
     AppMenu,
@@ -60,5 +61,6 @@ export {
     Table,
     Icon,
     Pagination,
-    TableList
+    TableList,
+    Calendar
 }

@@ -519,7 +519,8 @@ body {
   margin-right: 10px;
 }
 .ui-form-input,
-.ui-form-input-select {
+.ui-form-input-select,
+.ui-calendar {
   position: relative;
   display: block;
   width: 100%;
@@ -539,6 +540,9 @@ body {
   /* Safari 和 Chrome */
   -o-transition: all 0.15s;
   transition: all 0.15s;
+}
+.ui-calendar-container {
+  display: inline-block;
 }
 .ui-form-textarea textarea {
   vertical-align: baseline;

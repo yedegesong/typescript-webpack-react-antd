@@ -121,8 +121,10 @@ fileNames.forEach(function(v){
     if(v.match(regtsx)){
         var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
         var htmlConfig = {
-            title: 'My App',
             addLinkCss:['/styles/iconfont.css','/styles/app.css'],
+            addmommonScript:['/common/application.config.js',
+            '/lib/My97DatePicker/WdatePicker.js',
+            '/lib/echarts.common.min.js'],
             template: './view/' + v,
             filename:'./pages/' + (v.match(regtsx)[0]) +'.html',
             chunks:['common',chunksContainer],

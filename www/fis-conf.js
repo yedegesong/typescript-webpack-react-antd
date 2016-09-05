@@ -8,11 +8,7 @@ fis.set('project.ignore', [
 
 fis.media('pro').match('/dist/*.js', {
     release: '/ERP/$0'
-})
-.media('pro').match('/lib/*.js', {
-    release: '/ERP/$0'
-})
-.match('/styles/*', {
+}).match('/lib/*.js', {
     release: '/ERP/$0'
 }).match('/dist/pages/*.html', {
     release: '/ERP/$0'

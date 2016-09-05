@@ -27,9 +27,8 @@ export default class FormItems extends React.Component<any,any> {
     toChild(){
         let {children, label, className,help,isInline,require,wrapperCol,labelCol} = this.props;
         let Cls = isInline ? '' : `${css_prefix}-col-${wrapperCol}`;
-        return React.Children.map(this.props.children, (c: any,index:any) => {
-            
-            return React.cloneElement(c, { className: Cls})
+        return React.Children.map(children, (c: any,index:any) => {
+            return React.cloneElement(c, { className: `${Cls}`})
         });
     }
     /**
