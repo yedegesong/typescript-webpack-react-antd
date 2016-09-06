@@ -22,9 +22,12 @@ class IndexApp extends BaseContainer {
     render() {
         
         return (
+            <AppBody>
             <Panel title="手风琴" >
                    demo,demo
              </Panel>
+            </AppBody>
+            
         );
     }
 

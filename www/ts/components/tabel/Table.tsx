@@ -113,8 +113,7 @@ export default class Table extends React.Component<any, any> {
             this.checkedValue.splice(optionIndex, 1);
             if(this.checkedValue.length == 0){
                 this.setState({
-                    allChecked:false,
-                    radioChecked:this.props.rowRadio.value
+                    allChecked:false
                 })
             }
         }
