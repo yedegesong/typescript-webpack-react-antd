@@ -24,6 +24,8 @@ import Col from './grid/Col';
 import Upload from './upload/Upload';
 import Tabs from './tabs/Tabs';
 import TabPane from './tabs/TabPane';
+import Folding from './tabs/Folding';
+import FoldingPane from './tabs/FoldingPane';
 import Dashboard from './dashboard/Dashboard';
 import Table from './tabel/Table';
 import TableList from './tabel/TableList';
@@ -62,5 +64,7 @@ export {
     Icon,
     Pagination,
     TableList,
-    Calendar
+    Calendar,
+    Folding,
+    FoldingPane
 }

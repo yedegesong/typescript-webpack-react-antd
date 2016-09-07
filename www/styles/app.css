@@ -1093,8 +1093,8 @@ body {
 }
 .ui-btn-primary {
   color: #fff;
-  background-color: #2db7f5;
-  border-color: #10adf4;
+  background-color: #2096f3;
+  border-color: #0c87e8;
 }
 .ui-btn-primary:not([disabled]):hover,
 .ui-btn-primary:focus {
@@ -1332,23 +1332,11 @@ fieldset[disabled] .ui-btn {
   min-height: .01%;
   overflow-x: auto;
 }
-.ui-text-muted {
-  color: #bbb;
-}
 .ui-text-primary {
-  color: #2db7f5;
+  color: #2096f3;
 }
 .ui-text-info {
-  color: #57c7d4;
-}
-.ui-text-success {
-  color: #69caa0;
-}
-.ui-text-danger {
-  color: #F96868;
-}
-.ui-text-warning {
-  color: #f2a654;
+  color: #bbb;
 }
 .ui-poptips {
   width: 100%;

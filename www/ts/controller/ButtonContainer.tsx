@@ -27,6 +27,7 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
+        console.log('a')
         return (
             <AppBody>
                 <Panel title="按钮面板">

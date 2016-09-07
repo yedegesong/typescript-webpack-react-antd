@@ -43,7 +43,7 @@ function titleCase3(s) {
 }
 var config = {
     pathToBuild: pathToBuild,
-    devtool: "cheap-source-map",
+    devtool: "source-map",
     /*入口文件配置 编译的文件加文件路径
     {name:value}
     */
@@ -128,6 +128,7 @@ fileNames.forEach(function(v){
             template: './view/' + v,
             filename:'./pages/' + (v.match(regtsx)[0]) +'.html',
             chunks:['common',chunksContainer],
+            hash:true
          }
     
         config.plugins.push(new HtmlWebpackPlugin(htmlConfig));

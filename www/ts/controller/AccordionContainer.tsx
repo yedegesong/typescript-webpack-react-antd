@@ -6,12 +6,14 @@ import { Provider, connect} from 'react-redux';
 import {
     AppBody,
     Panel,
-    Buttons,Icon,FormGroup,FormItems,InputText,Calendar} from '../components/index';
+    Buttons,Icon,FormGroup,FormItems,InputText,Calendar,Folding,FoldingPane} from '../components/index';
 import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
-const store = BaseStore({  });
+
+import {AccordionReducer} from '../redux/AccordionReducer';
+const store = BaseStore({AccordionReducer});
 //declare let WdatePicker;
 //数据流向
 class IndexApp extends BaseContainer {
@@ -20,20 +22,30 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
-        
+                        // <AccPanel tab="选项卡一" key="1">选项卡一内容</AccPanel>
+                        // <AccPanel tab="选项卡二" key="2">选项卡二内容</AccPanel>
+                        // <AccPanel tab="选项卡三" key="3">选项卡三内容</AccPanel>
         return (
             <AppBody>
-            <Panel title="手风琴" >
-                   demo,demo
-             </Panel>
+                <Panel title="手风琴面板">
+                  <Folding>
+                        <FoldingPane title = "面板一">
+                            <div>11</div>
+                            <div>22</div>
+                        </FoldingPane>
+                        <FoldingPane title = "面板二">
+                            <div>33</div>
+                            <div>44</div>
+                        </FoldingPane>
+                  </Folding>
+                </Panel>
             </AppBody>
-            
         );
     }
 
     componentDidMount():void {
         let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction())
+        //dispatch(changeActiveAction())
     }
     
     componentWillUnmount():void {

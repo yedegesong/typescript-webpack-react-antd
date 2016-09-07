@@ -23,6 +23,8 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
+        console.log('a');
+        console.log(this.props)
         return (
             <AppBody>
                 <Panel  title="卡片">
@@ -55,6 +57,7 @@ class IndexApp extends BaseContainer {
 
     componentDidMount():void {
         let {MenuReducers, dispatch} = this.props;
+        
         dispatch(changeActiveAction())
     }
 

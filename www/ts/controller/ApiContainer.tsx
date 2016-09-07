@@ -30,21 +30,17 @@ class IndexApp extends BaseContainer {
                     <Col span="50" >
                         <Panel  title="面板-字体辅助" >
                             <div>
-                                <div className="cwgj-text-muted">在鼠标经过时颜色可以加深，就像默认的链接一样</div>
-                                <div className="cwgj-text-primary">在鼠标经过时颜色可以加深，就像默认的链接一样</div>
-                                <div className="cwgj-text-info">在鼠标经过时颜色可以加深，就像默认的链接一样</div>
-                                <div className="cwgj-text-success">在鼠标经过时颜色可以加深，就像默认的链接一样</div>
-                                <div className="cwgj-text-danger">在鼠标经过时颜色可以加深，就像默认的链接一样</div>
-                                <div className="cwgj-text-warning">在鼠标经过时颜色可以加深，就像默认的链接一样</div>
+                                <div className="ui-text-primary">主色调</div>
+                                <div className="ui-text-info">次色调</div>
                             </div>
                         </Panel>
                     </Col>
                 <Col span="50">
                     <Panel  title="面板-字体位置">
                         <div>
-                            <div className="cwgj-text-left">我是文字位置左</div>
-                            <div className="cwgj-text-center">我是文字位置中</div>
-                            <div className="cwgj-text-right">我是文字位置右</div>
+                            <div className="ui-text-left">我是文字位置左</div>
+                            <div className="ui-text-center">我是文字位置中</div>
+                            <div className="ui-text-right">我是文字位置右</div>
                         </div>
                     </Panel>
                 </Col>

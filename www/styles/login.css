@@ -11,20 +11,19 @@
     width: 100%;
     height: 100%;
 }
-.login-view{
-
-}
 .login-header h1{
-	color:#2db7f5;
-	font-size:.8rem;
+	color:#fff;
+	font-size:32px;
 	text-align: center;
 
 }
 
 .login-content{
-	max-width:300px;
-	margin:0 auto;
-	padding: .8rem 0;
+	max-width: 300px;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+    z-index: 999;
 }
 
 .login-center{
@@ -33,4 +32,12 @@
     border: 1px solid #d5d5d5;
     border-radius: 4px;
     margin: .48rem 0;
+}
+.login-bg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:50%;
+    background-color:#2096f3;
 }
