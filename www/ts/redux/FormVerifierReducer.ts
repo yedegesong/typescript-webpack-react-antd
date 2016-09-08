@@ -1,5 +1,4 @@
 import Tool from '../pub/Tool';
-import BaseApi from '../pub/BaseApi';
 /**
  * 菜单父键和值,二级菜单键和值,菜单切换状态,菜单数据
  * @type {{parentActive: {parentkey: number, parentvalue: string}, childActive: {childkey: number, childvalue: string}, menuSwitch: boolean, menuList: Array}}
@@ -13,15 +12,11 @@ let Ontext = (data) => {
 
 export let GetDataAction = () => {
 	return (dispatch, getState) => {
-		BaseApi.backfill().then(function(data){
-			dispatch(Ontext(data.data));
-		})
+		
     }
 }
 export let ChangeDataAction = (data) => {
-	return (dispatch, getState) => {
-		dispatch(Ontext(data));
-    }
+	
 }
 
 const HeaderState =

@@ -16,7 +16,9 @@ import {
     RadioGroup,
     Buttons,
     InfoText,
-    SelectGroup} from '../components/index';
+    SelectGroup,
+    Textarea,
+} from '../components/index';
 import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
@@ -97,6 +99,13 @@ class IndexApp extends BaseContainer {
                     <FormGroup horizontal >
                         <FormItems label="提示文本域">
                             <InfoText>56.2元</InfoText>
+                        </FormItems>
+                        <FormItems label="多行文本域">
+                            <InfoText>
+                                <Textarea>
+                                    文本域，文本域，文本域
+                                </Textarea>
+                            </InfoText>
                         </FormItems>
                         <FormItems label="用户名">
                             <InputText type="test" />

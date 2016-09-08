@@ -1,0 +1,42 @@
+.@{css-prefix}folding{
+    background-color: #f7f7f7;
+}
+
+.@{css-prefix}folding .folding-item{
+}
+
+.item-content{
+	background-color:#fff;
+	padding:15px;
+}
+.folding-item .item-header{
+	height: 38px;
+    line-height: 38px;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+}
+
+.folding-item>.item-header>.item-icion{
+	display:inline-block;
+	 width: 0;
+    height: 0;
+    margin-left:10px;
+    margin-right:10px;
+    border-top: 5px solid transparent;
+    border-left: 5px solid #666;
+    border-bottom: 5px solid transparent;
+}
+.folding-item>.item-content{
+	display: none;
+}
+
+.folding-item.folding-item-on>.item-content{
+	display: block;
+}
+
+
+.folding-item.folding-item-on>.item-header>.item-icion{
+	-webkit-transform: rotate(90deg);
+}
+

@@ -13,6 +13,7 @@ import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
 
 import {AccordionReducer} from '../redux/AccordionReducer';
+console.log(ReactDOM)
 const store = BaseStore({AccordionReducer});
 //declare let WdatePicker;
 //数据流向
@@ -29,11 +30,21 @@ class IndexApp extends BaseContainer {
             <AppBody>
                 <Panel title="手风琴面板">
                   <Folding>
-                        <FoldingPane title = "面板一">
+                        <FoldingPane header = "面板一" key ={'0'}>
+                            <div>11</div>
+                            <div>22</div>
+                            <Folding>
+                        <FoldingPane header = "面板一" key ={'0'}>
                             <div>11</div>
                             <div>22</div>
                         </FoldingPane>
-                        <FoldingPane title = "面板二">
+                        <FoldingPane header = "面板二" key = {'1'}>
+                            <div>33</div>
+                            <div>44</div>
+                        </FoldingPane>
+                  </Folding>
+                        </FoldingPane>
+                        <FoldingPane header = "面板二" key = {'1'}>
                             <div>33</div>
                             <div>44</div>
                         </FoldingPane>

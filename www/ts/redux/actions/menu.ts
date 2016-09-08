@@ -36,6 +36,27 @@ const MenuData = {
       "url": "accordion"
     },
     {
+      "description": "面包屑",
+      "menuId": 21,
+      "name": "面包屑",
+      "subMunu": [],
+      "url": "crumbs"
+    },
+    {
+      "description": "图标",
+      "menuId": 21,
+      "name": "图标",
+      "subMunu": [],
+      "url": "icion"
+    },
+    {
+      "description": "基于百度富文本",
+      "menuId": 21,
+      "name": "基于百度富文本",
+      "subMunu": [],
+      "url": "ueditor"
+    },
+    {
       "description": "日历",
       "menuId": 21,
       "name": "日历",

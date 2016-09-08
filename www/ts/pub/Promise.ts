@@ -1,7 +1,7 @@
 //import * as $ from 'jquery';
 import * as superagent from "superagent";
 import * as request from "superagent-bluebird-promise";
-import ApiConfig from './ApiConfig';
+import Config from './Config';
 import Toast from '../components/toast/Toast';
 /*--服务类AJAX-Promise--*/
 class Promise {
@@ -13,7 +13,7 @@ class Promise {
 
         Toast.open({ tips: '数据加载中...' });
 
-        let Url = url.indexOf('http') === 0? url : ApiConfig.ApiBaseUrl + url;
+        let Url = url.indexOf('http') === 0? url : Config.ApiBaseUrl + url;
       
         return request[type](Url).query(param).promise().then((res) => {
             if (res && res.text) {

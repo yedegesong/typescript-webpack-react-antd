@@ -16,14 +16,7 @@ export default class FoldingPane extends React.Component<any, any> {
         }
     }
 
-    createContent(){
-        return React.Children.map(this.props.children, (c: any,index:any) => {
-            return <div className = 'folding-item' >
-                        <div className = 'folding-header'>我是头部</div>
-                        <div className = 'folding-content'>我是身体</div>
-                   </div>
-        });
-    }
+    
     /**
      * body 主容器 包括头部和菜单
      */
@@ -34,7 +27,7 @@ export default class FoldingPane extends React.Component<any, any> {
         });
         return (
             <div className={Cls}>
-                   {this.createContent()}
+                   {children}
                 </div>)
     }
 
