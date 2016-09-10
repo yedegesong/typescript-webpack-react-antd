@@ -47,7 +47,7 @@ tsd install
 
 > 账号:admin 密码:123456
 
-http://yedegesong.github.io/ERP/pages/Login.html
+http://yedegesong.github.io/ERP/html/login.html
 
 ### 在线使用文档
 
