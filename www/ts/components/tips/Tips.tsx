@@ -9,9 +9,8 @@ interface TipsProps {
     showTime?:number;
     message?:string;
     type?:number;
+    onClose:Function;
 }
-const _messageHolder = document.createElement('div');
-document.body.appendChild(_messageHolder);
 
  class Tips extends React.Component<TipsProps,any> {
 
@@ -42,18 +41,16 @@ document.body.appendChild(_messageHolder);
             this.setState({timeout: setTimeout(()=>{
                 this.setState({ show: false});
                 if(this.props.onFinish) this.props.onFinish(this);
-                setTimeout(() => {
-                    ReactDOM.unmountComponentAtNode(_messageHolder);
-                }, 500);
+                this.props.onClose();
             },this.state.timeout)})
         }
     }
-
+   
     componentWillUnmount(){
         clearTimeout(this.state.showTime);
         clearTimeout(this.state.timeout);
     }
-
+   
     /**
      * body 主容器 包括头部和菜单
      */
@@ -76,9 +73,19 @@ document.body.appendChild(_messageHolder);
 
 }
 
+let  onClose = (messageHolder)=>{
+    setTimeout(() => {
+        ReactDOM.unmountComponentAtNode(messageHolder);
+        messageHolder.parentNode && messageHolder.parentNode.removeChild(messageHolder);
+                }, 500);        
+}
+
 export default function (config?:any):any {
+
+let _messageHolder = document.createElement('div');
+    document.body.appendChild(_messageHolder);
     ReactDOM.render(
-        <Tips {...config} />,
+        <Tips {...config} onClose={() => onClose(_messageHolder)}/>,
         _messageHolder
     );
 }
