@@ -84,11 +84,10 @@ class IndexApp extends BaseContainer {
     render() {
         return (
             <AppBody>
-            
              <Panel title="行内-表单面板" >
                     <FormGroup inline>
                         <FormItems label="账户 : ">
-                            <InputText type="test" placeholder="请输入账号"/>
+                            <InputText type="test" placeholder="请输入账号" id="user_name"/>
                         </FormItems>
                         <FormItems >
                             <InputText type="test" placeholder="请输入账号"/>
@@ -100,10 +99,10 @@ class IndexApp extends BaseContainer {
                         <FormItems label="提示文本域">
                             <InfoText>56.2元</InfoText>
                         </FormItems>
-                        <FormItems label="多行文本域">
+                        <FormItems label="多行文本域" >
                             <InfoText>
-                                <Textarea>
-                                    文本域，文本域，文本域
+                                <Textarea defaultValue ="文本域，文本域，文本域11">
+                                    
                                 </Textarea>
                             </InfoText>
                         </FormItems>
@@ -180,7 +179,7 @@ class IndexApp extends BaseContainer {
 
     componentDidMount():void {
         let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction())
+        dispatch(changeActiveAction());
     }
     
     componentWillUnmount():void {

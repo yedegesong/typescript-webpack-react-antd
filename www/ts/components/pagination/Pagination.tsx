@@ -22,8 +22,9 @@ export default class Pagination extends React.Component<any,any> {
 	pages: number;
 	static defaultProps = {
         defaultCurrent: 1,
-        total:500,
-        defaultPageSize:10
+        total:50,
+        defaultPageSize:10,
+		pageSizeOptions:[10,20,30,40]
     }
 
     constructor(props){
@@ -52,8 +53,6 @@ export default class Pagination extends React.Component<any,any> {
 		if (this.props.onChange) {
             this.props.onChange(page);
         }
-
-       
     }
 
     handlePrevClick(event, pages) {
@@ -184,31 +183,53 @@ export default class Pagination extends React.Component<any,any> {
 	}
 
 	showQuickJumper(){
-		return <div>
+		return <div className="pagination-text-input">
 			跳至
-			<input type="text" value={this.state._current} onKeyDown={this.handleKeyDown} onKeyUp={this.handleKeyUp} onChange={this.handleKeyUp} />
+			<input type="text" value={this.state._current} className="pagination-text" onKeyDown={this.handleKeyDown} onKeyUp={this.handleKeyUp} onChange={this.handleKeyUp} />
 			<button onClick= {this.handleGo.bind(this) }>Go</button>
 		</div>
 	}
 
+	showSizeChanger(){
+		return (<div className="pagination-select-input">
+				<select
+						{...this.props}
+						name={name}
+						className="pagination-select"
+						onChange={this.handleChange.bind(this)}>
+						<option value="10">10 条/页</option>
+						<option value="20">20 条/页</option>
+						<option value="30">30 条/页</option> 
+                	</select>
+			</div>)
+	}
+
+	handleChange(value){
+		this.setState({
+			defaultPageSize:value.target.value,
+			defaultCurrent:1
+		})
+	}
+
     render() {
-		let allPages = Math.ceil(this.props.total / this.props.defaultPageSize);
+		let allPages = Math.ceil(this.state.total / this.state.defaultPageSize);
         return (<div className={`${css_prefix}-pagination`}>
 					<ul className="pagination-list ui-clearfix">
 						<li 
 						className = {this.state.defaultCurrent < 2 ? 'off' : ''}
 						onClick={(event) => this.handlePrevClick(event, allPages) }>
-							<Icon type="left"/>
+							<Icon type="layer-copy"/>
 						</li>
 						{this.createItem(allPages) }
 						<li 
 					className = {this.state.defaultCurrent == allPages ? 'off' : ''}
 					onClick={(event) => this.handleNextClick(allPages) }>
-							<Icon type="right"/>
+							<Icon type="layer"/>
 						</li>
-						{this.props.showQuickJumper ? this.showQuickJumper() : false}
         			</ul>
+					{this.props.showSizeChanger ? this.showSizeChanger() : false}
+					{this.props.showQuickJumper ? this.showQuickJumper() : false}
         		</div>);
     }
-
+	
 }

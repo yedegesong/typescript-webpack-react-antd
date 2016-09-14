@@ -590,7 +590,7 @@ body {
 .ui-form-select-container:after {
   position: absolute;
   right: 10px;
-  top: 4px;
+  top: 8px;
   width: 20px;
   height: 20px;
   font-size: 12px;
@@ -604,11 +604,6 @@ body {
   content: "\e604";
   color: #767676;
   font-size: 14px;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transform: rotate(-90deg);
 }
 .ui-form-input:not([disabled]):hover,
 .ui-form-input-select:not([disabled]):hover,
@@ -1092,14 +1087,14 @@ body {
 }
 .ui-btn-primary {
   color: #fff;
-  background-color: #2096f3;
-  border-color: #0c87e8;
+  background-color: #2196f3;
+  border-color: #0d87e9;
 }
 .ui-btn-primary:not([disabled]):hover,
 .ui-btn-primary:focus {
   color: #fff;
-  background-color: #1caaea;
-  border-color: #1498d4;
+  background-color: #1e85d9;
+  border-color: #1a75be;
 }
 .ui-btn-primary:active,
 .ui-btn-primary.active {
@@ -1109,8 +1104,8 @@ body {
 }
 .ui-btn-success {
   color: #fff;
-  background-color: #5cb85c;
-  border-color: #4aab4a;
+  background-color: #00c249;
+  border-color: #00a33d;
 }
 .ui-btn-success:not([disabled]):hover,
 .ui-btn-success:focus {
@@ -1126,14 +1121,14 @@ body {
 }
 .ui-btn-danger {
   color: #fff;
-  background-color: #d9534f;
-  border-color: #d43a36;
+  background-color: #f44336;
+  border-color: #f22819;
 }
 .ui-btn-danger:not([disabled]):hover,
 .ui-btn-danger:focus {
   color: #fff;
-  background-color: #c9302c;
-  border-color: #b02a27;
+  background-color: #db3c30;
+  border-color: #c92f23;
 }
 .ui-btn-danger:active,
 .ui-btn-danger.active {
@@ -1160,14 +1155,14 @@ body {
 }
 .ui-btn-warning {
   color: #fff;
-  background-color: #f0ad4e;
-  border-color: #eea032;
+  background-color: #ff5722;
+  border-color: #ff4003;
 }
 .ui-btn-warning:not([disabled]):hover,
 .ui-btn-warning:focus {
   color: #fff;
-  background-color: #ec971f;
-  border-color: #da8712;
+  background-color: #e64c1e;
+  border-color: #ce4117;
 }
 .ui-btn-warning:active,
 .ui-btn-warning.active {
@@ -1179,6 +1174,9 @@ body {
   border-color: transparent;
   background-color: transparent;
   color: #2db7f5;
+}
+.ui-btn-link:hover {
+  background-color: #f7f7f7;
 }
 .ui-btn-lg {
   padding: 5px 15px;
@@ -1337,80 +1335,54 @@ fieldset[disabled] .ui-btn {
 .ui-text-info {
   color: #bbb;
 }
+.ui-text-error {
+  color: #f44336;
+}
+.ui-text-wring {
+  color: #ff5722;
+}
+.ui-text-succe {
+  color: #00c249;
+}
 .ui-poptips {
   width: 100%;
   position: fixed;
   display: -webkit-box;
   display: -moz-box;
-  top: 10px;
-  left: 0;
   z-index: 9999;
   -moz-box-pack: center;
   -webkit-box-pack: center;
   box-pack: center;
-  transform: translateY(-50px);
-  -webkit-transform: translateY(-50px);
   -moz-transition: all 500ms;
   /* Firefox 4 */
   -webkit-transition: all 500ms;
   /* Safari 和 Chrome */
   -o-transition: all 500ms;
   transition: all 500ms;
+  opacity: 0;
+  top: 50%;
+  text-align: center;
 }
 .ui-poptips.show {
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-}
-.ui-poptips.show {
-  transform: translateY(0px);
-  -webkit-transform: translateY(0px);
+  opacity: 1;
 }
 .ui-poptips-cnt {
-  padding: 8px 20px 8px 25px;
+  padding: 40px;
   font-size: 14px;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin-left: 20px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
   position: relative;
+  display: inline-block;
 }
 .ui-poptips-cnt > p {
-  margin-left: 10px;
-  color: #6a6c6f;
-}
-.ui-poptips-cnt:after {
-  font-size: 12px;
-  color: #686868;
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
-  content: '\e637';
-  position: absolute;
-  top: 7px;
-  left: 10px;
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  color: #2db7f5;
-}
-.ui-poptips-success .ui-poptips-cnt:after {
-  content: '\e62f';
-  color: #4ab754;
-}
-.ui-poptips-info .ui-poptips-cnt:after {
-  content: '\e631';
-  color: #e01929;
-}
-.ui-poptips-warn .ui-poptips-cnt:after {
-  content: '\e637';
-  color: #ff7e04;
+  color: #fff;
 }
 .ui-loading-block {
   position: fixed;
@@ -1634,6 +1606,47 @@ fieldset[disabled] .ui-btn {
   background-color: #27ae60 !important;
   color: #fff !important;
 }
+.ui-pagination > ul,
+.ui-pagination > .pagination-text-input,
+.ui-pagination > .pagination-select-input {
+  position: relative;
+  display: inline-block;
+}
+.ui-pagination > .pagination-select-input {
+  margin-right: 10px;
+}
+.ui-pagination > .pagination-select-input:after {
+  position: absolute;
+  right: 1px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  color: #686868;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e604";
+  color: #767676;
+  font-size: 14px;
+}
+.pagination-select {
+  position: relative;
+  width: 100%;
+  height: 29px;
+  padding: 0 20px 0 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-appearance: none;
+}
 .ui-pagination > ul li {
   cursor: pointer;
   border-radius: 6px;
@@ -1646,7 +1659,7 @@ fieldset[disabled] .ui-btn {
   line-height: 28px;
   text-align: center;
   list-style: none;
-  float: left;
+  display: inline-block;
   border: 1px solid #d9d9d9;
   background-color: #fff;
   margin-right: 8px;
@@ -1678,6 +1691,26 @@ fieldset[disabled] .ui-btn {
 .ui-pagination > ul li.page-next,
 .ui-pagination > ul li.page-prev {
   border: 0 none;
+}
+.pagination-text-input {
+  padding-top: 5px;
+}
+.pagination-text {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 28px;
+  cursor: text;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #666;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  padding: 1px 7px;
+  height: 22px;
+  border-radius: 4px;
+  width: 44px;
 }
 .ui-folding {
   background-color: #f7f7f7;

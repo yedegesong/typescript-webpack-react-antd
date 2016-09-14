@@ -33,17 +33,17 @@ class IndexApp extends BaseContainer {
                 <Row>
                     <Col span="50">
                         <Panel title="分页面板-简单分页">
-                            <Pagination onChange = {this.onChange} total={50}/>
+                            <Pagination onChange = {this.onChange} total={70}/>
                         </Panel>
                     </Col>
                     <Col span="50">
                         <Panel title="分页面板2-更多分页">
-                            <Pagination onChange = {this.onChange}/>
+                            <Pagination onChange = {this.onChange} total={500}/>
                         </Panel>
                     </Col>
                     <Col span="50">
                         <Panel title="分页面板2-带输入的分页">
-                            <Pagination showQuickJumper onChange = {this.onChange}/>
+                            <Pagination showQuickJumper showSizeChanger onChange = {this.onChange}/>
                         </Panel>
                     </Col>
                     </Row>

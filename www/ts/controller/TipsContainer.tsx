@@ -19,9 +19,9 @@ class IndexApp extends BaseContainer {
         super(props);
     }
 
-    handleButton(type?:number){
+    handleButton(tips,type?:number){
         Tips({
-            message:'我是提醒信息',
+            message:tips,
             type:type
         });
     }
@@ -31,10 +31,10 @@ class IndexApp extends BaseContainer {
         return (
             <AppBody>
                 <Panel title="全局提示-按钮面板">
-                    <Buttons onClick = {() => this.handleButton() } >显示普通</Buttons>
-                    <Buttons onClick = {() => this.handleButton(1) } >成功</Buttons>
-                    <Buttons onClick = {() => this.handleButton(2) } >报错</Buttons>
-                    <Buttons onClick = {() => this.handleButton(3) } >警告</Buttons>
+                    <Buttons onClick = {() => this.handleButton('我是普通显示') } >显示普通</Buttons>
+                    <Buttons onClick = {() => this.handleButton('我是成功显示',1) } >成功</Buttons>
+                    <Buttons onClick = {() => this.handleButton('我是报错显示',2) } >报错</Buttons>
+                    <Buttons onClick = {() => this.handleButton('我是警告',3) } >警告</Buttons>
                 </Panel>
             </AppBody>
         );

@@ -4,6 +4,7 @@
 declare var Upload: any;
 
 declare module "rc-upload" {
-	export = Upload
+	export default Upload
+	//export = Upload
 }
 

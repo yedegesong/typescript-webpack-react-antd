@@ -30,8 +30,12 @@ class IndexApp extends BaseContainer {
                     <Col span="50" >
                         <Panel  title="面板-字体辅助" >
                             <div>
+                                <div>默认色</div>
                                 <div className="ui-text-primary">主色调</div>
                                 <div className="ui-text-info">次色调</div>
+                                <div className="ui-text-succe">删除色</div>
+                                <div className="ui-text-error">删除色</div>
+                                <div className="ui-text-wring">警告色</div>
                             </div>
                         </Panel>
                     </Col>

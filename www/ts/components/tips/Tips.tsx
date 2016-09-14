@@ -56,10 +56,7 @@ interface TipsProps {
      */
     render() {
         let className = classNames(`${css_prefix}-poptips`, {
-            'show': this.state.show,
-            [`${css_prefix}-poptips-success`]: this.state.type == 1,
-            [`${css_prefix}-poptips-info`]: this.state.type == 2,
-            [`${css_prefix}-poptips-warn`]: this.state.type == 3
+            'show': this.state.show
         });
 
         return (
@@ -73,6 +70,9 @@ interface TipsProps {
 
 }
 
+/**
+ * 关掉弹出提示框
+ */
 let  onClose = (messageHolder)=>{
     setTimeout(() => {
         ReactDOM.unmountComponentAtNode(messageHolder);
