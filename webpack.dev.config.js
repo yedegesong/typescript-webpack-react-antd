@@ -103,9 +103,11 @@ var config = {
     },
     //输出文件配置
     output:      {
+        //path: path.resolve(__dirname, 'www/dist'),
         path: path.resolve(__dirname,app_config.pathToBuild,app_config.output),
         chunkFilename: '[name].js',
         filename:   '[name].js',
+        //publicPath:'/dist/'
         publicPath: '/' + app_config.output + '/'
     },
     module:      {
@@ -165,14 +167,14 @@ var config = {
  *  读取模板文件
  * @type {string[]}
  */
-var fileNames = fs.readdirSync(viewPath, function(err, files){
+var fileNames2 = fs.readdirSync(viewPath, function(err, files){
     if(err){console.log(err);return false;};
     return files;
 });
 /**
  * 动态插入多页模板
  */
-fileNames.forEach(function(v){
+fileNames2.forEach(function(v){
     var regtsx = /(?:\w*)(?=.ejs)/;
     /**
         如果不已ejs 结尾的不处理
@@ -183,8 +185,10 @@ fileNames.forEach(function(v){
             addLinkCss:app_config.addLinkCss,
             addmommonScript:app_config.addmommonScript,
             template: viewPath +'/'+ v,
-            //输出html的文件名，依赖于输出环境目录下
-            filename:path.resolve(__dirname,app_config.pathToBuild,app_config.htmlFileName) + '/' + (v.match(regtsx)[0]) +'.html',
+            //template: './www/view/'+ v,
+            //输出html的文件名，依赖于输出环境目录下输出的目录为 output 下的输出目录
+            filename:'./'+app_config.htmlFileName+'/' + (v.match(regtsx)[0]) +'.html',
+            //filename:path.resolve(__dirname,app_config.pathToBuild,app_config.htmlFileName) + '/' + (v.match(regtsx)[0]) +'.html',
             chunks:['common',chunksContainer],
             hash:true
          }

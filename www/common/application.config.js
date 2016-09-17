@@ -12,7 +12,7 @@
                  配置URL 切换
                  **/
                 BaseUrl:basePath (),
-                TelBaseUrl: basePath () + '/dist/pages/',
+                TelBaseUrl: basePath () + '/pages/',
                 ApiBaseUrl:  basePath () + 'act',
                 version:'1.1.0',
                 appType:102,
