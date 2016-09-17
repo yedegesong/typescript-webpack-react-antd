@@ -134,6 +134,19 @@ var config = {
         'react' :'React'
     },*/
     plugins:     [
+        /*new webpack.DefinePlugin({
+                'process.env': {
+                    NODE_ENV: JSON.stringify('production')
+                }
+            }),
+            new webpack.optimize.UglifyJsPlugin({
+                output: {
+                    comments: false
+                },
+                compress: {
+                    warnings: false
+                }
+            }),*/
         new webpack.optimize.CommonsChunkPlugin({
             name: "common",
             filename:"common.js"
