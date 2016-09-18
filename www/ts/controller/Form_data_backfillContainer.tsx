@@ -169,10 +169,10 @@ class IndexApp extends BaseContainer {
                             <InputSelect  data={this.date}  value= {this.submitDate.city} onChange={(event) => this.valueChange('city',event.target.value) } />
                         </FormItems>
                         <FormItems label="投放位置">
-                            <RadioGroup onChange={(event) => this.valueChannelChange('delivery_channel', event.target.value) }>
-                                <InputRadio label="全部"  checked = {this.submitDate.delivery_channel == '1' ? true : false} name="delivery_channel" value="1" />
-                                <InputRadio label="微信" checked = {this.submitDate.delivery_channel == '2' ? true : false} name="delivery_channel" value="2"  />
-                                <InputRadio label="APP"  checked = {this.submitDate.delivery_channel == '3' ? true : false} name="delivery_channel" value="3" />
+                            <RadioGroup onChange={(event) => this.valueChannelChange('delivery_channel', event.target.value) } value={this.submitDate.delivery_channel}>
+                                <InputRadio label="全部"   name="delivery_channel" value="1" />
+                                <InputRadio label="微信"  name="delivery_channel" value="2"  />
+                                <InputRadio label="APP" name="delivery_channel" value="3" />
                             </RadioGroup>
                         </FormItems>
                         <FormItems label="兴趣爱好">
@@ -194,7 +194,6 @@ class IndexApp extends BaseContainer {
 
     componentDidMount():void {
         let {FormVerifierReducer, dispatch} = this.props;
-        dispatch(GetDataAction())
         dispatch(changeActiveAction())
     }
     

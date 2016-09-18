@@ -10,27 +10,30 @@ let Ontext = (data) => {
 	return { type: GET_FORM, data }
 }
 
-export let GetDataAction = () => {
-	return (dispatch, getState) => {
+// export let GetDataAction = () => {
+// 	return (dispatch, getState) => {
 		
-    }
-}
+//     }
+// }
 export let ChangeDataAction = (data) => {
-	
+	return (dispatch, getState) => {
+		console.log(data)
+		dispatch(Ontext(data))
+     }
 }
 
 const HeaderState =
 	{
 		submitDate: {
 			accout: '我是默认默认',
-            password: '',
-            password_repeat: '',
-            city: '-1',
-            delivery_channel: '-1',
-            Interest: [],
-            phone: '',
-            email: '',
-            bank: ''
+            password: '123456',
+            password_repeat: '123456',
+            city: '福州',
+            delivery_channel: '2',
+            Interest: ['1','2'],
+            phone: '12345678910',
+            email: '277527478@qq.com',
+            bank: '1234567891023'
 		}
 	}
 export function FormVerifierReducer(state = HeaderState, action) {

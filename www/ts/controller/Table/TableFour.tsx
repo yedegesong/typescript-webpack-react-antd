@@ -12,7 +12,7 @@ import {
         radioName:'pay',
         value:'2',
         onChange(event,record) {
-            console.log(event);
+            //console.log(event);
             console.log(record)
   }
 };

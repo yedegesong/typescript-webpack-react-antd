@@ -31,10 +31,7 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
-       
-        return (
-            <AppBody>
-                <Panel  title="表格 - 带操作数据展示 - 组件">
+       /*<Panel  title="表格 - 带操作数据展示 - 组件">
                     <TableOne />
                 </Panel>
                 <Panel  title="表格 - 手机分类数据展示">
@@ -42,8 +39,11 @@ class IndexApp extends BaseContainer {
                 </Panel>
           <Panel  title="表格 - 复选框(全选/反选)">
                     <TableThree />
-                </Panel>
-             <Panel  title="表格 - 单选框表格组件">
+                </Panel>*/
+        return (
+            <AppBody>
+                
+                <Panel title="表格 - 单选框表格组件">
                     <TableFour />
                 </Panel>
             </AppBody>

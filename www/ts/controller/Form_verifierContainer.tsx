@@ -79,6 +79,9 @@ class IndexApp extends BaseContainer {
             label: '福州',
             value: '福州'
         }];
+        this.state = {
+            submitDate:{}
+        }
         //验证的表单
         this.submitDate= {
             accout:'',
@@ -127,6 +130,9 @@ class IndexApp extends BaseContainer {
 
     valueChange(name,value){
         this.submitDate[name] = value;
+        this.setState({
+            submitDate:this.submitDate
+        })
     }
     
     render() {
@@ -156,14 +162,14 @@ class IndexApp extends BaseContainer {
                             <InputSelect  data={this.date}  onChange={(event) => this.valueChange('city', event.target.value) } />
                         </FormItems>
                         <FormItems label="投放位置">
-                            <RadioGroup onChange={(event) => this.valueChange('delivery_channel', event.target.value) }>
+                            <RadioGroup onChange={(event) => this.valueChange('delivery_channel', event.target.value) } value={this.state.submitDate.delivery_channel}>
                                 <InputRadio label="全部" name="delivery_channel" value="1" />
                                 <InputRadio label="微信" name="delivery_channel" value="2"  />
                                 <InputRadio label="APP"  name="delivery_channel" value="3" />
                             </RadioGroup>
                         </FormItems>
                         <FormItems label="兴趣爱好">
-                            <CheckGroup  options={[{ label: '篮球', value: '1' }, { label: '足球', value: '2' }]} onChange={(checkedValues) => this.valueChange('Interest', checkedValues) }/>
+                            <CheckGroup  value= {'1'} options={[{ label: '篮球', value: '1' }, { label: '足球', value: '2' }]} onChange={(checkedValues) => this.valueChange('Interest', checkedValues) }/>
                         </FormItems>
                         <FormItems label="是否同意协议">
                             <InputCheckbox label="你必须阅读并同意" name="circle"  ref={(c) => this.checkedValue = c} />
