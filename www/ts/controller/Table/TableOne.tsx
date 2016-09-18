@@ -44,7 +44,7 @@ InputText} from '../../components/index';
         }
 }*/
    const rowRadio = {
-        radioName:'pay',
+        radioName:'pay2',
         value:'2',
         onChange(event,record) {
             console.log(event);
