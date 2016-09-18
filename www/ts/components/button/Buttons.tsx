@@ -41,9 +41,9 @@ export default class Buttons extends React.Component<any,any> {
             addClassName = className;
             Cls = classNames(`${css_prefix}-btn`,{
             [`${typeButton}${type}`] : true,
-            ui_btn_block:display&&display=='block',
-            ui_btn_lg:size&&size=='large',
-            ui_btn_sm:size&&size=='small',
+            [`ui-btn-block`]:display&&display=='block',
+            [`ui-btn-lg`]:size&&size=='large',
+            [`ui-btn-sm`]:size&&size=='small',
             [`${addClassName}`]: className
         });
         return (<button  {...this.props} className = { Cls }  onClick={(event) => this.handleClick(event) }>

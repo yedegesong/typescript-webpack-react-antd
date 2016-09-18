@@ -114,8 +114,8 @@ export default class Pagination extends React.Component<any,any> {
 			/**
 			 * 处理分页大于9页的方法函数
 			 */
-			jumpPrev = (<li key="prev" className="page-prev" onClick={this.jumpPrev}><Icon type="ellipsis" /></li>);
-			jumpNext = (<li key="next" className="page-next" onClick={this.jumpNext}><Icon type="ellipsis" /></li>);
+			jumpPrev = (<li key="prev" className="page-prev" onClick={this.jumpPrev}><Icon type="gd" /></li>);
+			jumpNext = (<li key="next" className="page-next" onClick={this.jumpNext}><Icon type="gd" /></li>);
 			lastPager = (<li key="last" onClick={(event) => this.handlePagesClick(allPages)}>{allPages}</li>);
 			firstPager = (<li key={1} onClick={(event) => this.handlePagesClick(1)}>1</li>);
 			let left = Math.max(1, current - 2);
@@ -218,13 +218,13 @@ export default class Pagination extends React.Component<any,any> {
 						<li 
 						className = {this.state.defaultCurrent < 2 ? 'off' : ''}
 						onClick={(event) => this.handlePrevClick(event, allPages) }>
-							<Icon type="layer-copy"/>
+							<Icon type="qf"/>
 						</li>
 						{this.createItem(allPages) }
 						<li 
 					className = {this.state.defaultCurrent == allPages ? 'off' : ''}
 					onClick={(event) => this.handleNextClick(allPages) }>
-							<Icon type="layer"/>
+							<Icon type="hf"/>
 						</li>
         			</ul>
 					{this.props.showSizeChanger ? this.showSizeChanger() : false}

@@ -27,58 +27,66 @@ class IndexApp extends BaseContainer {
         return (
             <AppBody>
                 <Panel title="所有图标-面板">
-                    <Icon type="shanchu"/>&nbsp; &nbsp;
-                     <Icon type="unie614"/>&nbsp; &nbsp;
-                      <Icon type="guanbi"/>&nbsp; &nbsp;
-                       <Icon type="zhanshi"/>&nbsp; &nbsp;
-                        <Icon type="sousuo"/>&nbsp; &nbsp;
-                         <Icon type="xiugai"/>&nbsp; &nbsp;
+                    <Icon type="sc"/>&nbsp; &nbsp;
+                     <Icon type="mm"/>&nbsp; &nbsp;
+                      <Icon type="gb"/>&nbsp; &nbsp;
+                       <Icon type="zs"/>&nbsp; &nbsp;
+                        <Icon type="ssi"/>&nbsp; &nbsp;
+                         <Icon type="xg"/>&nbsp; &nbsp;
                          
-                         <Icon type="wancheng"/>&nbsp; &nbsp;
-                         <Icon type="shouye"/>&nbsp; &nbsp;
-                         <Icon type="tixian"/>&nbsp; &nbsp;
-                         <Icon type="history-fill"/>&nbsp; &nbsp;
-                         <Icon type="layer"/>&nbsp; &nbsp;
+                         <Icon type="wcx"/>&nbsp; &nbsp;
+                         <Icon type="sy"/>&nbsp; &nbsp;
+                         <Icon type="tx"/>&nbsp; &nbsp;
+                         <Icon type="gd"/>&nbsp; &nbsp;
+                         <Icon type="ls"/>&nbsp; &nbsp;
 
-                         <Icon type="qingkong"/>&nbsp; &nbsp;
-                         <Icon type="zhankai"/>&nbsp; &nbsp;
-                         <Icon type="jiaoseguanli"/>&nbsp; &nbsp;
+                         <Icon type="hf"/>&nbsp; &nbsp;
+                         <Icon type="qk"/>&nbsp; &nbsp;
+                         <Icon type="x"/>&nbsp; &nbsp;
 
-                         <Icon type="xitong"/>&nbsp; &nbsp;
-                         <Icon type="signout"/>&nbsp; &nbsp;
-                         <Icon type="zengjia"/>&nbsp; &nbsp;
+                         <Icon type="sj"/>&nbsp; &nbsp;
+                         <Icon type="jsgl"/>&nbsp; &nbsp;
+                         <Icon type="xt"/>&nbsp; &nbsp;
 
-                         <Icon type="xitong"/>&nbsp; &nbsp;
-                         <Icon type="signout"/>&nbsp; &nbsp;
-                         <Icon type="zengjia"/>&nbsp; &nbsp;
+                         <Icon type="dc"/>&nbsp; &nbsp;
+                         <Icon type="zj"/>&nbsp; &nbsp;
+                         <Icon type="zh"/>&nbsp; &nbsp;
 
-                         <Icon type="zhanghao"/>&nbsp; &nbsp;
-                         <Icon type="fabu"/>&nbsp; &nbsp;
-                         <Icon type="yonghu"/>&nbsp; &nbsp;
+                         <Icon type="fb"/>&nbsp; &nbsp;
+                         <Icon type="yh"/>&nbsp; &nbsp;
+                         <Icon type="xz"/>&nbsp; &nbsp;
 
-                         <Icon type="xiazai-copy"/>&nbsp; &nbsp;
-                         <Icon type="caidan"/>&nbsp; &nbsp;
-                         <Icon type="apply"/>&nbsp; &nbsp;
+                         <Icon type="cd"/>&nbsp; &nbsp;
+                         <Icon type="cdd"/>&nbsp; &nbsp;
+                         <Icon type="tk"/>&nbsp; &nbsp;
 
-                         <Icon type="caidan-copy"/>&nbsp; &nbsp;
-                         <Icon type="tuikuan"/>&nbsp; &nbsp;
-                         <Icon type="chongzhi"/>&nbsp; &nbsp;
+                         <Icon type="cz"/>&nbsp; &nbsp;
+                         <Icon type="zd"/>&nbsp; &nbsp;
+                         <Icon type="zh1"/>&nbsp; &nbsp;
 
-                          <Icon type="zhangdan2"/>&nbsp; &nbsp;
-                         <Icon type="zhanghu"/>&nbsp; &nbsp;
-                         <Icon type="h5chuanboguanli"/>&nbsp; &nbsp;
+                          <Icon type="ggzx"/>&nbsp; &nbsp;
+                         <Icon type="grzx"/>&nbsp; &nbsp;
+                         <Icon type="dxwxz"/>&nbsp; &nbsp;
 
-                         <Icon type="gerenzhongxin"/>&nbsp; &nbsp;
-                         <Icon type="zhankai-copy"/>&nbsp; &nbsp;
-                         <Icon type="cuowu"/>&nbsp; &nbsp;
+                         <Icon type="dxxz"/>&nbsp; &nbsp;
+                         <Icon type="s"/>&nbsp; &nbsp;
+                         <Icon type="cw"/>&nbsp; &nbsp;
 
-                         <Icon type="jinggao"/>&nbsp; &nbsp;
-                         <Icon type="wancheng1"/>&nbsp; &nbsp;
-                         <Icon type="layer-copy"/>&nbsp; &nbsp;
+                         <Icon type="jg"/>&nbsp; &nbsp;
+                         <Icon type="wc"/>&nbsp; &nbsp;
+                         <Icon type="qf"/>&nbsp; &nbsp;
 
-                         <Icon type="zhankai-copy-copy"/>&nbsp; &nbsp;
-                         <Icon type="xiajiang"/>&nbsp; &nbsp;
-                         <Icon type="shangsheng"/>&nbsp; &nbsp;
+                         <Icon type="dxwxz1"/>&nbsp; &nbsp;
+                         <Icon type="dxxz1"/>&nbsp; &nbsp;
+                         <Icon type="y"/>&nbsp; &nbsp;
+                         <Icon type="xj"/>&nbsp; &nbsp;
+                         <Icon type="ss"/>&nbsp; &nbsp;
+                         <Icon type="wdgg"/>&nbsp; &nbsp;
+
+                         <Icon type="yczd"/>&nbsp; &nbsp;
+                         <Icon type="wczd"/>&nbsp; &nbsp;
+                         <Icon type="z"/>&nbsp; &nbsp;
+                         <Icon type="tcq"/>&nbsp; &nbsp;
                 </Panel>
             </AppBody>
         );

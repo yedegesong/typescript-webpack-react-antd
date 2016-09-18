@@ -17,7 +17,7 @@ import {
     RadioGroup,
     Buttons,
     Tips,
-    Toast} from '../components/index';
+    Toast,Icon} from '../components/index';
 //表单验证模块
 import Verifier from '../pub/Verifier';
 //数据流向
@@ -67,17 +67,25 @@ class LoginApp extends React.Component<any, any>{
     render() {
         return (
             <div>
-                <FormGroup >
-                    <FormItems label="用户名">
+                <div>
+                    <span> 登录</span>
+                    <span> 注册</span>
+                </div>
+                <div>
+                    <div className="login-item">
+                        <span className="item-icon"><Icon type="zh"/></span>
                         <InputText type="test" placeholder="请输入您的用户名" onChange={(event) => this.valueChange('accout', event.target.value) }/>
-                    </FormItems>
-                    <FormItems label="密码">
-                        <InputText type="password" placeholder="请输入您的密码" onChange={(event) => this.valueChange('password', event.target.value) }/>
-                    </FormItems>
-                    <FormItems BtnFormItems>
-                        <Buttons type = "primary"  display="block" size="large" onClick = {() => this.sublimeButton() }>登录</Buttons>
-                    </FormItems>
-                </FormGroup>
+                    </div>
+                    <div className="login-item">
+                        <span className="item-icon"><Icon type="mm"/></span>
+                        <InputText type="password" placeholder="请输入您的用户名" onChange={(event) => this.valueChange('password', event.target.value) }/>
+                    </div>
+                    <div>
+                        <Buttons type = "primary" display = "block" onClick = {() => this.sublimeButton() }>
+                            登录
+                        </Buttons>
+                    </div>
+                </div>
             </div>
         );
     }

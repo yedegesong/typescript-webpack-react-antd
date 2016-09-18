@@ -95,6 +95,7 @@ class Dialog extends React.Component<DialogProps, any> {
 
 
 let show = (content?: any, actions?: any, title?: string,callback?: any ) => {
+    console.log(title)
     init(content, actions,title,callback);
 };
 

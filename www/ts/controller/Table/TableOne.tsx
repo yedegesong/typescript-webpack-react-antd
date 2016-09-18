@@ -15,17 +15,18 @@ import {
 FormItems,
 InputText} from '../../components/index';
 
-class ChangeTable extends React.Component<any, any>{
+/*class ChangeTable extends React.Component<any, any>{
      constructor(props) {
          super(props);
          
      }
 
      handleInputChange(name,value){
-
+         console.log(value)
      }
         render(){
             let data = this.props.data.record;
+            
             return <FormGroup horizontal >
                     <FormItems label="姓名">
                         <InputText type="test" value={data.name} 
@@ -40,6 +41,62 @@ class ChangeTable extends React.Component<any, any>{
                         onChange={(event) => this.handleInputChange('address',event.target.value) }/>
                     </FormItems>
                     </FormGroup>
+        }
+}*/
+   const rowRadio = {
+        radioName:'pay',
+        value:'2',
+        onChange(event,record) {
+            console.log(event);
+            console.log(record)
+  }
+};
+class ChangeTable extends React.Component<any, any>{
+     constructor(props) {
+         super(props);
+         this.state = {
+
+            columns: [{
+                title: '姓名',
+                dataIndex: 'name',
+                key: 'name',
+                render: (text) => <a href="#">{text}</a>,
+            }, {
+                    title: '年龄',
+                    dataIndex: 'age',
+                    key: 'age',
+                }, {
+                    title: '住址',
+                    dataIndex: 'address',
+                    key: 'address',
+                }],
+            data: [{
+                key: '1',
+                name: '小明',
+                age: 32,
+                address: '西湖区湖底公园1号',
+            }, {
+                    key: '2',
+                    name: '小红',
+                    age: 42,
+                    address: '西湖区湖底公园2号',
+                }, {
+                    key: '3',
+                    name: '小东',
+                    age: 32,
+                    address: '西湖区湖底公园3号',
+                }
+            ]
+        }
+     }
+
+     handleInputChange(name,value){
+         console.log(value)
+     }
+        render(){
+            let data = this.props.data.record;
+            
+            return <Table rowRadio = {rowRadio} columns={this.state.columns} dataSource={this.state.data} />
         }
 }
 

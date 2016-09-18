@@ -46,7 +46,7 @@ class IndexApp extends BaseContainer {
             { label: '确定', onClick: buyConfirm, primary: true }
         ];
 
-        Dialog.show(<div>你确定要删除吗?</div>, actions);
+        Dialog.show(<div>你确定要删除吗?</div>, actions,'提示框');
         event.preventDefault();
         event.stopPropagation();
 
@@ -83,7 +83,7 @@ class IndexApp extends BaseContainer {
             { label: '取消' },
             { label: '确定', onClick: buyConfirm, primary: true }
         ];
-        Dialog.show(<div><InputText type="test" /></div>, actions);
+        Dialog.show(<div title="文本框"><InputText type="test" /></div>, actions);
         event.preventDefault();
         event.stopPropagation();
     }

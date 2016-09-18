@@ -18,6 +18,7 @@ import {
     InfoText,
     SelectGroup,
     Textarea,
+    Icon
 } from '../components/index';
 import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
@@ -172,6 +173,13 @@ class IndexApp extends BaseContainer {
                             <InputText type="test" addonBefore="输入" addonAfter="元"/>
                         </FormItems>
                     </FormGroup>
+                </Panel>
+
+                <Panel title="搜索框文本域">
+                        <div className="ui-search-input">
+                            <InputText type="test" />
+                            <div className="btn-box"><Icon type="ssi" /></div>
+                        </div>
                 </Panel>
             </AppBody>
         );
