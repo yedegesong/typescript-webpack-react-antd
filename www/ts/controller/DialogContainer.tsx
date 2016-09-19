@@ -10,7 +10,7 @@ import {
     Tips,
     Toast,
     Dialog,
-    InputText
+    InputText,
 } from '../components/index';
 import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
@@ -34,16 +34,18 @@ class IndexApp extends BaseContainer {
 
     _dialog(event) {
         let buyConfirm = (modal) => {
-            alert('您点击了确定按钮');
+            console.log('您点击了确定按钮');
+            
             modal.close();
         };
         let buyConfirm1 = (modal) => {
-            alert('您点击了取消按钮');
+            console.log('您点击了取消按钮');
+            console.log(modal)
             modal.close();
         };
         let actions = [
-            { label: '取消', onClick: buyConfirm1 },
-            { label: '确定', onClick: buyConfirm, primary: true }
+            { label: '', onClick: buyConfirm1 },
+            { label: '', onClick: buyConfirm, primary: true }
         ];
 
         Dialog.show(<div>你确定要删除吗?</div>, actions,'提示框');
@@ -88,6 +90,31 @@ class IndexApp extends BaseContainer {
         event.stopPropagation();
     }
 
+    _dialog4(event) {
+        let buyConfirm = (modal) => {
+            console.log('您点击了确定按钮');
+            modal.close();
+        };
+        let buyConfirm1 = (modal) => {
+            console.log('您点击了取消按钮');
+            console.log(modal)
+            modal.close();
+        };
+        let actions = [
+            { label: '取消', onClick: buyConfirm1 },
+            { label: '确定', onClick: buyConfirm, primary: true }
+        ];
+
+        Dialog.show(<div>
+                你确定要删除吗?
+                <div><Buttons>取消</Buttons>
+                <Buttons type="primary">确定</Buttons></div>
+            </div>,[],'提示框');
+        event.preventDefault();
+        event.stopPropagation();
+
+    }
+
     render() {
 
         return (
@@ -97,6 +124,7 @@ class IndexApp extends BaseContainer {
                     <Buttons onClick = {(event) =>  this._dialog1(event) } >单个提示弹框</Buttons>
                     <Buttons onClick = {(event) => this._dialog2(event) } >提示弹框回调在弹框</Buttons>
                     <Buttons onClick = {(event) => this._dialog3(event) } >提示弹框组件弹框</Buttons>
+                    <Buttons onClick = {(event) => this._dialog4(event) } >无尾部弹框组件</Buttons>
                 </Panel>
             </AppBody>
         );

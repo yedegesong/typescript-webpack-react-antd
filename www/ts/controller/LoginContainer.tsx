@@ -41,6 +41,10 @@ class LoginApp extends React.Component<any, any>{
             accout:'',
             password:''
         };
+
+        this.state ={
+            type:1
+        }
     }
 
     sublimeButton(){
@@ -62,16 +66,8 @@ class LoginApp extends React.Component<any, any>{
         this.submitDate[name] = value;
     }
 
-    
-
-    render() {
-        return (
-            <div>
-                <div>
-                    <span> 登录</span>
-                    <span> 注册</span>
-                </div>
-                <div>
+    createLogin(){
+        return <div>
                     <div className="login-item">
                         <span className="item-icon"><Icon type="zh"/></span>
                         <InputText type="test" placeholder="请输入您的用户名" onChange={(event) => this.valueChange('accout', event.target.value) }/>
@@ -80,12 +76,42 @@ class LoginApp extends React.Component<any, any>{
                         <span className="item-icon"><Icon type="mm"/></span>
                         <InputText type="password" placeholder="请输入您的用户名" onChange={(event) => this.valueChange('password', event.target.value) }/>
                     </div>
-                    <div>
+                    <div className="login-btn-box">
                         <Buttons type = "primary" display = "block" onClick = {() => this.sublimeButton() }>
                             登录
                         </Buttons>
                     </div>
                 </div>
+    }
+
+    createRegistered(){
+        return <div>
+                我是注册面板
+            </div>
+    }
+
+    changeType(type){
+        this.setState({
+            type:type
+        })
+    }
+
+    render() {
+        let stateType =()=>{
+            if(this.state.type == 1){
+                return this.createLogin()
+            }else{
+               return this.createRegistered();
+            }
+        }
+        return (
+            <div>
+                <div className="login-header">
+                    <span className={this.state.type == 1 ? 'on' : ''} onClick={()=>{this.changeType(1)}}> 登录</span>
+                    <b className="line"></b>
+                    <span className={this.state.type == 2 ? 'on' : ''} onClick={()=>{this.changeType(2)}}> 注册</span>
+                </div>
+                {stateType()}
             </div>
         );
     }

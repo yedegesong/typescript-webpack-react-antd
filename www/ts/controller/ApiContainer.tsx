@@ -85,6 +85,10 @@ class IndexApp extends BaseContainer {
     componentWillUnmount():void {
         
     }
+
+    /*shouldComponentUpdate(){
+        return false
+    }*/
 }
 
 let mapStateToProps = (state) => {

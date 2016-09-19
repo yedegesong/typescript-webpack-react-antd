@@ -47,7 +47,6 @@ InputText} from '../../components/index';
         radioName:'pay2',
         value:'2',
         onChange(event,record) {
-            console.log(event);
             console.log(record)
   }
 };
@@ -171,7 +170,7 @@ export default class TableOne extends React.Component<any, any> {
             record
         }
         let buyConfirm = (modal) => {
-            modal.close();
+            //modal.close();
         };
         let buyConfirm1 = (modal) => {
             modal.close();

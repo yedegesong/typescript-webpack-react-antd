@@ -70,3 +70,35 @@
     border-left: 2px solid #c8c8c8;
     margin-top: 8px;
 }
+
+.login-header{
+    padding:0 0 20px 0;
+    color:#b0b0b0;
+    text-align: center;
+}
+
+.login-header>span{
+    cursor: pointer;
+}
+.login-header>span:nth-child(1){
+    
+}
+.login-header>span:nth-child(2){
+    
+    border-left: 2px solid #b0b0b0;
+}
+
+.login-header .on{
+    color:#2196f3;
+    padding-bottom:5px;
+    border-bottom:2px solid #2196f3;
+}
+.login-header .line{
+    border: 1px solid;
+    margin: 0 40px;
+    vertical-align: middle;
+}
+
+.login-btn-box .ui-btn-primary{
+    height:48px;
+}
