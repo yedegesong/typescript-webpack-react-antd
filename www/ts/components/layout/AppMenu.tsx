@@ -1,6 +1,7 @@
 import * as React from "react";
 import {connect} from 'react-redux';
 import Tool from '../../pub/Tool';
+import Icon from '../icon/Icon';
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
 import {getMenuAction, saveParentActive, saveChildActive,changeActiveAction} from '../../redux/actions/MenuAction';
@@ -71,14 +72,20 @@ class AppMenu extends React.Component<AppMenuProps, any>{
         let ParentUrl = item.url;
         return (
             <li key={index} className={ parentActive } >
-                <h3 className = {hasChild ? 'on' : 'off'} data-href = {ParentUrl} onClick = {(event) => this.handleOrderTabClick(event, index, item.name, ParentUrl) }>{item.name}</h3>
+                <h3 className = {hasChild ? 'on' : 'off'} data-href = {ParentUrl} onClick = {(event) => this.handleOrderTabClick(event, index, item.name, ParentUrl) }>
+                    {item.icon ? <Icon type={item.icon}/> : false}
+                    {item.name}
+                </h3>
                 { hasChild ? (
                     <ul className={`${css_prefix}-menu-child`}>
                         {item.subMunu.map((childItem,childIndex) => {
                             let ChildUrl =  childItem.url;
                             let childActive = ChildUrl == now_url ? `${css_prefix}-menu-child-item chd-active` : `${css_prefix}-menu-child-item`;
                             return (<li key = {childIndex} className={childActive}>
-                                <a href={URL} onClick = {(event) => this.push(event, childIndex, childItem.name, ChildUrl) }>{childItem.name}</a>
+                                <a href={URL} onClick = {(event) => this.push(event, childIndex, childItem.name, ChildUrl) }>
+                                    {childItem.icon ? <Icon type={childItem.icon}/> : false}
+                                    {childItem.name}
+                                </a>
                                     </li>
                                     )
                         })}
@@ -89,6 +96,7 @@ class AppMenu extends React.Component<AppMenuProps, any>{
 
     render(){
         let {MenuReducers, dispatch} = this.props;
+        console.log(MenuReducers)
         return (
           <div className={`${css_prefix}-menu`}>
               <ul className={`${css_prefix}-menu-parent`}>
@@ -99,7 +107,7 @@ class AppMenu extends React.Component<AppMenuProps, any>{
   }
 
     componentDidMount() {
-        let {dispatch} = this.props;
+        let {MenuReducers,dispatch} = this.props;
         /**
          * 读取菜单数据
          */

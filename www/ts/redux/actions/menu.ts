@@ -5,6 +5,7 @@ const MenuData = {
       "menuId": 21,
       "name": "api",
       "subMunu": [],
+      "icon":"sy",
       "url": "api"
     },
     {
@@ -12,6 +13,7 @@ const MenuData = {
       "menuId": 21,
       "name": "网格布局",
       "subMunu": [],
+      "icon":"sj",
       "url": "grid"
     },
     {
@@ -19,6 +21,7 @@ const MenuData = {
       "menuId": 21,
       "name": "表格",
       "subMunu": [],
+      "icon":"jsgl",
       "url": "table"
     },
     {
@@ -26,6 +29,7 @@ const MenuData = {
       "menuId": 21,
       "name": "卡片",
       "subMunu": [],
+      "icon":"yczd",
       "url": "card"
     },
     {
@@ -95,11 +99,13 @@ const MenuData = {
       "description": "全局提示效果模块",
       "menuId": 21,
       "name": "全局提示效果模块",
+      "icon":"fb",
       "subMunu": [
         {
           "description": "全局提示",
           "menuId": 17,
           "name": "全局提示",
+          "icon":"tx",
           "url": "tips"
         },
         {

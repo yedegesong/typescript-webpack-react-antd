@@ -953,6 +953,9 @@ body {
   padding: 15px 20px;
   cursor: pointer;
 }
+.ui-menu-parent > li > h3 > .icon {
+  margin-right: 10px;
+}
 .ui-menu-parent > li > h3.on {
   position: relative;
 }
@@ -1023,6 +1026,9 @@ body {
 }
 .ui-menu-child > li a:hover {
   color: #fff;
+}
+.ui-menu-child > li a > .icon {
+  margin-right: 10px;
 }
 .ui-menu-child .chd-active {
   background-color: #222d37;
