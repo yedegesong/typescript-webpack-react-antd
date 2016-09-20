@@ -6,7 +6,6 @@
 var webpack          = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config           = require('./webpack.dev.config');
-console.log('build path:' + config.pathToBuild);
 // "dev": "webpack-dev-server --devtool eval --progress --colors --hot  --content-base build",
 new WebpackDevServer(webpack(config), {
     devtool: config.devtool,

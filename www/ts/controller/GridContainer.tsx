@@ -48,6 +48,14 @@ class IndexApp extends BaseContainer {
                         <Col span="90">90%</Col>
                     </Row>
                     <Row>
+                        <Col span="16">16%</Col>
+                        <Col span="16">16%</Col>
+                        <Col span="16">16%</Col>
+                        <Col span="16">16%</Col>
+                        <Col span="16">16%</Col>
+                        <Col span="16">16%</Col>
+                    </Row>
+                    <Row>
                         <Col span="20">20%</Col>
                         <Col span="80">80%</Col>
                     </Row>
