@@ -134,7 +134,7 @@ button {
 }
 a {
   -webkit-touch-callout: none;
-  color: #2db7f5;
+  color: #2196f3;
   background: transparent;
   text-decoration: none;
   outline: none;
@@ -643,12 +643,15 @@ body {
   top: 0;
   background-color: #fff;
 }
+.ui-form-input-radio > input[type='radio']:checked:before {
+  border: 1px solid #2196f3;
+}
 .ui-form-input-radio > input[type='radio']:checked:after {
   content: '';
   display: block;
   width: 8px;
   height: 8px;
-  background: #18b4ed;
+  background: #2196f3;
   border-radius: 100%;
   position: absolute;
   left: 5px;
@@ -702,7 +705,7 @@ body {
   transform: rotate(45deg) scale(1);
   position: absolute;
   left: 4px;
-  top: 1px;
+  top: 2px;
   display: table;
   width: 5px;
   height: 8px;
@@ -717,8 +720,8 @@ body {
   border-left: 0;
 }
 .ui-form-input-checkbox > input[type='checkbox']:checked:before {
-  background-color: #2db7f5;
-  border: 1px solid #2db7f5;
+  background-color: #2196f3;
+  border: 1px solid #2196f3;
 }
 .ui-form-input-checkbox > input[type='checkbox']:disabled:before {
   background-color: #f3f3f3;
@@ -1091,6 +1094,7 @@ body {
   background-color: #f4f4f4;
   border-color: #d9d9d9;
   margin-right: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 .ui-btn-default {
   color: #444;
@@ -1221,6 +1225,7 @@ fieldset[disabled] .ui-btn {
   display: block;
   margin-left: -10px;
   margin-right: -10px;
+  margin-bottom: 10px;
 }
 .ui-row .ui-col {
   position: relative;
@@ -1310,9 +1315,6 @@ fieldset[disabled] .ui-btn {
 .ui-table {
   font-size: 12px;
   color: #666;
-  -webkit-border-radius: 6px 6px 0 0;
-  -moz-border-radius: 6px 6px 0 0;
-  border-radius: 6px 6px 0 0;
   overflow: hidden;
 }
 .ui-table table {
@@ -1584,8 +1586,8 @@ fieldset[disabled] .ui-btn {
   cursor: pointer;
 }
 .ui-tabs-title > div.tabOn {
-  color: #2db7f5;
-  border-bottom: 2px solid #2db7f5;
+  color: #2196f3;
+  border-bottom: 2px solid #2196f3;
 }
 .ui-tabs-content > .ui-tabpane {
   display: none;
@@ -1598,9 +1600,6 @@ fieldset[disabled] .ui-btn {
 .ui-dash-stat {
   padding: 15px;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
 }
 .ui-dash-stat .ui-dash-stat-cont {
   position: relative;
@@ -1614,18 +1613,113 @@ fieldset[disabled] .ui-btn {
 }
 .ui-dash-color-a {
   color: #fff !important;
-  background: url("../images/white.png") repeat-x bottom #2980b9 !important;
+  background-color: #2096f3;
+  background: -webkit-linear-gradient(#71befc, #2997ef);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#71befc, #2997ef);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#71befc, #2997ef);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#71befc, #2997ef);
+  /* 标准的语法 */
 }
 .ui-dash-color-b {
-  background-color: #16a085 !important;
+  background: -webkit-linear-gradient(#68d7f7, #16b2df);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#68d7f7, #16b2df);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#68d7f7, #16b2df);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#68d7f7, #16b2df);
+  /* 标准的语法 */
   color: #fff !important;
 }
 .ui-dash-color-c {
-  background-color: #c0392b !important;
+  background: -webkit-linear-gradient(#3debda, #08c9b6);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#3debda, #08c9b6);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#3debda, #08c9b6);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#3debda, #08c9b6);
+  /* 标准的语法 */
   color: #fff !important;
 }
 .ui-dash-color-d {
-  background-color: #27ae60 !important;
+  background: -webkit-linear-gradient(#ffd182, #ecb149);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#ffd182, #ecb149);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#ffd182, #ecb149);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#ffd182, #ecb149);
+  /* 标准的语法 */
+  color: #fff !important;
+}
+.ui-dash-color-e {
+  background: -webkit-linear-gradient(#ffb088, #ff8f57);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#ffb088, #ff8f57);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#ffb088, #ff8f57);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#ffb088, #ff8f57);
+  /* 标准的语法 */
+  color: #fff !important;
+}
+.ui-dash-color-f {
+  background: -webkit-linear-gradient(#ff9f87, #fc7756);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#ff9f87, #fc7756);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#ff9f87, #fc7756);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#ff9f87, #fc7756);
+  /* 标准的语法 */
+  color: #fff !important;
+}
+.ui-dash-color-g {
+  background: -webkit-linear-gradient(#fe9292, #ef6868);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#fe9292, #ef6868);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#fe9292, #ef6868);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#fe9292, #ef6868);
+  /* 标准的语法 */
+  color: #fff !important;
+}
+.ui-dash-color-h {
+  background: -webkit-linear-gradient(#ff95d1, #ef6cb6);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#ff95d1, #ef6cb6);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#ff95d1, #ef6cb6);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#ff95d1, #ef6cb6);
+  /* 标准的语法 */
+  color: #fff !important;
+}
+.ui-dash-color-i {
+  background: -webkit-linear-gradient(#e194fe, #c17cdb);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#e194fe, #c17cdb);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#e194fe, #c17cdb);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#e194fe, #c17cdb);
+  /* 标准的语法 */
+  color: #fff !important;
+}
+.ui-dash-color-j {
+  background: -webkit-linear-gradient(#af9dff, #8c76eb);
+  /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(#af9dff, #8c76eb);
+  /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(#af9dff, #8c76eb);
+  /* Firefox 3.6 - 15 */
+  background: linear-gradient(#af9dff, #8c76eb);
+  /* 标准的语法 */
   color: #fff !important;
 }
 .ui-pagination > ul,
@@ -1635,7 +1729,8 @@ fieldset[disabled] .ui-btn {
   display: inline-block;
 }
 .ui-pagination > .pagination-select-input {
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 .ui-pagination > .pagination-select-input:after {
   position: absolute;
@@ -1665,27 +1760,27 @@ fieldset[disabled] .ui-btn {
   color: #555;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #d9d9d9;
   -webkit-appearance: none;
+  border-radius: 0;
 }
 .ui-pagination > ul li {
   cursor: pointer;
-  border-radius: 6px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   min-width: 28px;
   height: 28px;
+  margin-left: -1px;
   line-height: 28px;
   text-align: center;
   list-style: none;
   display: inline-block;
   border: 1px solid #d9d9d9;
   background-color: #fff;
-  margin-right: 8px;
   font-family: Arial;
+  border-radius: 0;
   -moz-transition: all 0.5s;
   /* Firefox 4 */
   -webkit-transition: all 0.5s;
@@ -1710,18 +1805,12 @@ fieldset[disabled] .ui-btn {
   border: 1px solid #d9d9d9;
   color: #ccc;
 }
-.ui-pagination > ul li.page-next,
-.ui-pagination > ul li.page-prev {
-  border: 0 none;
-}
 .pagination-text-input {
   padding-top: 5px;
 }
 .pagination-text {
   position: relative;
   display: inline-block;
-  width: 100%;
-  height: 28px;
   cursor: text;
   font-size: 12px;
   line-height: 1.5;
@@ -1731,8 +1820,8 @@ fieldset[disabled] .ui-btn {
   border: 1px solid #d9d9d9;
   padding: 1px 7px;
   height: 22px;
-  border-radius: 4px;
   width: 44px;
+  margin: 0 5px;
 }
 .ui-folding {
   background-color: #f7f7f7;

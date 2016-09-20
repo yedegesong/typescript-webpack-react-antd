@@ -229,12 +229,15 @@
 	background-color: #fff;
 }
 
+.@{css-prefix}form-input-radio>input[type='radio']:checked:before{
+	border: 1px solid #2196f3;
+}
 .@{css-prefix}form-input-radio>input[type='radio']:checked:after{
 	content: '';
 	display: block;
 	width: 8px;
 	height: 8px;
-	background: #18b4ed;
+	background: #2196f3;
 	border-radius: 100%;
 	position: absolute;
 	left: 5px;
@@ -292,7 +295,7 @@
 	transform: rotate(45deg) scale(1);
 	position: absolute;
 	left: 4px;
-	top: 1px;
+	top: 2px;
 	display: table;
 	width: 5px;
 	height: 8px;
@@ -308,8 +311,8 @@
 	border-left: 0;
 }
 .@{css-prefix}form-input-checkbox>input[type='checkbox']:checked:before{
-	background-color:#2db7f5;
-	border: 1px solid #2db7f5;
+	background-color:#2196f3;
+	border: 1px solid #2196f3;
 }
 
 .@{css-prefix}form-input-checkbox>input[type='checkbox']:disabled:before{

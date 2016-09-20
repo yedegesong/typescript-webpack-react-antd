@@ -217,6 +217,12 @@
   -moz-transform: translate(@X,@Y);    /* Firefox */
 }
 
-
+//渐变颜色
+.linear-gradient(@top:#71befc;@bottom:#2997ef){
+  background: -webkit-linear-gradient(@top, @bottom); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(@top, @bottom); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(@top, @bottom); /* Firefox 3.6 - 15 */
+  background: linear-gradient(@top, @bottom); /* 标准的语法 */
+}
 
 

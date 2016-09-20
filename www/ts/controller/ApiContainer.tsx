@@ -18,6 +18,9 @@ import {BaseStore} from '../redux/store/BaseStore';
 //表单验证模块
 import Verifier from '../pub/Verifier';
 const store = BaseStore({  });
+let divStyle = {
+    marginBottom: '10px',
+};
 class IndexApp extends BaseContainer {
     constructor(props) {
         super(props);
@@ -51,24 +54,57 @@ class IndexApp extends BaseContainer {
                 </Row>
                 <Panel title="面板-指示牌">
                     <Row className="userCenter-list">
-                                    <Col span='25'>
+                                    <Col span='16'>
                                     <Dashboard label={1} type="a">
                                             总点击次数(次)
                                         </Dashboard>
                                     </Col>
-                                    <Col span='25'>
+                                    <Col span='16'>
                                     <Dashboard label={2} type="b">
                                             总展示次数(次)
                                         </Dashboard>
                                     </Col>
-                                    <Col span='25'>
+                                    <Col span='16'>
                                     <Dashboard label={3} type="c">
                                             总广告费(元)
                                         </Dashboard>
                                     </Col>
-                                    <Col span='25'>
+                                    <Col span='16'>
                                     <Dashboard label={ 4} type="d">
-                                            目前广告正在展示数(条)
+                                            目前广告正在展示数
+                                        </Dashboard>
+                                    </Col>
+                                    <Col span='16'>
+                                    <Dashboard label={ 4} type="e">
+                                            目前广告正在展示数
+                                        </Dashboard>
+                                    </Col>
+                                    <Col span='16'>
+                                    <Dashboard label={ 4} type="f">
+                                            目前广告正在展示数
+                                        </Dashboard>
+                                    </Col>
+                                     
+                                </Row>
+                                <Row >
+                                <Col span='16'>
+                                    <Dashboard label={ 4} type="g">
+                                            目前广告正在展示数
+                                        </Dashboard>
+                                    </Col>
+                                    <Col span='16'>
+                                    <Dashboard label={ 4} type="h">
+                                            目前广告正在展示数
+                                        </Dashboard>
+                                    </Col>
+                                     <Col span='16'>
+                                    <Dashboard label={ 4} type="i">
+                                            目前广告正在展示数
+                                        </Dashboard>
+                                    </Col>
+                                    <Col span='16'>
+                                    <Dashboard label={ 4} type="j">
+                                            目前广告正在展示数
                                         </Dashboard>
                                     </Col>
                                 </Row>
