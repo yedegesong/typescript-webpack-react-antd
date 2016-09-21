@@ -20,7 +20,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var node_modules = path.resolve(__dirname, 'node_modules');
 //网站根目录
-var pathToBuild  = path.resolve(__dirname, 'www');
+var pathToBuild  = path.resolve(__dirname, app_config.pathToBuild);
 //模板位置
 var viewPath = path.resolve(__dirname,app_config.pathToBuild,app_config.viewPath);
 //页面主控制目录

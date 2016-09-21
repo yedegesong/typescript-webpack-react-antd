@@ -96,7 +96,6 @@ class AppMenu extends React.Component<AppMenuProps, any>{
 
     render(){
         let {MenuReducers, dispatch} = this.props;
-        console.log(MenuReducers)
         return (
           <div className={`${css_prefix}-menu`}>
               <ul className={`${css_prefix}-menu-parent`}>

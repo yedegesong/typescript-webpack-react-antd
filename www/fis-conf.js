@@ -14,7 +14,7 @@ fis.media('pro').match('/dist/*.js', {
     release: '/ERP/$0'
 }).match('/styles/*.css', {
     release: '/ERP/$0'
-}).match('/dist/pages/*.html', {
+}).match('/pages/*.html', {
     release: '/ERP/$0'
 });
 
