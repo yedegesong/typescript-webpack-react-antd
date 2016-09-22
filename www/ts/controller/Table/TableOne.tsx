@@ -91,7 +91,7 @@ class ChangeTable extends React.Component<any, any>{
 
         this.rowRadio = {
             radioName:'pay2',
-            value:'2',
+            value:'-1',
             onChange:(event,record)=>{
                 this.props.callback(record)
             }

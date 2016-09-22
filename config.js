@@ -15,12 +15,18 @@ var AppConfig = {
   //输出页面的文件夹名字
   htmlFileName:'pages',
   //公用样式配置
-  addLinkCss:['/styles/iconfont.css','/styles/app.css'],
+  addLinkCss:['/styles/iconfont.css',
+  '/lib/zTree_v3-master/css/zTreeStyle/zTreeStyle.css',
+  '/styles/app.css'],
   //公用脚本配置
   addmommonScript:[
     '/common/application.config.js',
     '/lib/jquery.min.js',
     '/lib/My97DatePicker/WdatePicker.js',
+    '/lib/zTree_v3-master/js/jquery.ztree.core.js',
+    '/lib/zTree_v3-master/js/jquery.ztree.excheck.js',
+    '/lib/zTree_v3-master/js/jquery.ztree.exedit.js',
+    '/lib/zTree_v3-master/js/jquery.ztree.exhide.js',
      '/lib/echarts.common.min.js']
 }
 

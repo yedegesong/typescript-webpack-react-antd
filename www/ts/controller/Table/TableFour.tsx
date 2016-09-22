@@ -10,7 +10,7 @@ import {
     Col, Table, Icon} from '../../components/index';
     const rowRadio = {
         radioName:'pay',
-        value:'2',
+        value:'-1',
         onChange(event,record) {
             //console.log(event);
             console.log(record)

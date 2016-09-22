@@ -71,7 +71,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
   line-height: 1.5;
   font-size: 16px;
-  color: #000;
+  color: #4c4c4c;
   -webkit-user-select: none;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -815,7 +815,7 @@ body {
 .ui-header-container {
   height: 56px;
   background-color: #fff;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
 }
 .ui-logo {
   width: 220px;
@@ -1088,9 +1088,9 @@ body {
   line-height: 1.5;
   padding: 4px 15px;
   font-size: 12px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -1330,11 +1330,11 @@ fieldset[disabled] .ui-btn {
 }
 .ui-table th,
 .ui-table td {
-  padding: .3rem .2rem;
+  padding: .2rem;
   word-break: break-all;
 }
 .ui-table th {
-  background-color: #f4f4f4;
+  background-color: #e4e7eb;
   font-weight: bold;
 }
 .ui-table tr {
@@ -1360,7 +1360,7 @@ fieldset[disabled] .ui-btn {
   overflow-x: auto;
 }
 .ui-text-primary {
-  color: #2096f3;
+  color: #2196f3;
 }
 .ui-text-info {
   color: #bbb;
@@ -1585,7 +1585,7 @@ fieldset[disabled] .ui-btn {
   height: 45px;
   min-width: 70px;
   text-align: center;
-  color: #777;
+  color: #4c4c4c;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border-bottom: 2px solid transparent;
@@ -1606,6 +1606,9 @@ fieldset[disabled] .ui-btn {
 .ui-dash-stat {
   padding: 15px;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .ui-dash-stat .ui-dash-stat-cont {
   position: relative;
@@ -1861,5 +1864,17 @@ fieldset[disabled] .ui-btn {
 }
 .folding-item.folding-item-on > .item-header > .item-icion {
   -webkit-transform: rotate(90deg);
+}
+.ui-crumbs {
+  font-size: 14px;
+}
+.ui-crumbs > ul > li {
+  display: inline-block;
+  color: #777;
+}
+.ui-crumbs > ul > li + li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
 }
 /*# sourceMappingURL=app.css.map */
