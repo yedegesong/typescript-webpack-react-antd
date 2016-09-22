@@ -27,8 +27,9 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
+        let {MenuReducers} = this.props;
         return (
-            <AppBody>
+            <AppBody reducers={MenuReducers}>
                 <Row>
                     <Col span="50" >
                         <Panel  title="面板-字体辅助" >
@@ -115,7 +116,7 @@ class IndexApp extends BaseContainer {
 
     componentDidMount():void {
         let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction())
+        //dispatch(changeActiveAction())
     }
 
     componentWillUnmount():void {

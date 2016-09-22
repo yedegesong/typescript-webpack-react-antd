@@ -6,22 +6,26 @@ import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
 let detect = new Detect();
 let adCls = detect.os.phone ? `${css_prefix}-layout-mobile-main` : `${css_prefix}-layout-pc-main`;
-class AppBody extends React.Component<any,any> {
+interface AppBodyProps {
+    MenuReducers?: any;
+    children?: any;
+    component?:symbol;
+}
+export default class AppBody extends React.Component<any,any> {
     
     constructor(props){
         super(props);
     }
     /**
-     * body 主容器 包括头部和菜单
+     * body 主容器 包括头部和菜单 <AppHeader /> <AppMenu  />
      */
     render() {
-        let {MenuReducers, dispatch} = this.props;
-        const {children} = this.props;
-        let Cls = MenuReducers.menuSwitch ? adCls : adCls + " off";
+        let {children,reducers} = this.props;
+        let Cls = reducers.menuSwitch ? adCls : adCls + " off";
         return (<div className={`${css_prefix}-body`}>
-                    <AppHeader />
+                    <AppHeader/>
                     <div className = { Cls }>
-                        <AppMenu  />
+                        <AppMenu />
                         <div className={`${css_prefix}-container`}>
                             {children}
                         </div>
@@ -32,10 +36,10 @@ class AppBody extends React.Component<any,any> {
 
 }
 
-let mapStateToProps = (state) => {
+/*let mapStateToProps = (state) => {
     return {
         MenuReducers: state.MenuReducers
     }
-}
+}*/
 
-export default connect(mapStateToProps)(AppBody);
+//export default connect(mapStateToProps)(AppBody);

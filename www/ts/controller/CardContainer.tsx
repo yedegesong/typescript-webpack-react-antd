@@ -23,33 +23,37 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
-        console.log('a');
-        console.log(this.props)
         return (
             <AppBody>
-                <Panel  title="卡片">
-                    <Row>
-                        <Col span='33' >
-                            <div className="cwgj-grid">
-                                <div className="cwgj-grid-img">
-                                    <a href="#">
-                                        <img src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-                                    </a>
+                <Panel  title="卡片 - 固定宽">
+                   <div className="ui-box-list">
+                        <div className="ui-item-box">
+                            <div className="ui-item">
+                                <div className="ui-img">
+                                    <img src="http://192.168.1.159:80//group1/M00/00/1D/wKgBn1esPzGAIonKAAAOx9rpefc934.png" />
                                 </div>
-                                <div className="cwgj-grid-group">
-                                    <div className="cwgj-grid-title cwgj-nowrap">标题</div>
-                                    <div className="cwgj-grid-date cwgj-nowrap cwgj-text-muted">啊发顺丰</div>
-                                    <div className="cwgj-grid-info">
-                                        展示: <span className="cwgj-text-danger">3</span>次,
-                                        点击: <span className="cwgj-text-danger">2</span>次
-                                    </div>
-                                    <div className="cwgj-grid-button">
-                                        <Buttons>按钮</Buttons>
-                                    </div>
+                                <div>
+                                    <p>九天集团超级跑车开售了</p>
                                 </div>
                             </div>
-                        </Col>
-                    </Row>
+                            <div className="ui-item">
+                                <div className="ui-img">
+                                    <img src="http://192.168.1.159:80//group1/M00/00/1D/wKgBn1esPzGAIonKAAAOx9rpefc934.png" />
+                                </div>
+                                <div>
+                                    <p>九天集团超级跑车开售了</p>
+                                </div>
+                            </div>
+                            <div className="ui-item">
+                                <div className="ui-img">
+                                    <img src="http://192.168.1.159:80//group1/M00/00/1D/wKgBn1esPzGAIonKAAAOx9rpefc934.png" />
+                                </div>
+                                <div>
+                                    <p>九天集团超级跑车开售了</p>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
                 </Panel>
             </AppBody>
         );

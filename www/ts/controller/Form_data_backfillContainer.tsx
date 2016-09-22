@@ -20,7 +20,7 @@ import {changeActiveAction} from '../redux/actions/MenuAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
-import {FormVerifierReducer, GetDataAction, ChangeDataAction} from '../redux/FormVerifierReducer';
+import {FormVerifierReducer, ChangeDataAction} from '../redux/FormVerifierReducer';
 //表单验证模块
 import Verifier from '../pub/Verifier';
 import Tool from '../pub/Tool';

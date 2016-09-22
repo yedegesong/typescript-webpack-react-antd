@@ -913,6 +913,8 @@ body {
   border-top: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  font-size: 14px;
+  text-align: center;
 }
 .ui-auth.on .ui-auth-menu {
   display: block;
@@ -946,6 +948,9 @@ body {
   /* Safari 和 Chrome */
   -o-transition: all 0.5s;
   transition: all 0.5s;
+}
+.ui-menu-parent {
+  padding-bottom: 100px;
 }
 .ui-menu-parent > li > h3 {
   position: relative;
@@ -1876,5 +1881,34 @@ fieldset[disabled] .ui-btn {
   padding: 0 5px;
   color: #ccc;
   content: "/\00a0";
+}
+.ui-box-list {
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.ui-item-box {
+  margin-right: -32px;
+}
+.ui-item-box:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.ui-item {
+  float: left;
+  width: 215px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+  background-color: #fff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.ui-img {
+  height: 170px;
+  padding: 10px;
+}
+.ui-img img {
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=app.css.map */

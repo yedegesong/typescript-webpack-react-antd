@@ -7,6 +7,7 @@ const css_prefix = ComponentsConfig.css_prefix;
 interface AppHeaderProps {
     MenuReducers: any;
     HeaderReducer: any;
+    rightMenu?:symbol;
     dispatch: Function;
 }
 class AppHeader extends React.Component<AppHeaderProps, any> {
@@ -60,10 +61,10 @@ class AppHeader extends React.Component<AppHeaderProps, any> {
                     <div className={cls}>
                         <h3 onClick = {(event) => this.handleAuthSwitch(event) }>欢迎您&nbsp;:&nbsp;{auchUserName}</h3>
                         <div className={`${css_prefix}-auth-menu`}>
-                        <ul>
-                            <li onClick = {this.exit.bind(this)} >退出</li>
-                        </ul>
-                    </div>
+                            <div>
+                                <p onClick = {this.exit.bind(this)} >退出</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>)
