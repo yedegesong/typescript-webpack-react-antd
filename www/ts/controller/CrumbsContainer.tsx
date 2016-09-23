@@ -29,8 +29,13 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
+        let {MenuReducers,HeaderReducer,Actions} = this.props;
         return (
-            <AppBody>
+            <AppBody 
+            meu_reducers={MenuReducers} 
+            hed_reducers = {HeaderReducer} 
+            actions = {Actions}
+            >
                     <Crumbs>
                         <li>首页</li>
                         <li>修改修改</li>

@@ -2,6 +2,7 @@ import * as React from "react";
 import {connect} from 'react-redux';/*
 import {switchMenu} from '../../redux/actions/MenuAction';*/
 import {loginOutAction} from '../../redux/actions/HeaderAction';
+import Icon from '../icon/Icon';
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
 interface AppHeaderProps {
@@ -63,7 +64,7 @@ export default class AppHeader extends React.Component<AppHeaderProps, any> {
                         <div className={`${css_prefix}-auth-menu`}>
                             {menuComponent}
                             <div>
-                                <p onClick = {this.exit.bind(this)} >退出</p>
+                                <p onClick = {this.exit.bind(this)} ><Icon type='dc'/>退出</p>
                             </div>
                         </div>
                     </div>
@@ -72,7 +73,6 @@ export default class AppHeader extends React.Component<AppHeaderProps, any> {
     }
     componentDidMount() {
         let {hed_reducers, actions} = this.props;
-        console.log(actions)
         actions.getAuthAction();
     }
 }

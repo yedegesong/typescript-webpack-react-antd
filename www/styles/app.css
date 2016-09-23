@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*主入口导入模块*/
 * {
   -webkit-box-sizing: border-box;
@@ -154,7 +155,104 @@ input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
-/*@import "media.less";*/
+/**
+  书写编译媒介选择器
+*/
+/* CSS Document */
+html {
+  font-size: 50px;
+}
+body {
+  font-size: 24px;
+}
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 21.33333333px;
+  }
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 24px;
+  }
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 25px;
+  }
+  body {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 25.6px;
+  }
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 26.66666667px;
+  }
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 27.6px;
+  }
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 424px) {
+  html {
+    font-size: 28.26666667px;
+  }
+  body {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 32px;
+  }
+  body {
+    font-size: 15.36px;
+  }
+}
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 36px;
+  }
+  body {
+    font-size: 17.28px;
+  }
+}
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 48px;
+  }
+  body {
+    font-size: 23.04px;
+  }
+}
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 50px;
+  }
+  body {
+    font-size: 24px;
+  }
+}
 /**
   书写全局公用样式
 */
@@ -294,6 +392,7 @@ body {
   -webkit-box-flex: 1;
   background-color: #f1f3f6;
   padding: .48rem;
+  font-size: 12px;
   -moz-transition: all 0.5s;
   /* Firefox 4 */
   -webkit-transition: all 0.5s;
@@ -1244,6 +1343,9 @@ fieldset[disabled] .ui-btn {
 .ui-table tr {
   /*border-bottom: 1px solid #e9e9e9;*/
 }
+.ui-table tr:nth-child(2n) {
+  background-color: #f6f9fb;
+}
 /*.@{css-prefix}table tbody tr:hover{
 	background-color: #f9f9f9;
 }*/
@@ -1494,6 +1596,7 @@ fieldset[disabled] .ui-btn {
   box-sizing: border-box;
   border-bottom: 2px solid transparent;
   cursor: pointer;
+  font-size: 14px;
 }
 .ui-tabs-title > div.tabOn {
   color: #2196f3;

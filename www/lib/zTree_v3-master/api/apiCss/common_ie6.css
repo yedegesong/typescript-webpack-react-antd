@@ -13,11 +13,11 @@ html pre {word-wrap: break-word}
 .contentBox {background-image: none;background-color: #F0F6E4;}
 .zTreeInfo {background-image: none;background-color: #F0F6E4;}
 
-.content button.ico16 {*background-image:url("img/apiMenu.gif")}
+.content button.ico16 {*background-image:url("/lib/zTree_v3-master/api/apiCss/img/apiMenu.gif")}
 .siteTag {background-image: none;}
 .apiContent .right {float: right;padding-right: 50px;}
 
 div.baby_overlay {background-color: #3C6E31;background-image:none;color:#fff;}
 div.baby_overlay .close {filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='apiCss/img/overlay_close_IE6.gif');background-image: none;}
-.baby_overlay_arrow {background-image:url(img/overlay_arrow.gif);}
-.apiDetail button {background-image:url("img/zTreeStandard.gif")}
+.baby_overlay_arrow {background-image:url(/lib/zTree_v3-master/api/apiCss/img/overlay_arrow.gif);}
+.apiDetail button {background-image:url("/lib/zTree_v3-master/api/apiCss/img/zTreeStandard.gif")}

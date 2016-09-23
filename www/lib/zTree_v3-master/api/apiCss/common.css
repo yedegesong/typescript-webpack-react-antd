@@ -2,7 +2,7 @@
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	margin: 0;padding: 0;border: 0;outline: 0;font-weight: inherit;font-style: inherit;font-size: 100%;font-family: inherit;vertical-align: baseline;}
 :focus {outline: 0;}
-body {color: #2f332a;font: 15px/21px Arial, Helvetica, simsun, sans-serif;background: #528036 url(img/background.jpg) no-repeat fixed 0 0;}
+body {color: #2f332a;font: 15px/21px Arial, Helvetica, simsun, sans-serif;background: #528036 url(/lib/zTree_v3-master/api/apiCss/img/background.jpg) no-repeat fixed 0 0;}
 p {padding-bottom: 20px;}
 ol, ul {list-style: none;}
 table {border-collapse: separate;border-spacing: 0;}
@@ -40,7 +40,7 @@ h4 {font-size: 14px;font-weight: normal;line-height: 25px;}
 .footer_wrap {bottom: 0;height: 47px;width: 100%;background-color: #1b1b1b;border-top: 1px solid #749e58;}
 
 /* Header */
-.header {position: relative;width: 940px;margin: 0 auto;height: 160px;border: 1px solid white;background: transparent url(img/header-bg.png) repeat-x 0 -50px;}
+.header {position: relative;width: 940px;margin: 0 auto;height: 160px;border: 1px solid white;background: transparent url(/lib/zTree_v3-master/api/apiCss/img/header-bg.png) repeat-x 0 -50px;}
 .header-text {padding: 40px 25px 15px 120px;font-size: 18px;line-height: 24px;color: #747d67;font-family: Helvetica, sans-serif;}
 .header-text img {padding-bottom: 5px;}
 .shortcuts {white-space: nowrap;text-align: right;position: absolute;top: -45px;right: 5px;}
@@ -52,7 +52,7 @@ h4 {font-size: 14px;font-weight: normal;line-height: 25px;}
 .shortcuts li a {color: #fff;}
 .ieSuggest {display:none;font-size: 12px;color: silver;position: absolute;left: 10px;top: 2px;}
 .google_plus {position: absolute;right: 10px; top:10px;}
-.light-bulb {position: absolute;left: -20px;bottom: -35px;width:116px;height:180px;background-image:url(img/lightbulb.png);background-repeat: no-repeat;}
+.light-bulb {position: absolute;left: -20px;bottom: -35px;width:116px;height:180px;background-image:url(/lib/zTree_v3-master/api/apiCss/img/lightbulb.png);background-repeat: no-repeat;}
 
 /* Content */
 .content {position: relative;width: 940px;margin: 0 auto;}
@@ -65,7 +65,7 @@ h4 {font-size: 14px;font-weight: normal;line-height: 25px;}
 .nav_section ul li.first {border: none;}
 .content .title {margin: 50px 30px 20px 70px;}
 .content li {margin-bottom: 5px;}
-.contentBox {position: relative;overflow: hidden;border: 1px solid white;min-height: 200px;line-height: 25px;background: transparent url(img/contact-bg.png) repeat-x 0 0;}
+.contentBox {position: relative;overflow: hidden;border: 1px solid white;min-height: 200px;line-height: 25px;background: transparent url(/lib/zTree_v3-master/api/apiCss/img/contact-bg.png) repeat-x 0 0;}
 
 .zTreeInfo {display:none;width: 940px;position: absolute;}
 .zTreeInfo p {padding-bottom: 50px;}
@@ -111,10 +111,10 @@ h4 {font-size: 14px;font-weight: normal;line-height: 25px;}
 .baby_overlay_tmp {position: absolute;top:0; left:-5000px;display:block;visibility: hidden;width:640px;font-size:11px;}
 .baby_overlay_tmp .details {padding: 20px;}
 .baby_overlay {display:none;position:absolute;z-index:99;left:0; top:0;width:640px;color:#fff;font-size:11px;}
-.baby_overlay .content {width:100%; height:100px;overflow: hidden;background: transparent url(img/overlay_bg.png) scroll repeat 0 0;}
+.baby_overlay .content {width:100%; height:100px;overflow: hidden;background: transparent url(/lib/zTree_v3-master/api/apiCss/img/overlay_bg.png) scroll repeat 0 0;}
 .baby_overlay .details {padding:0 20px 20px 20px;}
-.baby_overlay .close {background-image:url(img/close.png);position:absolute; right:5px; top:5px;cursor:pointer;height:36px;width:36px;}
-.baby_overlay_arrow {background-image:url(img/overlay_arrow.png);background-position:0 0;position:absolute;height:40px;width:40px;left: -40px;}
+.baby_overlay .close {background-image:url(/lib/zTree_v3-master/api/apiCss/img/close.png);position:absolute; right:5px; top:5px;cursor:pointer;height:36px;width:36px;}
+.baby_overlay_arrow {background-image:url(/lib/zTree_v3-master/api/apiCss/img/overlay_arrow.png);background-position:0 0;position:absolute;height:40px;width:40px;left: -40px;}
 .baby_overlay_arrow.reverse {background-position:0 -40px;}
 
 /* Footer */
@@ -150,12 +150,12 @@ button {vertical-align:middle;border:0 none;background: transparent no-repeat 0 
 .shortcuts button.donate {background-position: 0 -144px}
 .shortcuts button.download {background-position: 0 -96px}
 .shortcuts button.face {background-position: 0 -120px}
-.shortcuts button.cn {width:48px; height:24px;padding:0; margin:0 10px 0 0;background-image:url(img/chinese.png)}
-.shortcuts button.en {width:48px; height:24px;padding:0; margin:0 10px 0 0;background-image:url(img/english.png)}
+.shortcuts button.cn {width:48px; height:24px;padding:0; margin:0 10px 0 0;background-image:url(/lib/zTree_v3-master/api/apiCss/img/chinese.png)}
+.shortcuts button.en {width:48px; height:24px;padding:0; margin:0 10px 0 0;background-image:url(/lib/zTree_v3-master/api/apiCss/img/english.png)}
 
 .content button.ico {width:24px; height:24px;padding:0; margin:0 10px 0 0;}
 
-.content button.ico16 {width:16px; height:16px;padding:0; margin:0 5px 0 0;background-image:url("img/apiMenu.png");}
+.content button.ico16 {width:16px; height:16px;padding:0; margin:0 5px 0 0;background-image:url("/lib/zTree_v3-master/api/apiCss/img/apiMenu.png");}
 button.z_core {margin-top: -4px;background-position:0 0;}
 button.z_check {margin-top: -4px;background-position:0 -16px;}
 button.z_edit {margin-top: -4px;background-position:0 -32px;}
