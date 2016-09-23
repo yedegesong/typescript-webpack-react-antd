@@ -10,7 +10,8 @@ import {
     Buttons,
     Row,
     Col} from '../components/index';
-import {changeActiveAction} from '../redux/actions/MenuAction';
+import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
+import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -27,8 +28,9 @@ class IndexApp extends BaseContainer {
             width:`100%`,
             height:`400px`
         };
+        let {MenuReducers,HeaderReducer,Actions} = this.props;
         return (
-            <AppBody>
+            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
                 <Panel  title="饼状图面板-结合百度图表">
                     <Echarts>
                         <h3>饼状图</h3>

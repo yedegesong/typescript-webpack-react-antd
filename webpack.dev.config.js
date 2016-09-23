@@ -6,7 +6,6 @@
 var path = require('path');
 
 var fs = require('fs');
-
 var app_config = require('./config');
 /**
  * 导入文件入口

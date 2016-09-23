@@ -20,10 +20,10 @@ export default class AppBody extends React.Component<any,any> {
      * body 主容器 包括头部和菜单 <AppHeader /> <AppMenu  />
      */
     render() {
-        let {children,reducers} = this.props;
-        let Cls = reducers.menuSwitch ? adCls : adCls + " off";
+        let {children,meu_reducers,hed_reducers,actions} = this.props;
+        let Cls = meu_reducers.menuSwitch ? adCls : adCls + " off";
         return (<div className={`${css_prefix}-body`}>
-                    <AppHeader/>
+                    <AppHeader meu_reducers={meu_reducers} hed_reducers={hed_reducers} actions = {actions}/>
                     <div className = { Cls }>
                         <AppMenu />
                         <div className={`${css_prefix}-container`}>

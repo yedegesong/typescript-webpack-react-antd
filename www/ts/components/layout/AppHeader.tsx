@@ -1,16 +1,15 @@
 import * as React from "react";
-import {connect} from 'react-redux';
+import {connect} from 'react-redux';/*
 import {switchMenu} from '../../redux/actions/MenuAction';
-import {getAuthAction,loginOutAction} from '../../redux/actions/HeaderAction';
+import {getAuthAction,loginOutAction} from '../../redux/actions/HeaderAction';*/
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
 interface AppHeaderProps {
-    MenuReducers: any;
-    HeaderReducer: any;
-    rightMenu?:symbol;
-    dispatch: Function;
+    meu_reducers?:any;
+    hed_reducers?:any;
+    actions?:any;
 }
-class AppHeader extends React.Component<AppHeaderProps, any> {
+export default class AppHeader extends React.Component<AppHeaderProps, any> {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,12 +20,12 @@ class AppHeader extends React.Component<AppHeaderProps, any> {
      * 点击切换菜单
      */
     handleSwitch(event){
-        let {MenuReducers,dispatch} = this.props;
-        if(MenuReducers.menuSwitch){
-            dispatch(switchMenu(false));
+        let {meu_reducers,actions} = this.props;
+        if(meu_reducers.menuSwitch){
+            actions.switchMenu(false);
             return false;
         }
-        dispatch(switchMenu(true));
+        actions.switchMenu(true);
     }
     /**
      * 点击切换头部菜单
@@ -42,12 +41,12 @@ class AppHeader extends React.Component<AppHeaderProps, any> {
      * 点击退出
      */
     exit(){
-        loginOutAction();
+        //this.props.actions.loginOutAction();
     }
     
     render() {
-        let {HeaderReducer, dispatch} = this.props;
-        let auchUserName = HeaderReducer.LOGIN_ID;
+        let {hed_reducers,actions} = this.props;
+        let auchUserName = hed_reducers.LOGIN_ID;
         let cls = this.state.authSwitch ? `${css_prefix}-auth on` : `${css_prefix}-auth `;
         return (
             <div className={`${css_prefix}-layout-header`}>
@@ -70,16 +69,8 @@ class AppHeader extends React.Component<AppHeaderProps, any> {
             </div>)
     }
     componentDidMount() {
-        let {HeaderReducer, dispatch} = this.props;
-        dispatch(getAuthAction());
+        let {hed_reducers, actions} = this.props;
+        console.log(actions)
+        actions.getAuthAction();
     }
 }
-
-let mapStateToProps = (state) => {
-    return {
-        HeaderReducer: state.HeaderReducer,
-        MenuReducers: state.MenuReducers
-    }
-}
-
-export default connect(mapStateToProps)(AppHeader);

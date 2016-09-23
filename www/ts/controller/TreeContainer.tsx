@@ -11,7 +11,8 @@ import {
     Row,
     Col,
     Icon,Dashboard} from '../components/index';
-import {changeActiveAction} from '../redux/actions/MenuAction';
+    import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
+import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -25,8 +26,9 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
+        let {MenuReducers,HeaderReducer,Actions} = this.props;
         return (
-            <AppBody>
+            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
                 <Panel title="基于jquery-树插件-ztree 地址:http://www.treejs.cn/v3/demo.php#_111">
                     <div className="zTreeDemoBackground left">
 		                <ul id="treeDemo" className="ztree"></ul>
@@ -37,7 +39,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        let {MenuReducers, dispatch} = this.props;
+        let {MenuReducers, Actions} = this.props;
+        Actions.changeActiveAction();
         let setting = {
 			check: {
 				enable: true,
@@ -64,7 +67,6 @@ class IndexApp extends BaseContainer {
             { id:22, pId:2, name:"角色管理 2-2"},
         ]
         $.fn.zTree.init($("#treeDemo"), setting, zNodes);
-        dispatch(changeActiveAction())
     }
 
     componentWillUnmount():void {
@@ -78,14 +80,25 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
+        HeaderReducer: state.HeaderReducer,
         MenuReducers: state.MenuReducers
     }
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        Actions: bindActionCreators({
+                 changeActiveAction,
+                 switchMenu,
+                 getAuthAction,
+                 loginOutAction
+             }, dispatch)
+    };
+}
 /**
  * 添加监听数据
  */
-const App = connect(mapStateToProps)(IndexApp);
+const App = connect(mapStateToProps,mapDispatchToProps)(IndexApp);
 const ElementContainer = document.getElementById("example");
 ReactDOM.render(
     <Provider store = {store}>

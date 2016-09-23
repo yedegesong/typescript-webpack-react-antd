@@ -16,7 +16,8 @@ import {
     RadioGroup,
     Buttons,
     Tips} from '../components/index';
-import {changeActiveAction} from '../redux/actions/MenuAction';
+    import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
+import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -70,7 +71,7 @@ class IndexApp extends BaseContainer {
     checkedValue: any;
     constructor(props) {
         super(props);
-        let {FormVerifierReducer, dispatch} = this.props;
+        let {FormVerifierReducer, Actions} = this.props;
         this.date = [{
             label: '北京',
             value: '北京'
@@ -129,22 +130,23 @@ class IndexApp extends BaseContainer {
     }
 
     valueChannelChange(name,value){
-        let {dispatch} = this.props;
+        let {Actions} = this.props;
         this.submitDate[name] = value;
-        dispatch(ChangeDataAction(this.submitDate));
+        Actions.ChangeDataAction(this.submitDate);
     }
 
     valueInterestChange(name,value){
-        let {dispatch} = this.props;
+        let {Actions} = this.props;
         this.submitDate[name] = value;
-        dispatch(ChangeDataAction(this.submitDate));
+        Actions.ChangeDataAction(this.submitDate);
     }
     
     render() {
-        let {FormVerifierReducer, dispatch} = this.props;
+        let {FormVerifierReducer,MenuReducers,HeaderReducer,Actions} = this.props;
+        console.log(this.props)
         this.submitDate = Tool.assign({}, this.submitDate, FormVerifierReducer.submitDate);
         return (<div>
-            <AppBody>
+            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
                 <Panel title = "表单验证 - 基于redux的数据回填">
                     <FormGroup horizontal >
                         <FormItems label="用户名">
@@ -193,8 +195,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        let {FormVerifierReducer, dispatch} = this.props;
-        dispatch(changeActiveAction())
+        let {FormVerifierReducer, Actions} = this.props;
+       Actions.changeActiveAction();
     }
     
     componentWillUnmount():void {
@@ -213,14 +215,28 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
+        HeaderReducer: state.HeaderReducer,
+        MenuReducers: state.MenuReducers,
         FormVerifierReducer: state.FormVerifierReducer
     }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        Actions: bindActionCreators({
+                 changeActiveAction,
+                 switchMenu,
+                 getAuthAction,
+                 loginOutAction,
+                 ChangeDataAction
+             }, dispatch)
+    };
 }
 
 /**
  * 添加监听数据
  */
-const App = connect(mapStateToProps)(IndexApp);
+const App = connect(mapStateToProps,mapDispatchToProps)(IndexApp);
 const ElementContainer = document.getElementById("example");
 ReactDOM.render(
     <Provider store = {store}>

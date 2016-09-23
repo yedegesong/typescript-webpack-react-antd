@@ -8,7 +8,8 @@ import {
     Panel,
     Buttons,
     Tips} from '../components/index';
-import {changeActiveAction} from '../redux/actions/MenuAction';
+import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
+import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -27,9 +28,9 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
-
+let {MenuReducers,HeaderReducer,Actions} = this.props;
         return (
-            <AppBody>
+            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
                 <Panel title="全局提示-按钮面板">
                     <Buttons onClick = {() => this.handleButton('我是普通显示') } >显示普通</Buttons>
                     <Buttons onClick = {() => this.handleButton('我是成功显示',1) } >成功</Buttons>
@@ -41,8 +42,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction())
+        let {MenuReducers, Actions} = this.props;
+        Actions.changeActiveAction();
     }
     
     componentWillUnmount():void {
@@ -52,14 +53,25 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
+        HeaderReducer: state.HeaderReducer,
         MenuReducers: state.MenuReducers
     }
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        Actions: bindActionCreators({
+                 changeActiveAction,
+                 switchMenu,
+                 getAuthAction,
+                 loginOutAction
+             }, dispatch)
+    };
+}
 /**
  * 添加监听数据
  */
-const App = connect(mapStateToProps)(IndexApp);
+const App = connect(mapStateToProps,mapDispatchToProps)(IndexApp);
 const ElementContainer = document.getElementById("example");
 ReactDOM.render(
     <Provider store = {store}>

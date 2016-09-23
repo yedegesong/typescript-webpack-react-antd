@@ -11,7 +11,8 @@ import {
     Row,
     Col,
     Icon,Dashboard} from '../components/index';
-import {changeActiveAction} from '../redux/actions/MenuAction';
+    import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
+import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -24,8 +25,9 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
+        let {MenuReducers,HeaderReducer,Actions} = this.props;
         return (
-            <AppBody>
+            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
                 <Panel title="所有图标-面板">
                     <Icon type="sc"/>&nbsp; &nbsp;
                      <Icon type="mm"/>&nbsp; &nbsp;
@@ -93,8 +95,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction())
+        let {MenuReducers, Actions} = this.props;
+        Actions.changeActiveAction();
     }
 
     componentWillUnmount():void {
@@ -104,14 +106,25 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
+        HeaderReducer: state.HeaderReducer,
         MenuReducers: state.MenuReducers
     }
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        Actions: bindActionCreators({
+                 changeActiveAction,
+                 switchMenu,
+                 getAuthAction,
+                 loginOutAction
+             }, dispatch)
+    };
+}
 /**
  * 添加监听数据
  */
-const App = connect(mapStateToProps)(IndexApp);
+const App = connect(mapStateToProps,mapDispatchToProps)(IndexApp);
 const ElementContainer = document.getElementById("example");
 ReactDOM.render(
     <Provider store = {store}>
