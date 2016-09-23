@@ -12,7 +12,7 @@ import {
     Col,
     Icon,Dashboard} from '../components/index';
 import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
-import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
+import {getAuthAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -22,6 +22,14 @@ const store = BaseStore({  });
 let divStyle = {
     marginBottom: '10px',
 };
+//数据流向
+let header_menu = ()=>{
+    return <ul>
+                {['个人资料','密码修改','充值','充送'].map((value,key)=>{
+                    return <li key={key} onClick={()=>{alert(value)}}>{value}</li>
+                })}
+            </ul>
+}
 class IndexApp extends BaseContainer {
     constructor(props) {
         super(props);
@@ -30,7 +38,12 @@ class IndexApp extends BaseContainer {
     render() {
         let {MenuReducers,HeaderReducer,Actions} = this.props;
         return (
-            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
+            <AppBody 
+            meu_reducers={MenuReducers} 
+            hed_reducers = {HeaderReducer} 
+            actions = {Actions}
+            menuComponent = {header_menu()}
+            >
                 <Row>
                     <Col span="50" >
                         <Panel  title="面板-字体辅助" >
@@ -141,8 +154,7 @@ function mapDispatchToProps(dispatch) {
         Actions: bindActionCreators({
                  changeActiveAction,
                  switchMenu,
-                 getAuthAction,
-                 loginOutAction
+                 getAuthAction
              }, dispatch)
     };
 }

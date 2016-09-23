@@ -18,6 +18,14 @@ console.log(ReactDOM)
 const store = BaseStore({AccordionReducer});
 //declare let WdatePicker;
 //数据流向
+let header_menu = ()=>{
+    return <ul>
+                <li>个人资料</li>
+                <li>修改密码</li>
+                <li>充值</li>
+                <li>充送</li>
+            </ul>
+}
 class IndexApp extends BaseContainer {
     constructor(props) {
         super(props);
@@ -29,7 +37,12 @@ class IndexApp extends BaseContainer {
                         // <AccPanel tab="选项卡二" key="2">选项卡二内容</AccPanel>
                         // <AccPanel tab="选项卡三" key="3">选项卡三内容</AccPanel>
         return (
-            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
+            <AppBody 
+                meu_reducers={MenuReducers}
+                hed_reducers = {HeaderReducer}
+                actions = {Actions}
+                menuComponent = {header_menu()}
+                  >
                 <Panel title="手风琴面板">
                   <Folding>
                         <FoldingPane header = "面板一" key ={'0'}>

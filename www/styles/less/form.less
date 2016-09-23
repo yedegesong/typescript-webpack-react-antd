@@ -70,8 +70,7 @@
 
 .@{css-prefix}form-items .@{css-prefix}form-label{
 	display: inline-block;
-	font-size: 12px;
-	margin-top: 10px;
+	font-size: 14px;
 }
 .@{css-prefix}form-items .@{css-prefix}form-items-help{
 	margin-top:10px;
@@ -229,7 +228,7 @@
 	background-color: #fff;
 }
 
-.@{css-prefix}form-input-radio>input[type='radio']:checked:before{
+.@{css-prefix}form-input-radio>input[type='radio']:not(:disabled):checked:before{
 	border: 1px solid #2196f3;
 }
 .@{css-prefix}form-input-radio>input[type='radio']:checked:after{
