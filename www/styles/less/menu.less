@@ -1,12 +1,12 @@
 //左侧菜单 背景颜色
-@menu-background: #2c3b48;
+@menu-background: #313942;
 //父菜单移动上去 背景颜色
 @menu-hover-background: #1f2933;
 @menu-hover-color:#fff;
 //菜单文字颜色
 @menu-text-color:#959ca3;
 //子热点状态
-@menu-child-active:#222d37;
+@menu-child-active:#262c33;
 .@{css-prefix}menu{
   position: absolute;
   top: 0;
@@ -74,9 +74,10 @@
 }
 .@{css-prefix}menu-parent>li.active .@{css-prefix}menu-child{
   max-height:400px;
+    background-color: #1c2126;
 }
 .@{css-prefix}menu-child>li{
-  border-bottom: 0 none;
+  border-bottom: 1px solid #2a2c2d;
   a{
     position: relative;
     display: block;

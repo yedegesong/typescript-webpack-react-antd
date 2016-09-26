@@ -40,7 +40,7 @@
   border: 1px solid transparent;
   white-space: nowrap;
   line-height: 1.5;
-  padding: 4px 15px;
+  padding: 8px 20px;
   font-size: 12px;
   .border-radius(2px);
   .user-select;
@@ -51,7 +51,10 @@
   margin-right: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
-
+.@{css-prefix}btn:active{
+  
+   box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
 //默认按钮
 .@{css-prefix}btn-default{
   color: #444;
@@ -71,7 +74,7 @@
 .@{css-prefix}btn-primary{
   color: @color-write;
   background-color: @btn-blue;
-  border-color: darken(@btn-blue, 6%);
+  /*border-color: darken(@btn-blue, 6%);*/
 }
 .@{css-prefix}btn-primary:not([disabled]):hover,
 .@{css-prefix}btn-primary:focus{
@@ -91,7 +94,7 @@
 .@{css-prefix}btn-success{
   color: @color-write;
   background-color: @btn-green;
-  border-color: darken(@btn-green,6%);
+  /*border-color: darken(@btn-green,6%);*/
 }
 .@{css-prefix}btn-success:not([disabled]):hover,
 .@{css-prefix}btn-success:focus{
@@ -111,7 +114,7 @@
 .@{css-prefix}btn-danger{
   color: @color-write;
   background-color: @btn-red;
-  border-color: darken(@btn-red,6%);
+  /*border-color: darken(@btn-red,6%);*/
 }
 .@{css-prefix}btn-danger:not([disabled]):hover,
 .@{css-prefix}btn-danger:focus{
@@ -131,7 +134,7 @@
 .@{css-prefix}btn-info{
   color: @color-write;
   background-color: @btn-info;
-  border-color: darken(@btn-info,6%);
+  /*border-color: darken(@btn-info,6%);*/
 }
 .@{css-prefix}btn-info:not([disabled]):hover,
 .@{css-prefix}btn-info:focus{
@@ -151,7 +154,7 @@
 .@{css-prefix}btn-warning{
   color: @color-write;
   background-color: @btn-warning;
-  border-color: darken(@btn-warning,6%);
+  /*border-color: darken(@btn-warning,6%);*/
 }
 .@{css-prefix}btn-warning:not([disabled]):hover,
 .@{css-prefix}btn-warning:focus{
@@ -178,7 +181,7 @@
 //大按钮
 .@{css-prefix}btn-lg{
   padding: 5px 15px;
-  font-size: 14px;
+  font-size: 16px;
 }
 //小按钮
 .@{css-prefix}btn-sm{

@@ -1,5 +1,5 @@
-@input-hover-color:#57c5f7;
-@input-focus-color:#d5f1fd;
+@input-hover-color:#2096f3;
+@input-focus-color:#35a6ff;
 //文本域提示颜色值
 .input-placeholder(@color: #999;@ft:12px){
 	::-webkit-input-placeholder {
@@ -118,8 +118,10 @@
 	color: #555;
 	background-color: #fff;
 	background-image: none;
-	border: 1px solid #ccc;
-	border-radius: 4px;
+	border: 1px solid #b2b2b2;
+	border-radius: 2px;
+
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.12);
 	-webkit-appearance: none;
 	.transition(all,.15s);
 }
@@ -149,7 +151,7 @@
 .@{css-prefix}form-textarea textarea:focus{
 	border-color: @input-hover-color;
 	outline: 0;
-	box-shadow: 0 0 0 2px @input-focus-color;
+	box-shadow:inset 0 2px 2px rgba(0,0,0,0.12);
 
 }
 

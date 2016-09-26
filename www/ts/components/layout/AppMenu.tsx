@@ -6,6 +6,7 @@ import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
 import {getMenuAction, saveParentActive, saveChildActive,changeActiveAction} from '../../redux/actions/MenuAction';
 const now_url = window.location.href.match(/(?:\w*)(?=.html)/);
+
 interface AppMenuProps {
     active:number;
     MenuReducers: any;
@@ -65,6 +66,7 @@ class AppMenu extends React.Component<AppMenuProps, any>{
     }
 
     createItem(item,index){
+        console.log(item)
         let {MenuReducers, dispatch} = this.props;
         //判断是否存在子菜单
         let hasChild = item.subMunu.length > 0 ? true : false;
@@ -80,7 +82,7 @@ class AppMenu extends React.Component<AppMenuProps, any>{
                     <ul className={`${css_prefix}-menu-child`}>
                         {item.subMunu.map((childItem,childIndex) => {
                             let ChildUrl =  childItem.url;
-                            let childActive = ChildUrl == now_url ? `${css_prefix}-menu-child-item chd-active` : `${css_prefix}-menu-child-item`;
+                            let childActive = ChildUrl == now_url[0] ? `${css_prefix}-menu-child-item chd-active` : `${css_prefix}-menu-child-item`;
                             return (<li key = {childIndex} className={childActive}>
                                 <a href={URL} onClick = {(event) => this.push(event, childIndex, childItem.name, ChildUrl) }>
                                     {childItem.icon ? <Icon type={childItem.icon}/> : false}

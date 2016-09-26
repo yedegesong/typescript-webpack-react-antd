@@ -376,7 +376,7 @@ body {
   width: 100%;
   min-height: 100%;
   top: 56px;
-  background-color: #f1f3f6;
+  background-color: #faf9f7;
 }
 .ui-layout-pc-main {
   display: -webkit-box;
@@ -384,13 +384,13 @@ body {
   width: 100%;
   min-height: 100%;
   top: 56px;
-  background-color: #f1f3f6;
+  background-color: #faf9f7;
 }
 .ui-container {
   position: relative;
   z-index: 99;
   -webkit-box-flex: 1;
-  background-color: #f1f3f6;
+  background-color: #faf9f7;
   padding: .48rem;
   font-size: 12px;
   -moz-transition: all 0.5s;
@@ -531,8 +531,9 @@ body {
   color: #555;
   background-color: #fff;
   background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #b2b2b2;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.12);
   -webkit-appearance: none;
   -moz-transition: all 0.15s;
   /* Firefox 4 */
@@ -568,9 +569,9 @@ body {
 }
 .ui-form-input:focus,
 .ui-form-textarea textarea:focus {
-  border-color: #57c5f7;
+  border-color: #2096f3;
   outline: 0;
-  box-shadow: 0 0 0 2px #d5f1fd;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.12);
 }
 .ui-form-input[disabled] {
   background-color: #eee;
@@ -608,7 +609,7 @@ body {
 .ui-form-input:not([disabled]):hover,
 .ui-form-input-select:not([disabled]):hover,
 .ui-form-textarea textarea:hover {
-  border-color: #57c5f7;
+  border-color: #2096f3;
 }
 .ui-form-input-radio {
   line-height: 25px;
@@ -839,7 +840,7 @@ body {
 .ui-menu-switch span {
   position: relative;
   display: block;
-  width: 12px;
+  width: 20px;
   height: 2px;
   margin-top: 4px;
   background-color: #2096f3;
@@ -849,7 +850,7 @@ body {
   content: ' ';
   position: absolute;
   display: block;
-  width: 12px;
+  width: 20px;
   height: 2px;
   background-color: #2096f3;
 }
@@ -939,7 +940,7 @@ body {
   width: 220px;
   z-index: 9;
   color: #959ca3;
-  background-color: #2c3b48;
+  background-color: #313942;
   overflow-y: auto;
   -moz-transition: all 0.5s;
   /* Firefox 4 */
@@ -1014,9 +1015,10 @@ body {
 }
 .ui-menu-parent > li.active .ui-menu-child {
   max-height: 400px;
+  background-color: #1c2126;
 }
 .ui-menu-child > li {
-  border-bottom: 0 none;
+  border-bottom: 1px solid #2a2c2d;
 }
 .ui-menu-child > li a {
   position: relative;
@@ -1035,7 +1037,7 @@ body {
   margin-right: 10px;
 }
 .ui-menu-child .chd-active {
-  background-color: #222d37;
+  background-color: #262c33;
   border-left: 3px solid #2096f3;
 }
 .ui-menu-child .chd-active a {
@@ -1089,7 +1091,7 @@ body {
   border: 1px solid transparent;
   white-space: nowrap;
   line-height: 1.5;
-  padding: 4px 15px;
+  padding: 8px 20px;
   font-size: 12px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -1105,6 +1107,9 @@ body {
   margin-right: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
+.ui-btn:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
 .ui-btn-default {
   color: #444;
   background-color: #fff;
@@ -1119,7 +1124,7 @@ body {
 .ui-btn-primary {
   color: #fff;
   background-color: #2196f3;
-  border-color: #0d87e9;
+  /*border-color: darken(@btn-blue, 6%);*/
 }
 .ui-btn-primary:not([disabled]):hover,
 .ui-btn-primary:focus {
@@ -1136,7 +1141,7 @@ body {
 .ui-btn-success {
   color: #fff;
   background-color: #00c249;
-  border-color: #00a33d;
+  /*border-color: darken(@btn-green,6%);*/
 }
 .ui-btn-success:not([disabled]):hover,
 .ui-btn-success:focus {
@@ -1153,7 +1158,7 @@ body {
 .ui-btn-danger {
   color: #fff;
   background-color: #f44336;
-  border-color: #f22819;
+  /*border-color: darken(@btn-red,6%);*/
 }
 .ui-btn-danger:not([disabled]):hover,
 .ui-btn-danger:focus {
@@ -1170,7 +1175,7 @@ body {
 .ui-btn-info {
   color: #fff;
   background-color: #5bc0de;
-  border-color: #42b6d9;
+  /*border-color: darken(@btn-info,6%);*/
 }
 .ui-btn-info:not([disabled]):hover,
 .ui-btn-info:focus {
@@ -1187,7 +1192,7 @@ body {
 .ui-btn-warning {
   color: #fff;
   background-color: #ff5722;
-  border-color: #ff4003;
+  /*border-color: darken(@btn-warning,6%);*/
 }
 .ui-btn-warning:not([disabled]):hover,
 .ui-btn-warning:focus {
@@ -1211,7 +1216,7 @@ body {
 }
 .ui-btn-lg {
   padding: 5px 15px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .ui-btn-sm {
   padding: 1px 8px;
