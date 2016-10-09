@@ -30,7 +30,10 @@ class IndexApp extends BaseContainer {
         };
         let {MenuReducers,HeaderReducer,Actions} = this.props;
         return (
-            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
+            <AppBody 
+            meu_reducers={MenuReducers} 
+            hed_reducers = {HeaderReducer} 
+            actions = {Actions}>
                 <Panel  title="饼状图面板-结合百度图表">
                     <Echarts>
                         <h3>饼状图</h3>
@@ -42,8 +45,8 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        let {MenuReducers, dispatch} = this.props;
-        dispatch(changeActiveAction())
+        let {MenuReducers, Actions} = this.props;
+        Actions.changeActiveAction()
        var myChart = echarts.init(document.getElementById('main'));
         // 指定图表的配置项和数据
         var option = {
@@ -107,14 +110,25 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
+        HeaderReducer: state.HeaderReducer,
         MenuReducers: state.MenuReducers
     }
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        Actions: bindActionCreators({
+                 changeActiveAction,
+                 switchMenu,
+                 getAuthAction,
+                 loginOutAction
+             }, dispatch)
+    };
+}
 /**
  * 添加监听数据
  */
-const App = connect(mapStateToProps)(IndexApp);
+const App = connect(mapStateToProps,mapDispatchToProps)(IndexApp);
 const ElementContainer = document.getElementById("example");
 ReactDOM.render(
     <Provider store = {store}>
