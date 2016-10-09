@@ -89,7 +89,7 @@ class IndexApp extends BaseContainer {
             <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
              <Panel title="行内-表单面板" >
                     <FormGroup inline>
-                        <FormItems label="账户 : ">
+                        <FormItems label="账户 : " className="abcd">
                             <InputText type="test" placeholder="请输入账号" id="user_name"/>
                         </FormItems>
                         <FormItems >

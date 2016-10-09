@@ -49,15 +49,15 @@ class IndexApp extends BaseContainer {
                             <div>11</div>
                             <div>22</div>
                             <Folding>
-                        <FoldingPane header = "面板一" key ={'0'}>
-                            <div>11</div>
-                            <div>22</div>
-                        </FoldingPane>
-                        <FoldingPane header = "面板二" key = {'1'}>
-                            <div>33</div>
-                            <div>44</div>
-                        </FoldingPane>
-                  </Folding>
+                                <FoldingPane header = "面板一" key ={'0'}>
+                                    <div>11</div>
+                                    <div>22</div>
+                                </FoldingPane>
+                                <FoldingPane header = "面板二" key = {'1'}>
+                                    <div>33</div>
+                                    <div>44</div>
+                                </FoldingPane>
+                            </Folding>
                         </FoldingPane>
                         <FoldingPane header = "面板二" key = {'1'}>
                             <div>33</div>

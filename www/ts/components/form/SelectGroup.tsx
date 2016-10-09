@@ -32,7 +32,7 @@ export default class SelectGroup extends React.Component<any,any> {
     }
 
     renderItems() {
-        return this.props.data.map((item, i) => {
+        return this.props.items.map((item, i) => {
             return <optgroup label={item.label} key = {i}>
                 {item.options.map((items, key) => {
                     return <option value={items.value} key={key}>{items.label}</option>
@@ -42,8 +42,9 @@ export default class SelectGroup extends React.Component<any,any> {
     }
 
     render() {
+       
         let inputClassName = `${css_prefix}-form-input-select`;
-        const {value, name, data,className} = this.props;
+        const {value, name, items,className} = this.props;
         let addClassName = className;
         let Cls = classNames(`${css_prefix}-form-select-container`, { [`${addClassName}`]: className });
         return (
@@ -55,7 +56,7 @@ export default class SelectGroup extends React.Component<any,any> {
                     className={inputClassName}
                     onChange={this.handleChange}>
                     <option value="-1">请选择</option> 
-                    {data && data.length >= 1 ? this.renderItems() : false}
+                    {items && items.length >= 1 ? this.renderItems() : false}
                 </select>
             </div>
         );

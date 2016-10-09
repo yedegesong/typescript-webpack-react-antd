@@ -37,11 +37,15 @@ export default class FormItems extends React.Component<any,any> {
     render() {
         let {children, label, className,help,isInline,require,labelCol} = this.props;
         let addClassName = className;
+        
         let contenCls = classNames(`${css_prefix}-form-items`, {[`${addClassName}`]: className });
         let Cls = classNames(`${css_prefix}-form-label`,
         {[`${css_prefix}-col-${labelCol}`]: labelCol&&!isInline });
+        let helpStyle = {
+            "marginLeft":`${labelCol}%`
+        }
         let labelTel = label ? (<label className={Cls}><span>{require?<strong className="require">*</strong>:false}{label}</span></label>) : false;
-        let helpTips = help ? (<div className={`${css_prefix}-form-items-help`}>{help}</div>) : false;
+        let helpTips = help ? (<div className={`${css_prefix}-form-items-help`} style={helpStyle}>{help}</div>) : false;
         return (<div className={contenCls}>
                     {labelTel}
                     {this.toChild()}

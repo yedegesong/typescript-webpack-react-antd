@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -p --config webpack.build.config.js --progress --colors  --profile",
+"build": "webpack -p --config webpack.build.config.js --progress --colors  --profile",
     "dev": "node webpack.server.js",
     "dev2": "webpack-dev-server --inline --hot --quiet",
     "lint": "eslint src",

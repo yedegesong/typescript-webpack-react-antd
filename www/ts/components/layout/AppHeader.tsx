@@ -54,7 +54,7 @@ export default class AppHeader extends React.Component<AppHeaderProps, any> {
             <div className={`${css_prefix}-layout-header`}>
                 <div className={`${css_prefix}-header-container`}>
                     <div className={`${css_prefix}-logo`}>
-                        组件管理系统
+                        广告系统
                     </div>
                     <div className={`${css_prefix}-menu-switch`} onClick = {(event) => this.handleSwitch(event)}>
                         <span></span>

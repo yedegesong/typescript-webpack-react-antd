@@ -22,7 +22,7 @@ export default class InfoText extends React.Component<any, any> {
             {
                 [`${addClassName}`]: className
             });
-        return (<div className = {Cls}>
+        return (<div className = {Cls} {...this.props}>
             {children}
         </div>
         );

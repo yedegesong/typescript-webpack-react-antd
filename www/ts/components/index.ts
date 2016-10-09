@@ -33,7 +33,7 @@ import Icon from './icon/Icon';
 import Pagination from './pagination/Pagination';
 import Calendar from './calendar/Calendar';
 import Crumbs from './Crumbs/crumbs';
-
+import Label from './label/Label';
 export {
     AppHeader,
     AppMenu,
@@ -69,5 +69,6 @@ export {
     Calendar,
     Folding,
     FoldingPane,
-    Crumbs
+    Crumbs,
+    Label
 }
