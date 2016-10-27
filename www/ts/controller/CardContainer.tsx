@@ -10,8 +10,6 @@ import {
     Buttons,
     Row,
     Col} from '../components/index';
-import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
-import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -24,9 +22,9 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
-        let {MenuReducers,HeaderReducer,Actions} = this.props;
+        let {Actions} = this.props;
         return (
-           <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
+           <AppBody>
                 <Panel  title="卡片 - 固定宽">
                    <div className="ui-box-list">
                         <div className="ui-item-box">
@@ -62,9 +60,7 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-      let {MenuReducers, Actions} = this.props;
-        
-        Actions.changeActiveAction();
+      let {Actions} = this.props;
     }
 
     componentWillUnmount():void {
@@ -74,18 +70,14 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
-        HeaderReducer: state.HeaderReducer,
-        MenuReducers: state.MenuReducers
+       
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         Actions: bindActionCreators({
-                 changeActiveAction,
-                 switchMenu,
-                 getAuthAction,
-                 loginOutAction
+                
              }, dispatch)
     };
 }

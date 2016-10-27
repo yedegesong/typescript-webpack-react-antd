@@ -11,8 +11,6 @@ import {
     Row,
     Col,
     Icon,Dashboard} from '../components/index';
-    import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
-import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -26,9 +24,9 @@ class IndexApp extends BaseContainer {
     }
 
     render() {
-        let {MenuReducers,HeaderReducer,Actions} = this.props;
+        let {Actions} = this.props;
         return (
-            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
+            <AppBody>
                 <Panel title="基于jquery-树插件-ztree 地址:http://www.treejs.cn/v3/demo.php#_111">
                     <div className="zTreeDemoBackground left">
 		                <ul id="treeDemo" className="ztree"></ul>
@@ -39,8 +37,7 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        let {MenuReducers, Actions} = this.props;
-        Actions.changeActiveAction();
+        let {Actions} = this.props;
         let setting = {
 			check: {
 				enable: true,
@@ -80,18 +77,14 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
-        HeaderReducer: state.HeaderReducer,
-        MenuReducers: state.MenuReducers
+       
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         Actions: bindActionCreators({
-                 changeActiveAction,
-                 switchMenu,
-                 getAuthAction,
-                 loginOutAction
+                 
              }, dispatch)
     };
 }

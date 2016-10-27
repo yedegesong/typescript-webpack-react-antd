@@ -1,5 +1,7 @@
 import * as React from "react";
-import {connect} from 'react-redux';/*
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
+/*
 import {switchMenu} from '../../redux/actions/MenuAction';*/
 import {loginOutAction} from '../../redux/actions/HeaderAction';
 import Icon from '../icon/Icon';

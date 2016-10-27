@@ -10,8 +10,6 @@ import {
     Buttons,
     Row,
     Col} from '../components/index';
-import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
-import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -30,10 +28,7 @@ class IndexApp extends BaseContainer {
         };
         let {MenuReducers,HeaderReducer,Actions} = this.props;
         return (
-            <AppBody 
-            meu_reducers={MenuReducers} 
-            hed_reducers = {HeaderReducer} 
-            actions = {Actions}>
+            <AppBody>
                 <Panel  title="饼状图面板-结合百度图表">
                     <Echarts>
                         <h3>饼状图</h3>
@@ -45,8 +40,7 @@ class IndexApp extends BaseContainer {
     }
 
     componentDidMount():void {
-        let {MenuReducers, Actions} = this.props;
-        Actions.changeActiveAction()
+        let {Actions} = this.props;
        var myChart = echarts.init(document.getElementById('main'));
         // 指定图表的配置项和数据
         var option = {
@@ -110,18 +104,14 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
-        HeaderReducer: state.HeaderReducer,
-        MenuReducers: state.MenuReducers
+        
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
         Actions: bindActionCreators({
-                 changeActiveAction,
-                 switchMenu,
-                 getAuthAction,
-                 loginOutAction
+                
              }, dispatch)
     };
 }

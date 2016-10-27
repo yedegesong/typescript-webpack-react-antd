@@ -16,8 +16,6 @@ import {
     RadioGroup,
     Buttons,
     Tips} from '../components/index';
-    import {changeActiveAction,switchMenu} from '../redux/actions/MenuAction';
-import {getAuthAction,loginOutAction} from '../redux/actions/HeaderAction';
 //自己书写的基类
 import BaseContainer from '../components/pubController/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
@@ -142,11 +140,10 @@ class IndexApp extends BaseContainer {
     }
     
     render() {
-        let {FormVerifierReducer,MenuReducers,HeaderReducer,Actions} = this.props;
-        console.log(this.props)
+        let {FormVerifierReducer,Actions} = this.props;
         this.submitDate = Tool.assign({}, this.submitDate, FormVerifierReducer.submitDate);
         return (<div>
-            <AppBody meu_reducers={MenuReducers} hed_reducers = {HeaderReducer} actions = {Actions}>
+            <AppBody>
                 <Panel title = "表单验证 - 基于redux的数据回填">
                     <FormGroup horizontal >
                         <FormItems label="用户名">
@@ -196,7 +193,6 @@ class IndexApp extends BaseContainer {
 
     componentDidMount():void {
         let {FormVerifierReducer, Actions} = this.props;
-       Actions.changeActiveAction();
     }
     
     componentWillUnmount():void {
@@ -215,8 +211,6 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
-        HeaderReducer: state.HeaderReducer,
-        MenuReducers: state.MenuReducers,
         FormVerifierReducer: state.FormVerifierReducer
     }
 }
@@ -224,11 +218,7 @@ let mapStateToProps = (state) => {
 function mapDispatchToProps(dispatch) {
     return {
         Actions: bindActionCreators({
-                 changeActiveAction,
-                 switchMenu,
-                 getAuthAction,
-                 loginOutAction,
-                 ChangeDataAction
+                 
              }, dispatch)
     };
 }

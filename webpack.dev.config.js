@@ -79,8 +79,8 @@ var config = {
          * alias配置项，可以为常用模块配置改属性，可以节省编译的搜索时间。例如：
 
          */
-        /*alias:{
-            'react':path.join(nodeModulesPath,'react/react.js')
+       /*alias:{
+            'verifier':'/www/pub/Verifier.ts'
         },*/
         /**
          * 扩展的文件后缀名
