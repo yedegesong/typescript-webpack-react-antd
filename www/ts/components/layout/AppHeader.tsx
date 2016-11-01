@@ -11,7 +11,7 @@ interface AppHeaderProps {
     meu_reducers?:any;
     hed_reducers?:any;
     actions?:any;
-    menuComponent?:symbol;
+    menuComponent?:any;
 }
 export default class AppHeader extends React.Component<AppHeaderProps, any> {
     constructor(props) {

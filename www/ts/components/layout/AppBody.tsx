@@ -1,6 +1,6 @@
 import * as React from "react";
 import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import { Provider, connect} from 'react-redux';
 import {AppHeader, AppMenu} from '../index';
 import Detect from '../../pub/Detect';
 import ComponentsConfig from "../ComponentsConfig";
@@ -8,6 +8,8 @@ import {changeActiveAction,switchMenu} from '../../redux/actions/MenuAction';
 import {getAuthAction} from '../../redux/actions/HeaderAction';
 
 import headerMenu from './header_menu';
+
+console.log(headerMenu)
 const css_prefix = ComponentsConfig.css_prefix;
 let detect = new Detect();
 let adCls = detect.os.phone ? `${css_prefix}-layout-mobile-main` : `${css_prefix}-layout-pc-main`;
@@ -16,7 +18,7 @@ interface AppBodyProps {
     children?: any;
     component?:symbol;
 }
-export default class AppBody extends React.Component<any,any> {
+class AppBody extends React.Component<any,any> {
     
     constructor(props){
         super(props);

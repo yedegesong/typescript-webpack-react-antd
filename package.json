@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-"build": "webpack -p --config webpack.build.config.js --progress --colors  --profile",
+    "build": "webpack -p --config webpack.build.config.js --progress --colors  --profile",
     "dev": "node webpack.server.js",
     "dev2": "webpack-dev-server --inline --hot --quiet",
     "lint": "eslint src",
@@ -13,7 +13,6 @@
   "author": "cj",
   "license": "ISC",
   "dependencies": {
-    "antd": "^0.12.17",
     "classnames": "^2.2.0",
     "jquery": "^2.2.2",
     "object-assign": "^4.0.1",
@@ -26,7 +25,8 @@
     "redux-actions": "^0.9.1",
     "redux-thunk": "^2.0.1",
     "superagent": "^2.0.0-alpha.3",
-    "superagent-bluebird-promise": "^3.0.0"
+    "superagent-bluebird-promise": "^3.0.0",
+    "typescript": "^2.0.6"
   },
   "devDependencies": {
     "babel": "^6.1.18",
@@ -45,7 +45,6 @@
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.0",
     "ts-loader": "^0.8.1",
-    "typescript": "^1.8.9",
     "webpack": "^1.12.8",
     "webpack-dev-server": "^1.12.1",
     "webpack-split-by-path": "^0.0.8"

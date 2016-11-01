@@ -32,11 +32,7 @@ var componentsSrc = path.resolve(__dirname,app_config.pathToBuild, app_config.co
 var filepath = (function(){
     var files_names= {};
     var regtsx = /(.*).tsx/;
-    var fileNames = fs.readdirSync(controllerSrc, function(err, files){
-    if(err){console.log(err);return false;};
-    return files
-    });
-
+    var fileNames = fs.readdirSync(controllerSrc);
     fileNames.forEach(function(v){
     var tsx = v.match(regtsx);
     if(tsx){
@@ -166,10 +162,7 @@ var config = {
  *  读取模板文件
  * @type {string[]}
  */
-var fileNames2 = fs.readdirSync(viewPath, function(err, files){
-    if(err){console.log(err);return false;};
-    return files;
-});
+var fileNames2 = fs.readdirSync(viewPath);
 /**
  * 动态插入多页模板
  */
