@@ -20,6 +20,28 @@ var VERIFIERS = {
         },
         tip: '不能为空'
     },
+    require2: {
+        /**
+         * 验证文本域不能为空以及不能存在特殊字符
+         * @type {any|boolean|boolean}
+         */
+        test: (value) => {
+            
+            return (/[^\u4e00-\u9fa5]/).test(value.toString().trim());
+        },
+        tip: '格式不对'
+    },
+    require3: {
+        /**
+         * 实际需验证文本域的值,验证参数值
+         * @type {any|boolean|boolean}
+         */
+        test: (value) => {
+            
+            return (/^[\w\W]{6,16}$/).test(value.toString().trim());
+        },
+        tip: '格式不对'
+    },
     password:{
         test: (value, verifierValue) => {
             if (!verifierValue) {

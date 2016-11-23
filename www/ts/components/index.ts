@@ -7,6 +7,7 @@ import FormGroup from './form/FormGroup';
 import FormItems from './form/FormItems';
 import InputText from './form/InputText';
 import InputSelect from './form/InputSelect';
+import InputSearch from './form/InputSearch';
 import SelectGroup from './form/SelectGroup';
 import InputRadio from './form/InputRadio';
 import InputCheckbox from './form/InputCheckbox';
@@ -44,6 +45,7 @@ export {
     FormItems,
     InputText,
     InputSelect,
+    InputSearch,
     InputRadio,
     InputCheckbox,
     CheckGroup,

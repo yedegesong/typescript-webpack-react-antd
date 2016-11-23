@@ -17,6 +17,38 @@
                     "orderNum": 1,
                     "parentId": 1,
                     "privilegeName": "网格布局"
+                },
+                {
+                    "privilegeId": 2,
+                    "privilegeUrl": "crumbs",
+                    "organization": 2,
+                    "orderNum": 1,
+                    "parentId": 1,
+                    "privilegeName": "面包屑"
+                },
+                {
+                    "privilegeId": 2,
+                    "privilegeUrl": "button",
+                    "organization": 2,
+                    "orderNum": 1,
+                    "parentId": 1,
+                    "privilegeName": "按钮"
+                },
+                {
+                    "privilegeId": 2,
+                    "privilegeUrl": "icion",
+                    "organization": 2,
+                    "orderNum": 1,
+                    "parentId": 1,
+                    "privilegeName": "图标"
+                },
+                {
+                    "privilegeId": 2,
+                    "privilegeUrl": "form",
+                    "organization": 2,
+                    "orderNum": 1,
+                    "parentId": 1,
+                    "privilegeName": "表单"
                 }
             ],
             "titleMap": {
@@ -26,6 +58,26 @@
                 "orderNum": 1,
                 "parentId": 0,
                 "privilegeName": "UI组件"
+            }
+        },
+        {
+            "childMap": [
+                {
+                    "privilegeId": 2,
+                    "privilegeUrl": "form_verifier",
+                    "organization": 2,
+                    "orderNum": 1,
+                    "parentId": 1,
+                    "privilegeName": "表单组件"
+                }
+            ],
+            "titleMap": {
+                "privilegeId": 1,
+                "privilegeUrl": "#",
+                "organization": 2,
+                "orderNum": 1,
+                "parentId": 0,
+                "privilegeName": "UI功能组件"
             }
         }
     ],

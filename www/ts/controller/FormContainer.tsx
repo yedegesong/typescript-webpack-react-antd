@@ -18,7 +18,8 @@ import {
     InfoText,
     SelectGroup,
     Textarea,
-    Icon
+    Icon,
+    InputSearch
 } from '../components/index';
 //自己书写的基类
 import BaseContainer from '../common/BaseContainer';
@@ -161,7 +162,6 @@ class IndexApp extends BaseContainer {
                         </FormItems>
                     </FormGroup>
                 </Panel>
-               
                 <Panel title="特殊文本域" >
                     <FormGroup horizontal >
                         <FormItems label="用户名">
@@ -176,10 +176,9 @@ class IndexApp extends BaseContainer {
                 </Panel>
 
                 <Panel title="搜索框文本域">
-                        <div className="ui-search-input">
-                            <InputText type="test" />
-                            <div className="btn-box"><Icon type="ssi" /></div>
-                        </div>
+                        <InputSearch onChange={(value)=>{ 
+                            console.log(value)
+                        }}/>
                 </Panel>
             </AppBody>
         );

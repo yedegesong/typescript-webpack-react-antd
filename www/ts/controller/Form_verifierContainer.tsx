@@ -169,14 +169,14 @@ class IndexApp extends BaseContainer {
                             </RadioGroup>
                         </FormItems>
                         <FormItems label="兴趣爱好">
-                            <CheckGroup  value= {'1'} options={[{ label: '篮球', value: '1' }, { label: '足球', value: '2' }]} onChange={(checkedValues) => this.valueChange('Interest', checkedValues) }/>
+                            <CheckGroup   options={[{ label: '篮球', value: '1' }, { label: '足球', value: '2' }]} onChange={(checkedValues) => this.valueChange('Interest', checkedValues) }/>
                         </FormItems>
                         <FormItems label="是否同意协议">
                             <InputCheckbox label="你必须阅读并同意" name="circle"  ref={(c) => this.checkedValue = c} />
                         </FormItems>
-                        <FormItems >
-                            <Buttons type = "danger" display = "block" onClick = {() => this.sublimeButton() } >登录</Buttons>
-                        </FormItems>
+                        <div>
+                            <Buttons type = "danger" onClick = {() => this.sublimeButton() } >登录</Buttons>
+                        </div>
                     </FormGroup>
                 </Panel>
             </AppBody>

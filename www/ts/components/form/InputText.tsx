@@ -2,21 +2,7 @@ import * as React from "react";
 import classNames from "classnames";
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
-/**
- * 面板组件
- */
-interface InputTextProps {
-    value?: string;
-    className?: string;
-    onChange?: Function;
-    name?:string;
-    type?:string;
-    placeholder?:string;
-    addonAfter?: any;
-    addonBefore?: any;
-    defaultValue?: any;
-    id?: any;
-}
+
 export default class InputText extends React.Component<any,any> {
 
     static  defaultProps = {

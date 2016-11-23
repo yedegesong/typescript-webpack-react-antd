@@ -137,7 +137,7 @@ div#rMenu {
     height:100px;
     overflow-y:auto;
     overflow-x:hidden;
-    width:170px;
+    width:80%;
     padding:15px;
     border: 1px solid #ddd;
     }
@@ -168,4 +168,21 @@ div#rMenu {
 }
 #chooseRole{
     margin-left:15px;
+}
+
+.del-button{
+    color:#f44336;
+    cursor: pointer;
+}
+
+#reset-password-cls{
+    display: none;
+}
+
+#reset-password-cls.on{
+    display: block;
+}
+
+.page-box{
+    margin-top:10px;
 }
