@@ -1,7 +1,7 @@
 import Config from '../../pub/Config';
 import Tool from '../../pub/Tool';
 import Api from '../../pub/Api';
-import {Tips, Dialog} from '../../components/index';
+import { Tips, Dialog } from '../../components/index';
 import LocalStorage from '../../pub/LocalStorage';
 /**
  * 菜单初始化获取值
@@ -17,7 +17,7 @@ let OnGetAuth = (state) => {
  */
 function getAuthAction(reddit?: any) {
     return (dispatch, getState) => {
-        let _data = LocalStorage.get('cw_auth');
+        let _data = LocalStorage.get('auth_token');
         /**
          * 如果本地存在就取本地数据，否则跳转到登录页。
          */
@@ -31,21 +31,23 @@ function getAuthAction(reddit?: any) {
 /**
  * 退出操作
  */
-function loginOutAction(){
+function loginOutAction() {
     let buyConfirm = (modal) => {
-        LocalStorage.remove('cw_auth');
-        LocalStorage.remove('cw_menu');
-        Tool.goPush('login');
-        modal.close();
+        Api.exit().then(function (callbackData) {
+                Tool.goPush('login');
+                LocalStorage.remove('auth_token');
+                modal.close();
+        })
+
     }
 
     let actions = [
         { label: '取消' },
         { label: '确定', onClick: buyConfirm, primary: true }
     ]
-
-    Dialog.show('您确定要退出？', actions);
-    
+    return (dispatch, getState) => {
+        Dialog.show('您确定要退出？', actions);
+    }
 }
 
 export {

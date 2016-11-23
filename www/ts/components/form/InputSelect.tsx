@@ -44,7 +44,10 @@ export default class InputSelect extends React.Component<any,any> {
         let {value, name, data,className} = this.props;
         let addClassName = className;
         let Cls = classNames(`${css_prefix}-form-item-container`,
-         { [`${addClassName}`]: className });
+         { 
+             [`${css_prefix}-form-select-container`]:true,
+             [`${addClassName}`]: className }
+             );
         return (
             <div className={Cls}>
                 <select

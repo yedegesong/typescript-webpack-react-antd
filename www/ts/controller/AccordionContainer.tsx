@@ -8,10 +8,10 @@ import {
     Panel,
     Buttons,Icon,FormGroup,FormItems,InputText,Calendar,Folding,FoldingPane} from '../components/index';
 //自己书写的基类
-import BaseContainer from '../components/pubController/BaseContainer';
+//自己书写的基类
+import BaseContainer from '../common/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
-import {AccordionReducer} from '../redux/AccordionReducer';
-const store = BaseStore({AccordionReducer});
+const store = BaseStore({});
 class IndexApp extends BaseContainer {
     constructor(props) {
         super(props);

@@ -17,7 +17,7 @@ import {
     Buttons,
     Tips} from '../components/index';
 //自己书写的基类
-import BaseContainer from '../components/pubController/BaseContainer';
+import BaseContainer from '../common/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
 import {FormVerifierReducer, ChangeDataAction} from '../redux/FormVerifierReducer';
 //表单验证模块

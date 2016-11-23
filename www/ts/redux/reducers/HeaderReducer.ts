@@ -6,7 +6,7 @@ import Tool from '../../pub/Tool';
  */
 const HeaderState =
 	{
-		LOGIN_ID: ''
+		username: 'username'
 	}
 
 export default function HeaderReducer(state = HeaderState, action) {

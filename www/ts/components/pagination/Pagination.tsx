@@ -23,7 +23,7 @@ export default class Pagination extends React.Component<any,any> {
 	static defaultProps = {
         defaultCurrent: 1,
         total:50,
-        defaultPageSize:10,
+        defaultPageSize:20,
 		pageSizeOptions:[10,20,30,40]
     }
 
@@ -32,12 +32,12 @@ export default class Pagination extends React.Component<any,any> {
 		/**
 		 * 总条数除以页面需要展现的数目 得到页数
 		 */
-		 
 	     this.state = {
 			   defaultCurrent: this.props.defaultCurrent,
 			   total: this.props.total,
 			   defaultPageSize: this.props.defaultPageSize,
-			   _current: this.props.current
+			   _current: this.props.current,
+			   pageSizeOptions:this.props.pageSizeOptions
 	       }
 		 this.jumpNext = this.jumpNext.bind(this);
 		 this.jumpPrev = this.jumpPrev.bind(this);
@@ -56,6 +56,9 @@ export default class Pagination extends React.Component<any,any> {
     }
 
     handlePrevClick(event, pages) {
+		if(this.state.defaultCurrent < 2 ){
+			return;
+		}
 		this.setState((state) => {
 			if (state.defaultCurrent == 1) {
 				return false;
@@ -69,6 +72,9 @@ export default class Pagination extends React.Component<any,any> {
     }
 
     handleNextClick(pages) {
+		if(pages <= this.state.defaultCurrent){
+			return;
+		}
 		this.setState((state) => {
 			if (state.defaultCurrent == pages){
 				return false;
@@ -197,9 +203,9 @@ export default class Pagination extends React.Component<any,any> {
 						name={name}
 						className="pagination-select"
 						onChange={this.handleChange.bind(this)}>
-						<option value="10">10 条/页</option>
-						<option value="20">20 条/页</option>
-						<option value="30">30 条/页</option> 
+						{this.state.pageSizeOptions.map((value,keyIndex)=>{
+							return <option value={value} key={keyIndex} >{value} 条/页</option>
+						})}
                 	</select>
 			</div>)
 	}
@@ -214,22 +220,37 @@ export default class Pagination extends React.Component<any,any> {
     render() {
 		let allPages = Math.ceil(this.state.total / this.state.defaultPageSize);
         return (<div className={`${css_prefix}-pagination`}>
+					<div className="pagination-total">
+						共{this.state.total}条
+					</div>
 					<ul className="pagination-list ui-clearfix">
 						<li 
 						className = {this.state.defaultCurrent < 2 ? 'off' : ''}
-						onClick={(event) => this.handlePrevClick(event, allPages) }>
+						onClick={(event) => {this.handlePrevClick(event, allPages) }}>
 							<Icon type="qf"/>
 						</li>
 						{this.createItem(allPages) }
 						<li 
-					className = {this.state.defaultCurrent == allPages ? 'off' : ''}
-					onClick={(event) => this.handleNextClick(allPages) }>
+					className = {allPages <= this.state.defaultCurrent? 'off' : ''}
+					onClick={(event) => {this.handleNextClick(allPages) }}>
 							<Icon type="hf"/>
 						</li>
         			</ul>
 					{this.props.showSizeChanger ? this.showSizeChanger() : false}
+					<div className="pagination-all-page">共{allPages}页</div>
 					{this.props.showQuickJumper ? this.showQuickJumper() : false}
         		</div>);
     }
 	
+	/**
+     * 解决二次渲染值回填
+     */
+    componentWillReceiveProps(nextProps) {
+		this.setState({
+			total:nextProps.total,
+			defaultCurrent:nextProps.defaultCurrent,
+			defaultPageSize:nextProps.defaultPageSize,
+			pageSizeOptions:nextProps.pageSizeOptions
+		})
+    }
 }

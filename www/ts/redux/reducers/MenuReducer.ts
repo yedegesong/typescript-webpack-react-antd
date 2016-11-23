@@ -1,4 +1,4 @@
-import { BASE_MENU, SWITCH_MENU, GET_ACTIVE, ACTIVE_MENU, CHANGE_ACTIVE} from '../actions/MenuAction';
+import { QUERY_MENU, SWITCH_MENU } from '../actions/MenuAction';
 import Tool from '../../pub/Tool';
 /**
  * 菜单父键和值,二级菜单键和值,菜单切换状态,菜单数据
@@ -6,19 +6,37 @@ import Tool from '../../pub/Tool';
  */
 const MenuState =
 	{
-		active: { parent: -1, child: -1 },
+		parent: 0,
+		child: 0,
 		menuSwitch: true,
-		menuList: []
+		menuList: [
+			{
+				"name": "账号权限管理",
+				"subMunu": [
+					{
+						"name": "用户管理",
+						"url": "user_management"
+					},
+					{
+						"name": "角色管理",
+						"url": "role_management"
+					}
+				],
+				"url": "#"
+			}
+		]
 	}
 
 export default function MenuReducers(state = MenuState, action) {
 	switch (action.type) {
-		case BASE_MENU:
-			return Tool.assign({}, state, action.state);
+		case QUERY_MENU:
+			return Tool.assign({}, state, {
+				parent: action.menu.parent,
+				child: action.menu.child,
+				menuList: action.menu.menuList,
+			});
 		case SWITCH_MENU:
 			return Tool.assign({}, state, { menuSwitch: action.menuSwitch });
-		case CHANGE_ACTIVE:
-			return Tool.assign({}, state, { active: action.active });
 		default:
 			return state
 	}

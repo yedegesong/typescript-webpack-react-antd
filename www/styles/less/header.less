@@ -109,16 +109,15 @@
 
 /**头部个人菜单**/
 .@{css-prefix}auth-menu{
-      display: none;
+    display: none;
     position: absolute;
-    top: 56px;
+    top: 70px;
     right: -0;
     background: #fff;
     color: #333 !important;
-    padding: 5px 0 3px 0;
     border-radius: 0 0 5px 5px;
     height: auto;
-    min-width: 150px;
+    min-width: 305px;
     border: solid thin rgba(0,0,0,0.2);
     border-top: none;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
@@ -131,21 +130,36 @@
   display:block;
 }
 
-.@{css-prefix}auth-menu >ul >li{
-  text-align: center;
-  padding: 10px 12px;
+.menu-header{
+  height:80px;
+  padding-top: 18px;
+  background-color:#73bffb;
+  color:#fff;
+}
+
+.user-img{
+  float:left;
+  width:50px;
+  height:50px;
+  margin-left:15px;
+}
+
+.user-info{
+  margin-left:80px;
+  margin-right:80px;
   text-align: left;
-  color: #9d9fa2;
-  background: #fafbfc;
-  font-size:14px;
-  text-align:center;
 }
 
-.@{css-prefix}auth-menu >ul >li:hover{
-  background: rgba(0,0,0,0.04);
-  color:#1f2c36;
+.user-out{
+    height: 25px;
+    width: 45px;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    border: 1px solid #fff;
+    top: 28px;
+    border-radius: 2px;
 }
-
 
 
 

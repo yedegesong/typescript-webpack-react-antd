@@ -4,20 +4,12 @@ import { Provider, connect} from 'react-redux';
 import {AppHeader, AppMenu} from '../index';
 import Detect from '../../pub/Detect';
 import ComponentsConfig from "../ComponentsConfig";
-import {changeActiveAction,switchMenu} from '../../redux/actions/MenuAction';
-import {getAuthAction} from '../../redux/actions/HeaderAction';
-
-import headerMenu from './header_menu';
-
-console.log(headerMenu)
+import {switchMenu,query_menu} from '../../redux/actions/MenuAction';
+import {getAuthAction,loginOutAction} from '../../redux/actions/HeaderAction';
 const css_prefix = ComponentsConfig.css_prefix;
 let detect = new Detect();
 let adCls = detect.os.phone ? `${css_prefix}-layout-mobile-main` : `${css_prefix}-layout-pc-main`;
-interface AppBodyProps {
-    MenuReducers?: any;
-    children?: any;
-    component?:symbol;
-}
+
 class AppBody extends React.Component<any,any> {
     
     constructor(props){
@@ -30,9 +22,9 @@ class AppBody extends React.Component<any,any> {
         let {children,MenuReducers,HeaderReducer,Actions} = this.props;
         let Cls = MenuReducers.menuSwitch ? adCls : adCls + " off";
         return (<div className={`${css_prefix}-body`}>
-                    <AppHeader menuComponent={headerMenu} meu_reducers={MenuReducers} hed_reducers={HeaderReducer} actions = {Actions}/>
+                    <AppHeader meu_reducers={MenuReducers} hed_reducers={HeaderReducer} actions = {Actions}/>
                     <div className = { Cls }>
-                        <AppMenu />
+                        <AppMenu menu_reducers = {MenuReducers} actions = {Actions} />
                         <div className={`${css_prefix}-container`}>
                             {children}
                         </div>
@@ -43,7 +35,6 @@ class AppBody extends React.Component<any,any> {
 
     componentDidMount():void {
         let {MenuReducers, Actions} = this.props;
-        Actions.changeActiveAction();
     }
 }
 
@@ -57,9 +48,10 @@ let mapStateToProps = (state) => {
 function mapDispatchToProps(dispatch) {
     return {
         Actions: bindActionCreators({
-                changeActiveAction,
                  switchMenu,
-                 getAuthAction
+                 getAuthAction,
+                 query_menu,
+                 loginOutAction
              }, dispatch)
     };
 }

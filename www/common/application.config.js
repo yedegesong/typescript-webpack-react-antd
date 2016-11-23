@@ -3,19 +3,19 @@
  */
 //API接口 配置模块 全局注入
 (function(){
+        //全局路径
         function basePath (){
                 return 'http://127.0.0.1:9090'
-                //return 'http://cwgjad1.api1.cheweiguanjia.com/'
         }
+        //全局Api地址
+        function baseApiPath(){
+                return 'http://127.0.0.1:9090'
+                //return 'http://218.106.156.27:8001'
+        }
+
         window.applicationConfig = {
-                /**
-                 配置URL 切换
-                 **/
-                BaseUrl:basePath (),
                 TelBaseUrl: basePath () + '/dist/pages/',
-                ApiBaseUrl:  basePath () + 'act',
-                version:'1.1.0',
-                appType:102,
-                varName:'3.3.0'
+                version:'4.0.0',
+                ApiBaseUrl:  baseApiPath ()
         }
 })(window);

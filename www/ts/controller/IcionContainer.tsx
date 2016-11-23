@@ -12,7 +12,7 @@ import {
     Col,
     Icon,Dashboard} from '../components/index';
 //自己书写的基类
-import BaseContainer from '../components/pubController/BaseContainer';
+import BaseContainer from '../common/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
 //表单验证模块
 import Verifier from '../pub/Verifier';

@@ -1,9 +1,6 @@
 import * as React from "react";
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-/*
-import {switchMenu} from '../../redux/actions/MenuAction';*/
-import {loginOutAction} from '../../redux/actions/HeaderAction';
 import Icon from '../icon/Icon';
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
@@ -45,29 +42,48 @@ export default class AppHeader extends React.Component<AppHeaderProps, any> {
      * 点击退出
      */
     exit(){
-        loginOutAction();
+        let {hed_reducers,actions} = this.props;
+        actions.loginOutAction();
     }
     
+    createMenu(){
+        let {hed_reducers,actions} = this.props;
+        return (
+            <div>
+                <div className="menu-header">
+                    <div className="user-img">
+                        <img src="/images/header.png" />
+                    </div>
+                    <div className="user-info">
+                        <p>{hed_reducers.username}</p>
+                        <p>UI设计师，产品部</p>
+                    </div>
+                    <div className="user-out" onClick = {this.exit.bind(this)}>注销</div>
+                </div>
+            </div>
+        )
+    }
+
     render() {
+        /*<div>
+           <p onClick = {this.exit.bind(this)} ><Icon type='dc'/>退出</p>
+        </div>*/
         let {hed_reducers,actions,menuComponent} = this.props;
-        let auchUserName = hed_reducers.LOGIN_ID;
+        let username = hed_reducers.username;
         let cls = this.state.authSwitch ? `${css_prefix}-auth on` : `${css_prefix}-auth `;
         return (
             <div className={`${css_prefix}-layout-header`}>
                 <div className={`${css_prefix}-header-container`}>
                     <div className={`${css_prefix}-logo`}>
-                        广告系统
+                         车位管家
                     </div>
                     <div className={`${css_prefix}-menu-switch`} onClick = {(event) => this.handleSwitch(event)}>
                         <span></span>
                     </div>
                     <div className={cls}>
-                        <h3 onClick = {(event) => this.handleAuthSwitch(event) }>欢迎您&nbsp;:&nbsp;{auchUserName}</h3>
+                        <h3 onClick = {(event) => this.handleAuthSwitch(event) }>欢迎您&nbsp;:&nbsp;{username}</h3>
                         <div className={`${css_prefix}-auth-menu`}>
-                            {menuComponent}
-                            <div>
-                                <p onClick = {this.exit.bind(this)} ><Icon type='dc'/>退出</p>
-                            </div>
+                            {this.createMenu()}
                         </div>
                     </div>
                 </div>

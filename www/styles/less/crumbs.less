@@ -1,12 +1,20 @@
 .@{css-prefix}crumbs{
   	font-size:14px;
+    background-color:#fff;
+    padding:10px 30px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.14);
+    margin-bottom:16px;
 }
+
 .@{css-prefix}crumbs>ul>li{
 	display: inline-block;
 	color:#777;
 }
 
-
+.@{css-prefix}crumbs>ul>li:nth-child(1){
+	color:#bbb;
+}
 .@{css-prefix}crumbs>ul>li+li:before {
     padding: 0 5px;
     color: #ccc;

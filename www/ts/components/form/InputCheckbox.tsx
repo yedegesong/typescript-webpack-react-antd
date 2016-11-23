@@ -46,7 +46,8 @@ export default class InputCheckbox extends React.Component<any, any> {
     }
 
     render() {
-        const {className,label} = this.props;
+        const {className,label,id} = this.props;
+       // console.log(id)
         let addClassName = className;
         let Cls = classNames(`${css_prefix}-form-checkbox-container`, { [`${addClassName}`]: className });
         return (
@@ -58,7 +59,7 @@ export default class InputCheckbox extends React.Component<any, any> {
                         onChange={(event)=>{this.handleChange(event)}}
                         name={this.props.name}
                         checked={this.state.checked}
-                        id={this.props.id}/>
+                        id={id}/>
                     <span>{label}</span>
                 </label>
                 </div>

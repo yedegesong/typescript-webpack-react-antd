@@ -52,6 +52,12 @@ var VERIFIERS = {
         },
         tip: '只能为数字'
     },
+    confusion_number: {
+        test: (value) => {
+            return (/(?=.*?[a-zA-Z])(?=.*?[0-9])[a-zA-Z0-9]{6,16}$/).test(value.toString().trim());
+        },
+        tip: '请输入正确的格式'
+    },
     mobile: {
         test: (value) => {
             return value && ((/^((1[378][0-9]{9})|(15[89][0-9]{8}))$/).test(value.toString().trim()));
@@ -147,7 +153,7 @@ let verifyConfig = (input, verifyConfigs, immediately = false) => {
 
             if (typeof verifyOneResult == 'string') {
 
-                let tips = verifyConfig['name'] + verifyOneResult;
+                let tips:any = verifyConfig['name'] + verifyOneResult;
                 tips = {name: configName, tips};
                 if (immediately) {
                     return [tips];

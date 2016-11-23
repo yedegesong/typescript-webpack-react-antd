@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "childMap": [
+                {
+                    "privilegeId": 2,
+                    "privilegeUrl": "api",
+                    "organization": 2,
+                    "orderNum": 1,
+                    "parentId": 1,
+                    "privilegeName": "API主组件"
+                },
+                {
+                    "privilegeId": 2,
+                    "privilegeUrl": "grid",
+                    "organization": 2,
+                    "orderNum": 1,
+                    "parentId": 1,
+                    "privilegeName": "网格布局"
+                }
+            ],
+            "titleMap": {
+                "privilegeId": 1,
+                "privilegeUrl": "#",
+                "organization": 2,
+                "orderNum": 1,
+                "parentId": 0,
+                "privilegeName": "UI组件"
+            }
+        }
+    ],
+    "resultCode": 200
+}

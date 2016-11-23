@@ -29,7 +29,7 @@ export default class Table extends React.Component<any, any> {
         let ths = [];
         ths = ths.concat(columns).map((c,i) => {
             if(c.key == 'checked'){
-                return <th key={'checked'} >
+                return <th key={'checked'} id="checkKey">
                     <InputCheckbox checked = {this.state.allChecked} onChange={(value)=>this.allCheckbox(value)}/>
                 </th>;
             }
@@ -76,6 +76,7 @@ export default class Table extends React.Component<any, any> {
     allCheckbox(value){
         let {dataSource,rowSelection} = this.props;
         if(value){
+            this.checkedValue = [];
             /**
              * 遍历加载全部数据
              */
@@ -104,6 +105,7 @@ export default class Table extends React.Component<any, any> {
         if(value){
             this.checkedValue.push(record);
             if(this.checkedValue.length == dataSource.length){
+                $('#checkKey').find('input').prop('checked',true);
                 this.setState({
                     allChecked:true
                 })
@@ -115,6 +117,8 @@ export default class Table extends React.Component<any, any> {
                 this.setState({
                     allChecked:false
                 })
+            }else{
+                $('#checkKey').find('input').prop('checked',false);
             }
         }
         //单个复选框选择回调
@@ -124,6 +128,7 @@ export default class Table extends React.Component<any, any> {
     }
 
     render() {
+        
         let {columns,rowSelection, dataSource,rowRadio, className} = this.props;
         /**
          * 带复选框的表格
@@ -137,7 +142,7 @@ export default class Table extends React.Component<any, any> {
                 key: 'checked',
                 render: (text, record) => (
                     <span>
-                            <InputCheckbox checked = {this.state.allChecked} onChange={(value)=>this.childCheckbox(value,record)}/>
+                            <InputCheckbox  value={record.key} checked = {this.state.allChecked} onChange={(value)=>this.childCheckbox(value,record)}/>
                         </span>
                 )
             });
@@ -175,4 +180,10 @@ export default class Table extends React.Component<any, any> {
         );
     }
 
+    componentWillReceiveProps(nextProps){
+        this.checkedValue = [];
+        this.setState({
+                allChecked:false
+            })
+    }
 }
