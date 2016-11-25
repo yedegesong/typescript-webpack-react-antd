@@ -1047,7 +1047,7 @@ body {
   overflow: hidden;
 }
 .ui-menu-parent > li.active .ui-menu-child {
-  max-height: 400px;
+  max-height: 600px;
   background-color: #1c2126;
 }
 .ui-menu-child > li {

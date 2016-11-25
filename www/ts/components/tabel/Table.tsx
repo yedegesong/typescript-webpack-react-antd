@@ -8,15 +8,16 @@ import InputRadio from '../form/InputRadio';
 import ComponentsConfig from "../ComponentsConfig";
 const css_prefix = ComponentsConfig.css_prefix;
 export default class Table extends React.Component<any, any> {
-    onceTable:boolean;
-    checkedValue:any;
+    onceTable: boolean;
+    checkedValue: any;
     constructor(props) {
         super(props);
         this.onceTable = true;
         this.checkedValue = [];
         this.state = {
-            allChecked:false,
-            radioChecked:this.props.rowRadio ? this.props.rowRadio.value : '-1'
+            allChecked: false,
+            headerChecked: false,
+            radioChecked: this.props.rowRadio ? this.props.rowRadio.value : '-1'
         }
     }
 
@@ -27,13 +28,13 @@ export default class Table extends React.Component<any, any> {
      */
     getHeader(columns) {
         let ths = [];
-        ths = ths.concat(columns).map((c,i) => {
-            if(c.key == 'checked'){
+        ths = ths.concat(columns).map((c, i) => {
+            if (c.key == 'checked') {
                 return <th key={'checked'} id="checkKey">
-                    <InputCheckbox checked = {this.state.allChecked} onChange={(value)=>this.allCheckbox(value)}/>
+                    <InputCheckbox checked={this.state.headerChecked} onChange={(value) => this.allCheckbox(value)} />
                 </th>;
             }
-            if(c.key == 'radio'){
+            if (c.key == 'radio') {
                 return <th key={'radio'}></th>;
             }
             if (c.colSpan !== 0) {
@@ -53,44 +54,63 @@ export default class Table extends React.Component<any, any> {
      * @returns {any}
      */
     getBody() {
-        let {dataSource, columns,rowSelection} = this.props;
+        let {dataSource, columns, rowSelection} = this.props;
         return dataSource.map((c, i) => {
-            return <TableRow key={i}  columns = {columns} record = {c} />
+            return <TableRow key={i} columns={columns} record={c} />
         })
     }
     /**
      * 单选框选择操作
      */
-    hanldRadio(event,record){
+    hanldRadio(event, record) {
         let {rowRadio} = this.props;
-        rowRadio.onChange(event,record)
+        rowRadio.onChange(event, record)
         this.setState({
-            radioChecked:event.target.value
+            radioChecked: event.target.value
         })
         //console.log(record)
-       // console.log(event.target.checked)
+        // console.log(event.target.checked)
     }
     /**
      * 处理复选框全部表单
      */
-    allCheckbox(value){
-        let {dataSource,rowSelection} = this.props;
-        if(value){
+    allCheckbox(value) {
+        let {dataSource, rowSelection} = this.props;
+        let _input = document.querySelector('#checkKey').querySelector('input');
+        if (value) {
             this.checkedValue = [];
             /**
              * 遍历加载全部数据
              */
-            dataSource.forEach((v)=>{
+            dataSource.forEach((v) => {
                 this.checkedValue.push(v);
             })
             this.setState({
-                allChecked:true
+                allChecked: true,
+                headerChecked: true
             })
-        }else{
-            this.setState({
-                allChecked:false
-            })
-            this.checkedValue = [];
+        } else {
+            if (_input.checked && this.checkedValue.length != dataSource.length) {
+                this.checkedValue = [];
+                /**
+                 * 遍历加载全部数据
+                 */
+                dataSource.forEach((v) => {
+                    this.checkedValue.push(v);
+                })
+                this.setState({
+                    allChecked: true,
+                    headerChecked: true
+                })
+            } else {
+
+                this.setState({
+                    allChecked: false,
+                    headerChecked: false
+                })
+                this.checkedValue = [];
+            }
+
         }
         //回调全部选择的数据
         rowSelection.onSelectAll(this.checkedValue);
@@ -100,25 +120,28 @@ export default class Table extends React.Component<any, any> {
      * @param value
      * @param record
      */
-    childCheckbox(value,record){
-        let {dataSource,rowSelection} = this.props;
-        if(value){
+    childCheckbox(value, record) {
+        let {dataSource, rowSelection} = this.props;
+        let _input = document.querySelector('#checkKey').querySelector('input');
+        if (value) {
             this.checkedValue.push(record);
-            if(this.checkedValue.length == dataSource.length){
-                $('#checkKey').find('input').prop('checked',true);
+            if (this.checkedValue.length == dataSource.length) {
+                _input.checked = true;
                 this.setState({
-                    allChecked:true
+                    allChecked: true,
+                    headerChecked: true
                 })
             }
-        }else{
+        } else {
             let optionIndex = this.checkedValue.indexOf(record);
             this.checkedValue.splice(optionIndex, 1);
-            if(this.checkedValue.length == 0){
+            if (this.checkedValue.length == 0) {
                 this.setState({
-                    allChecked:false
+                    allChecked: false,
+                    headerChecked: false
                 })
-            }else{
-                $('#checkKey').find('input').prop('checked',false);
+            } else {
+                _input.checked = false;
             }
         }
         //单个复选框选择回调
@@ -128,12 +151,12 @@ export default class Table extends React.Component<any, any> {
     }
 
     render() {
-        
-        let {columns,rowSelection, dataSource,rowRadio, className} = this.props;
+
+        let {columns, rowSelection, dataSource, rowRadio, className} = this.props;
         /**
          * 带复选框的表格
          */
-        if(rowSelection&&this.onceTable){
+        if (rowSelection && this.onceTable) {
             //阻止多次创建
             this.onceTable = false;
             columns.unshift({
@@ -142,15 +165,15 @@ export default class Table extends React.Component<any, any> {
                 key: 'checked',
                 render: (text, record) => (
                     <span>
-                            <InputCheckbox  value={record.key} checked = {this.state.allChecked} onChange={(value)=>this.childCheckbox(value,record)}/>
-                        </span>
+                        <InputCheckbox value={record.key} checked={this.state.allChecked} onChange={(value) => this.childCheckbox(value, record)} />
+                    </span>
                 )
             });
         }
         /**
          * 带单选框的表格
          */
-        if(rowRadio&&this.onceTable){
+        if (rowRadio && this.onceTable) {
             //阻止多次创建
             this.onceTable = false;
             columns.unshift({
@@ -159,31 +182,31 @@ export default class Table extends React.Component<any, any> {
                 key: 'radio',
                 render: (text, record) => (
                     <span>
-                            <InputRadio name={rowRadio.radioName} 
-                             checked = {this.state.radioChecked == record.key ? true : false}
-                             value={record.key}
-                             onChange={(value)=>this.hanldRadio(value,record)}
-                              />
-                        </span>
+                        <InputRadio name={rowRadio.radioName}
+                            checked={this.state.radioChecked == record.key ? true : false}
+                            value={record.key}
+                            onChange={(value) => this.hanldRadio(value, record)}
+                            />
+                    </span>
                 )
             });
         }
 
         return (<div className={`${css_prefix}-table`}>
             <table>
-                {this.getHeader(columns) }
-                 <tbody>
-                    {this.getBody() }
+                {this.getHeader(columns)}
+                <tbody>
+                    {this.getBody()}
                 </tbody>
             </table>
         </div>
         );
     }
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         this.checkedValue = [];
         this.setState({
-                allChecked:false
-            })
+            allChecked: false
+        })
     }
 }
