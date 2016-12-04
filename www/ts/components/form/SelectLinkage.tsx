@@ -5,16 +5,6 @@ import InputSelect from './InputSelect';
 import LocalStorage from '../../pub/LocalStorage';
 const css_prefix = ComponentsConfig.css_prefix;
 declare var window: any;
-let findKey = (elements, callback) => {
-    var value, values = [], i, key;
-    for (key in elements) {
-        value = callback(elements[key], key);
-        if (value != null) { values.push(value) }
-    }
-    return values;
-}
-
-
 export default class SelectLinkage extends React.Component<any, any> {
     /**
      * 表单布局 块布局(默认),水平布局(horizontal),行内布局(inline)
