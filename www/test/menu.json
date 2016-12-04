@@ -173,6 +173,14 @@
                     "orderNum": 1,
                     "parentId": 1,
                     "privilegeName": "图表组件"
+                },
+                {
+                    "privilegeId": 2,
+                    "privilegeUrl": "form_data_linkage",
+                    "organization": 2,
+                    "orderNum": 1,
+                    "parentId": 1,
+                    "privilegeName": "表单三级联动功能"
                 }
             ],
             "titleMap": {
