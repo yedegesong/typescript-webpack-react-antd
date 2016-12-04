@@ -19,15 +19,10 @@ import {
 //自己书写的基类
 import BaseContainer from '../common/BaseContainer';
 import {BaseStore} from '../redux/store/BaseStore';
-import {FormLinkageReducer,
-    getCitysAction,
-    getCityAction,
-    getProvincesAction,
-    getAreaAction} from '../redux/FormLinkageReducer';
 //表单验证模块
 import Verifier from '../pub/Verifier';
 import Tool from '../pub/Tool';
-const store = BaseStore({ FormLinkageReducer });
+const store = BaseStore({  });
 class IndexApp extends BaseContainer {
     date: any[];
     submitDate:any;
@@ -43,7 +38,9 @@ class IndexApp extends BaseContainer {
         return (<div>
             <AppBody>
                 <Panel title = "表单三级联动">
-                    <SelectLinkage />
+                    <SelectLinkage callbackValue = {(value)=>{
+                        console.log(value)
+                    }}/>
                 </Panel>
             </AppBody>
             </div>
@@ -63,7 +60,7 @@ class IndexApp extends BaseContainer {
 
 let mapStateToProps = (state) => {
     return {
-        FormLinkageReducer: state.FormLinkageReducer
+       
     }
 }
 

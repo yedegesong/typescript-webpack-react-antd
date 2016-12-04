@@ -26,9 +26,9 @@ export default class SelectLinkage extends React.Component<any, any> {
         super(props);
         this.storage_city = null;
         this.data = {
-            province: '请选择',
-            city: '请选择',
-            area: '请选择'
+            province: '-1',
+            city: '-1',
+            area: '-1'
         }
         this.state = {
             province: [],
@@ -56,8 +56,8 @@ export default class SelectLinkage extends React.Component<any, any> {
     handleProvinceChange(value) {
         let city = [];
         this.data.province = value;
-        this.data.city = '请选择';
-        this.data.area = '请选择';
+        this.data.city = '-1';
+        this.data.area = '-1';
         let _data = LocalStorage.get('city_data');
         for (let keys in _data) {
             if (keys == value) {
@@ -76,6 +76,10 @@ export default class SelectLinkage extends React.Component<any, any> {
             city: city,
             area: []
         })
+
+        if(this.props.callbackValue){
+            this.props.callbackValue(this.data)
+        }
     }
     /**
      * 选择城市
@@ -83,7 +87,7 @@ export default class SelectLinkage extends React.Component<any, any> {
     handleCityChange(value) {
         let area = [];
         this.data.city = value;
-        this.data.area = '请选择';
+        this.data.area = '-1';
         let storage_city = this.storage_city;
         for (let citys in storage_city) {
             if (citys == value) {
@@ -98,13 +102,19 @@ export default class SelectLinkage extends React.Component<any, any> {
         this.setState({
             area: area
         })
+        if(this.props.callbackValue){
+            this.props.callbackValue(this.data)
+        }
     }
 
     /**
      * 选择区域
      */
-    handleAreaChange(event) {
-
+    handleAreaChange(value) {
+        this.data.area = value;
+        if(this.props.callbackValue){
+            this.props.callbackValue(this.data)
+        }
     }
     /**
      * body 主容器 包括头部和菜单
@@ -124,7 +134,7 @@ export default class SelectLinkage extends React.Component<any, any> {
 
     componentDidMount(): void {
         if (!LocalStorage.get('city_data')) {
-            $.getScript('http://127.0.0.1:9090/lib/area.js', function (prov) {
+            $.getScript('/lib/area.js', function (prov) {
                 LocalStorage.add('city_data', window.prov);
             })
         }
