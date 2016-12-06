@@ -12,14 +12,18 @@ export default class SelectLinkage extends React.Component<any, any> {
      */
     data: any;
     storage_city: any;
-    constructor(props) {
-        super(props);
-        this.storage_city = null;
-        this.data = {
+    static defaultProps = {
+        value: {
             province: '-1',
             city: '-1',
             area: '-1'
         }
+    }
+
+    constructor(props) {
+        super(props);
+        this.storage_city = null;
+        this.data = this.props.value;
         this.state = {
             province: [],
             city: [],
@@ -38,6 +42,7 @@ export default class SelectLinkage extends React.Component<any, any> {
         this.setState({
             province: province,
         })
+
     }
 
     /**
@@ -46,8 +51,8 @@ export default class SelectLinkage extends React.Component<any, any> {
     handleProvinceChange(value) {
         let city = [];
         this.data.province = value;
-        this.data.city = '-1';
-        this.data.area = '-1';
+        this.data.city = this.props.value.city;
+        this.data.area = this.props.value.area;
         let _data = LocalStorage.get('city_data');
         for (let keys in _data) {
             if (keys == value) {
@@ -55,7 +60,9 @@ export default class SelectLinkage extends React.Component<any, any> {
             }
         }
 
+
         for (let citys in this.storage_city) {
+
             city.push({
                 label: citys,
                 value: citys
@@ -67,7 +74,8 @@ export default class SelectLinkage extends React.Component<any, any> {
             area: []
         })
 
-        if(this.props.callbackValue){
+        if (this.props.callbackValue) {
+            //console.log(this.data)
             this.props.callbackValue(this.data)
         }
     }
@@ -77,7 +85,7 @@ export default class SelectLinkage extends React.Component<any, any> {
     handleCityChange(value) {
         let area = [];
         this.data.city = value;
-        this.data.area = '-1';
+        this.data.area = this.props.value.area;
         let storage_city = this.storage_city;
         for (let citys in storage_city) {
             if (citys == value) {
@@ -92,8 +100,9 @@ export default class SelectLinkage extends React.Component<any, any> {
         this.setState({
             area: area
         })
-        if(this.props.callbackValue){
-            this.props.callbackValue(this.data)
+        if (this.props.callbackValue) {
+            this.props.callbackValue(this.data);
+            console.log()
         }
     }
 
@@ -102,21 +111,34 @@ export default class SelectLinkage extends React.Component<any, any> {
      */
     handleAreaChange(value) {
         this.data.area = value;
-        if(this.props.callbackValue){
-            this.props.callbackValue(this.data)
+        if (this.props.callbackValue) {
+            this.props.callbackValue(this.data);
+
         }
+    }
+
+    /**
+     * 初始化选择城市
+     */
+    initCity() {
+        this.handleProvinceChange(this.props.value.province);
+        this.handleCityChange(this.props.value.city)
     }
     /**
      * body 主容器 包括头部和菜单
      */
     render() {
+        const {className} = this.props;
+        let Cls = classNames(`${css_prefix}-linkage-container`, {
+            [`${className}`]: className
+        });
         return (
-            <div>
-                <InputSelect data={this.state.province} value={this.data.province}
+            <div className={Cls}>
+                <InputSelect delValue={'请选择省份'} data={this.state.province} value={this.data.province}
                     onChange={(event) => this.handleProvinceChange(event.target.value)} />
-                <InputSelect data={this.state.city} value={this.data.city}
+                <InputSelect delValue={'请选择城市'} data={this.state.city} value={this.data.city}
                     onChange={(event) => this.handleCityChange(event.target.value)} />
-                <InputSelect data={this.state.area} value={this.data.area}
+                <InputSelect delValue={'请选择区域'} data={this.state.area} value={this.data.area}
                     onChange={(event) => this.handleAreaChange(event.target.value)} />
             </div>
         );
@@ -131,6 +153,10 @@ export default class SelectLinkage extends React.Component<any, any> {
 
         let _data = LocalStorage.get('city_data');
         this.changeProvince(_data);
+
+        if (this.props.value.province != '-1' && this.props.value.city != '-1' && this.props.value.area != '-1') {
+            this.initCity();
+        }
     }
 
     componentWillUnmount(): void {

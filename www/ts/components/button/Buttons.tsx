@@ -49,7 +49,7 @@ export default class Buttons extends React.Component<any,any> {
         return (<button  {...this.props} className = { Cls }  onClick={(event) => this.handleClick(event) }>
                     {children}
                 </button>
-                    );
+        );
     }
 
 }

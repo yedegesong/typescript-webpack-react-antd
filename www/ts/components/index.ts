@@ -35,7 +35,9 @@ import Pagination from './pagination/Pagination';
 import Calendar from './calendar/Calendar';
 import Crumbs from './Crumbs/crumbs';
 import Label from './label/Label';
-import SelectLinkage from './form/SelectLinkage'
+import SelectLinkage from './form/SelectLinkage';
+import Steps from './steps/Steps';
+import Step from './steps/Step';
 export {
     AppHeader,
     AppMenu,
@@ -74,5 +76,7 @@ export {
     FoldingPane,
     Crumbs,
     Label,
-    SelectLinkage
+    SelectLinkage,
+    Steps,
+    Step
 }

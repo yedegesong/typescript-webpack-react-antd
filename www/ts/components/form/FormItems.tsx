@@ -1,6 +1,7 @@
 import * as React from "react";
 import classNames from "classnames";
 import ComponentsConfig from "../ComponentsConfig";
+import Tool from "../../pub/Tool";
 const css_prefix = ComponentsConfig.css_prefix;
 interface FormItemsProps {
     label?: string;
@@ -27,8 +28,16 @@ export default class FormItems extends React.Component<any,any> {
     toChild(){
         let {children, label, className,help,isInline,require,wrapperCol,labelCol} = this.props;
         let Cls = isInline ? '' : `${css_prefix}-col-${wrapperCol}`;
+        let opts_obj = null;
         return React.Children.map(children, (c: any,index:any) => {
-            return React.cloneElement(c, { className: `${Cls}`})
+            let AddCls = classNames([`${Cls}`],
+            {[`${c.props.className}`]: c.props.className });
+            if(c.props.id){
+                opts_obj = Tool.assign({},{ className: `${AddCls}`,id:c.props.id})
+            }else{
+                opts_obj = { className: `${AddCls}`};
+            }
+            return React.cloneElement(c,opts_obj)
         });
     }
     /**
@@ -37,10 +46,10 @@ export default class FormItems extends React.Component<any,any> {
     render() {
         let {children, label, className,help,isInline,require,labelCol} = this.props;
         let addClassName = className;
-        
         let contenCls = classNames(`${css_prefix}-form-items`, {[`${addClassName}`]: className });
         let Cls = classNames(`${css_prefix}-form-label`,
         {[`${css_prefix}-col-${labelCol}`]: labelCol&&!isInline });
+        
         let helpStyle = {
             "marginLeft":`${labelCol}%`
         }

@@ -41,7 +41,7 @@ export default class InputSelect extends React.Component<any,any> {
 
     render() {
         let inputClassName = `${css_prefix}-form-input-select`;
-        let {value, name, data,className} = this.props;
+        let {value, name, data,className,delValue} = this.props;
         let addClassName = className;
         let Cls = classNames(`${css_prefix}-form-item-container`,
          { 
@@ -56,7 +56,7 @@ export default class InputSelect extends React.Component<any,any> {
                     value={this.state.value}
                     className={inputClassName}
                     onChange={this.handleChange}>
-                    <option value="-1">请选择</option> 
+                    <option value="-1">{delValue ? delValue : '请选择'}</option> 
                     {data && data.length >= 1 ? this.renderItems() : false}
                 </select>
             </div>

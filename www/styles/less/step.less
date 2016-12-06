@@ -1,0 +1,92 @@
+.@{css-prefix}steps {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.@{css-prefix}steps>.steps-item {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+}
+
+.steps-item.on .steps-tail > i {
+  background: #2096f3;
+}
+
+.steps-item.on .steps-tail > i:after {
+  background: #2096f3;
+}
+
+.steps-item.on .steps-step {
+  color: #2096f3;
+}
+
+.steps-item.on .steps-step > b {
+  border: 1px solid #2096f3;
+  color: #2096f3;
+}
+
+.steps-tail {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 20px;
+  padding: 0 10px;
+}
+
+.steps-tail > i {
+  display: inline-block;
+  vertical-align: top;
+  background: #e9e9e9;
+  height: 1px;
+  border-radius: 1px;
+  width: 100%;
+  position: relative;
+}
+
+.steps-tail > i:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  width: 0;
+  background: #e9e9e9;
+  height: 100%;
+  opacity: 0;
+  width: 100%;
+  -webkit-transition: all 0.6s;
+  transition: all 0.6s;
+  opacity: 1;
+}
+
+.steps-item:last-child {
+  width: auto !important;
+  margin-right: 0;
+}
+
+.steps-step {
+  height: 43px;
+  z-index: 999;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #fff;
+  padding: 0 15px;
+  line-height: 43px;
+  font-size: 14px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.steps-step > b {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  line-height: 23px;
+  text-align: center;
+  border-radius: 26px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  color: #ccc;
+  margin-right: 10px;
+}

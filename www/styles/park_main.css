@@ -1,0 +1,30 @@
+.park-select{
+    display: block;
+}
+.page-box{
+    text-align: center;
+    margin-top:15px;
+}
+
+.select-left{
+    float:left;
+}
+
+.select-right{
+    float:right;
+}
+
+.select-box{
+    margin-bottom:15px;
+}
+
+.select-right>div{
+    display: inline-block;
+    margin:0 5px;
+}
+.operation-box>span,.quickfunction-box>span{
+    padding:0 3px;
+}
+.inputlng{
+    margin-right:15px;
+}
