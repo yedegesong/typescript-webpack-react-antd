@@ -51,8 +51,8 @@ export default class SelectLinkage extends React.Component<any, any> {
     handleProvinceChange(value) {
         let city = [];
         this.data.province = value;
-        this.data.city = this.props.value.city;
-        this.data.area = this.props.value.area;
+        this.data.city = '-1';
+        this.data.area = '-1';
         let _data = LocalStorage.get('city_data');
         for (let keys in _data) {
             if (keys == value) {
@@ -85,7 +85,7 @@ export default class SelectLinkage extends React.Component<any, any> {
     handleCityChange(value) {
         let area = [];
         this.data.city = value;
-        this.data.area = this.props.value.area;
+        this.data.area = '-1';
         let storage_city = this.storage_city;
         for (let citys in storage_city) {
             if (citys == value) {
@@ -121,8 +121,42 @@ export default class SelectLinkage extends React.Component<any, any> {
      * 初始化选择城市
      */
     initCity() {
-        this.handleProvinceChange(this.props.value.province);
-        this.handleCityChange(this.props.value.city)
+        let city = [];
+        let area = [];
+        this.data.province = this.props.value.province;
+        this.data.city = this.props.value.city;
+        this.data.area = this.props.value.area;
+        let _data = LocalStorage.get('city_data');
+        for (let keys in _data) {
+            if (keys == this.props.value.province) {
+                this.storage_city = _data[keys];
+            }
+        }
+
+
+        for (let citys in this.storage_city) {
+
+            city.push({
+                label: citys,
+                value: citys
+            })
+        }
+        let storage_city = this.storage_city;
+        for (let citys in storage_city) {
+            if (citys == this.data.city) {
+                storage_city[citys].forEach((v) => {
+                    area.push({
+                        label: v,
+                        value: v
+                    })
+                })
+            }
+        }
+       
+        this.setState({
+            city: city,
+            area: area
+        })
     }
     /**
      * body 主容器 包括头部和菜单
@@ -167,7 +201,7 @@ export default class SelectLinkage extends React.Component<any, any> {
      * 解决二次渲染值回填
      */
     componentWillReceiveProps(nextProps) {
-
+        console.log(nextProps)
     }
 
 }
