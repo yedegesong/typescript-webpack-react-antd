@@ -1,3 +1,6 @@
+/**
+ * 三级联动组件
+ */
 import * as React from "react";
 import classNames from "classnames";
 import ComponentsConfig from "../ComponentsConfig";
@@ -42,7 +45,6 @@ export default class SelectLinkage extends React.Component<any, any> {
         this.setState({
             province: province,
         })
-
     }
 
     /**
@@ -171,7 +173,6 @@ export default class SelectLinkage extends React.Component<any, any> {
 
         let _data = LocalStorage.get('city_data');
         this.changeProvince(_data);
-
         if (this.props.value.province != '-1' && this.props.value.city != '-1' && this.props.value.area != '-1') {
             this.initCity();
         }
