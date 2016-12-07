@@ -33,10 +33,7 @@ var componentsSrc = path.resolve(__dirname,app_config.pathToBuild, app_config.co
 var filepath = (function(){
     var files_names= {};
     var regtsx = /(.*).tsx/;
-    var fileNames = fs.readdirSync(controllerSrc, function(err, files){
-    if(err){console.log(err);return false;};
-    return files
-    });
+    var fileNames = fs.readdirSync(controllerSrc);
 
     fileNames.forEach(function(v){
     var tsx = v.match(regtsx);
@@ -165,19 +162,19 @@ var config = {
  *  读取模板文件
  * @type {string[]}
  */
-var fileNames = fs.readdirSync(viewPath, function(err, files){
-    if(err){console.log(err);return false;};
-    return files;
-});
+var fileNames = fs.readdirSync(viewPath);
 /**
  * 动态插入多页模板
  */
+
 fileNames.forEach(function(v){
+    console.log(v)
     var regtsx = /(?:\w*)(?=.ejs)/;
     /**
         如果不已ejs 结尾的不处理
     **/
     if(v.match(regtsx)){
+        console.log(v)
         var chunksContainer = titleCase3(v.match(regtsx)[0]) + 'Container';
         var htmlConfig = {
             addLinkCss:app_config.addLinkCss,
