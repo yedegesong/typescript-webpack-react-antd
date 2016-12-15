@@ -17,6 +17,56 @@
     <%for (var js in htmlWebpackPlugin.options.addmommonScript) {%>
     <script src="<%= htmlWebpackPlugin.options.addmommonScript[js] %>"></script>
     <%}%>
+     <style>
+        .tipStyle{
+            z-index: 99999;
+            padding-left: 10px;
+            padding-right: 2px;
+            position: absolute;
+            top: 10px;
+            font-size: 12px;
+            right: 10px;
+            border-radius: 3px;
+            line-height: 20px;
+        }
+        .upload{
+            border: 1px dashed #d9d9d9;
+            width: 96px;
+            height: 96px;
+            border-radius: 4px;
+            background-color: #fbfbfb;
+            text-align: center;
+            cursor: pointer;
+            -webkit-transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .upload>div{
+            margin-top:25px;
+        }
+        .item-line{
+            display:inline-block;
+            margin-right:10px;
+            width:65px;
+        }
+        .items-line-item{
+            margin-bottom:10px;
+        }
+
+        .list-images{}
+        .list-images>li{
+                display: inline-block;
+                width: 96px;
+                height: 96px;
+                margin: 0 8px 8px 0;
+        }
+        .list-images>li img{
+            width:100%;
+        }
+    </style>
 </head>
 
 <body>
