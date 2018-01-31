@@ -13,8 +13,8 @@ export default class BaseComponent extends React.Component < any, any > {
          * 如果本地存在就取本地数据，否则跳转到登录页。
          */
         if (!_data) {
-             alert('没有权限,请重新登录');
-             Tool.goPush('login');
+            
+             //Tool.goPush('login');
         }
       
     }

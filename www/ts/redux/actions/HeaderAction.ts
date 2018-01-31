@@ -1,8 +1,10 @@
 import Config from '../../pub/Config';
 import Tool from '../../pub/Tool';
 import Api from '../../pub/Api';
+
 import { Tips, Dialog } from '../../components/index';
 import LocalStorage from '../../pub/LocalStorage';
+
 /**
  * 菜单初始化获取值
  */

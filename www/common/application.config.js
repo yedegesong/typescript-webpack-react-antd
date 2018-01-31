@@ -10,7 +10,7 @@
         //全局Api地址
         function baseApiPath(){
                 return 'http://127.0.0.1:9090'
-                //return 'http://218.106.156.27:8001'
+                //return 'https://yedegesong.github.io/ERP'
         }
 
         window.applicationConfig = {

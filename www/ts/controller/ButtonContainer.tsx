@@ -18,20 +18,26 @@ let divStyle = {
 class IndexApp extends BaseContainer {
     constructor(props) {
         super(props);
+        this.state = {
+            name:'小明'
+        }
     }
 
     handleButton(){
+        
+        //this.setState({name:'小东'})
         //let {MenuReducers, dispatch} = this.props;
-        alert('a')
+        
     }
 
     render() {
+        console.log(this.state.name)
         let {Actions} = this.props;
         return (
             <AppBody>
                 <Panel title="按钮面板">
                     <Buttons>默认default</Buttons>
-                    <Buttons type = "primary"  onClick={this.handleButton}>首选primary</Buttons>
+                    <Buttons type = "primary"  onClick={this.handleButton.bind(this)}>首选primary</Buttons>
                     <Buttons type = "success">成功success</Buttons>
                     <Buttons type = "danger">危险danger</Buttons>
                     <Buttons type = "info">一般info</Buttons>

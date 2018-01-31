@@ -4,6 +4,8 @@ import LocalStorage from '../../pub/LocalStorage';
 //import menu from './menu';
 import Api from '../../pub/Api';
 const now_url = window.location.href.match(/(?:\w*)(?=.html)/);
+import {menuData} from './menu';
+console.log(menuData)
 /**
  * 菜单初始化获取值
  */
@@ -36,8 +38,8 @@ let query_menu = () => {
         let child_index: number;
         let menuList = [];
         let subMunu = [];
-        Api.menu().then(function (callbackData) {
-            $.each(callbackData.data, (keyIndex, value) => {
+       
+            $.each(menuData.data, (keyIndex, value) => {
                 menuList.push({
                     name: value.titleMap.privilegeName,
                     url: value.titleMap.privilegeUrl,
@@ -60,7 +62,7 @@ let query_menu = () => {
                 })
             })
             dispatch(OnGetMenu({parent:parent_index,child:child_index,menuList:menuList}));
-        })
+        
     }
 }
 export {
